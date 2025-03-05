@@ -3,21 +3,36 @@ layout: page
 title: About Us
 ---
 
-We are a team based in the [School of Computing, National University of Singapore](https://www.comp.nus.edu.sg).
-
-You can reach us at the email `seer[at]comp.nus.edu.sg`
+We are CS2103T-T11 Team 1, a team based in the [School of Computing, National University of Singapore](https://www.comp.nus.edu.sg).
 
 ## Project team
 
-### John Doe
+### Abi Halim
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/abihalim.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/AbiHalim)]
 
-* Role: Project Advisor
+* Role: Team Lead
+* In charge of Documentation
+
+### Vee Hua Zhi
+
+<img src="images/veehz.png" width="200px">
+
+* Role: Code Quality
+* In charge of ensuring Code Quality
+
+### Shashwat Chandra
+
+<img src="images/shashwatchan.png" width="200px">
+
+[[github](http://github.com/shashwatchan)]
+[[website](http://shashwatchandra.com)]
+
+* Role: PM
+* Responsibilities: Testing
+
 
 ### Song Yuexi
 
@@ -29,31 +44,4 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 * Role: Testing, Scheduling and tracking
 * Responsibilities: In charge of defining, assigning, and tracking project tasks, Ensures the testing of the project is done properly and on time.
 
-### Johnny Doe
 
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)] [[portfolio](team/johndoe.md)]
-
-* Role: Developer
-* Responsibilities: Data
-
-### Jean Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
-
-* Role: Developer
-* Responsibilities: Dev Ops + Threading
-
-### James Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
-
-* Role: Developer
-* Responsibilities: UI
