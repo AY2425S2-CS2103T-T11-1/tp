@@ -32,3 +32,16 @@ We are CS2103T-T11 Team 1, a team based in the [School of Computing, National Un
 
 * Role: PM
 * Responsibilities: Testing
+
+
+### Song Yuexi
+
+<img src="images/yosiesyx.png" width="200px">
+
+[[github](https://github.com/YosieSYX)]
+[[portfolio](https://yosiesyx.github.io/SongYuexi/)]
+
+* Role: Testing, Scheduling and tracking
+* Responsibilities: In charge of defining, assigning, and tracking project tasks, Ensures the testing of the project is done properly and on time.
+
+
