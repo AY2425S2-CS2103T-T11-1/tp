@@ -22,3 +22,13 @@ We are CS2103T-T11 Team 1, a team based in the [School of Computing, National Un
 
 * Role: Code Quality
 * In charge of ensuring Code Quality
+
+### Shashwat Chandra
+
+<img src="images/shashwatchan.png" width="200px">
+
+[[github](http://github.com/shashwatchan)]
+[[website](http://shashwatchandra.com)]
+
+* Role: PM
+* Responsibilities: Testing
