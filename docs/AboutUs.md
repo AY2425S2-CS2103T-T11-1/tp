@@ -19,15 +19,15 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 * Role: Project Advisor
 
-### Jane Doe
+### Song Yuexi
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/yosiesyx.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/YosieSYX)]
+[[portfolio](https://yosiesyx.github.io/SongYuexi/)]
 
-* Role: Team Lead
-* Responsibilities: UI
+* Role: Testing, Scheduling and tracking
+* Responsibilities: In charge of defining, assigning, and tracking project tasks, Ensures the testing of the project is done properly and on time.
 
 ### Johnny Doe
 
