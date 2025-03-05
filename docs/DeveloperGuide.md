@@ -273,28 +273,74 @@ NUS students who
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …                      | I want to …                                                                    | So that I can…                                      |
-|:---------|-----------------------------|--------------------------------------------------------------------------------|-----------------------------------------------------|
-| `* * *`  | NUS student                 | record the year, major, and housing of my contact                              | record NUS-relevant information about the person    |
-| `* * *`  | NUS student                 | fetch and store latest module information for the semester                     | use the application offline                         |
-| `* * *`  | NUS student                 | link a contact to their course timetable                                       | record the modules and timetables of contacts       |
-| `* * *`  | NUS student                 | record the timeslot and venue of the module taken by my contact                | record the information of each module               |
-| `* * *`  | NUS student                 | find contacts by module                                                        | find friends to take modules with                   |
-| `* * *`  | NUS student                 | sync mine and others module info with NUSMods                                  |                                                     |
-| `* * *`  | user                        | back up my contact data                                                        | it won't get lost                                   |
-| `* * *`  | user                        | group my contacts into different categories                                    |                                                     |
-| `* * *`  | user                        | save certain contacts as favourites                                            |                                                     |
-| `* * *`  | user                        | share the contact details of a contact                                         | other people can receive details easily             |
-| `* * *`  | NUS student                 | record the second major / minors of my contact                                 | have more detailed information on their program     |
-| `* * * ` | user                        | record the birthday of my contact                                              |                                                     |
-| `* * *`  | user                        | merge duplicate contacts automatically                                         | avoid redundancy                                    |
-| `* *`    | user                        | automatically back up my contact data periodically                             | it will not be lost if I forget to manually save it |
-| `* *`    | NUS student                 | view where my contact is at the current moment based on their NUSMods schedule | easily meet them                                    |
-| `* *`    | NUS student                 | compare my schedule with my contacts                                           | see when we have overlapping free time              |
-| `* *`    | user who prefers light mode | toggle the GUI between dark mode and light mode                                |                                                     |
-| `* *`    | user                        | import contacts from a backup file                                             |                                                     |
-| `*`      | user                        | get a notification when it is one of my contact's birthdays                    | I won't forget to wish them                         |
-| `*`      | user                        | have the option to lock my contacts with a password                            | random people won't access my sensitive information |
+| Priority | As a …             | I want to …                                                                    | So that I can…                                                         |
+|:---------|--------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| `* * *`  | new user           | see usage instructions                                                         | refer to instructions when I forget how to use the App                 |
+|
+| `* * *`  | user               | add a new person                                                               |                                                                        |
+|
+| `* * *`  | user               | view a list of all my contacts                                                 | quickly find and access their details                                  |
+|
+| `* * *`  | user               | clear all contacts at once                                                     | reset my address book when needed                                      |
+|
+| `* * *`  | user               | exit the application using a command                                           | close it quickly when I am done using it                               |
+|
+| `* * *`  | user               | have my contacts saved automatically                                           | my data is not lost when I close the application                              |
+|
+| `* * *`  | advanced user      | edit the data file directly                                           | modify my contact list without using the application interface                              |
+|
+| `* * *`  | user               | interact with a graphical interface while using command-line inputs                                          | visually confirm my actions and navigate the application more easily                             |
+|
+| `* * *`  | user               | delete a person                                                                | remove entries that I no longer need                                   |
+|
+| `* * *`  | user               | find a person by name                                                          | locate details of persons without having to go through the entire list |
+|
+| `* * *`  | user               | edit a contact’s details                                                       | update outdated or incorrect information                               |
+|
+| `* * *`  | NUS student        | record the year, major, and housing of my contact                              | record NUS-relevant information about the person                       |
+|
+| `* * *`  | NUS student        | fetch and store latest module information for the semester                     | use the application offline                                            |
+|
+| `* * *`  | NUS student        | link a contact to their course timetable                                       | record the modules and timetables of contacts                          |
+|
+| `* * *`  | NUS student        | record the timeslot and venue of the module taken by my contact                | record the information of each module                                  |
+|
+| `* * *`  | NUS student        | find contacts by module                                                        | find friends to take modules with                                      |
+|
+| `* * *`  | NUS student        | sync mine and others module info with NUSMods                                  |                                                                        |
+|
+| `* * *`  | user               | back up my contact data                                                        | make sure my data won't get lost                                       |
+|
+| `* * *`  | user               | group my contacts into different categories                                    |                                                                        |
+|
+| `* * *`  | user               | save certain contacts as favourites                                            |                                                                        |
+|
+| `* * *`  | user               | share the contact details of a contact                                         | other people can receive details easily                                |
+|
+| `* * *`  | NUS student        | record the second major / minors of my contact                                 | have more detailed information on their program                        |
+|
+| `* * * ` | user               | record the birthday of my contact                                              |                                                                        |
+|
+| `* * *`  | user               | merge duplicate contacts automatically                                         | avoid redundancy                                                       |
+|
+| `* *`    | user               | hide private contact details                                                   | minimize chance of someone else seeing them by accident                |
+|
+| `* *`    | user               | automatically back up my contact data periodically                             | it will not be lost if I forget to manually save it                    |
+|
+| `* *`    | NUS student        | view where my contact is at the current moment based on their NUSMods schedule | easily meet them                                                       |
+|
+| `* *`    | NUS student        | compare my schedule with my contacts                                           | see when we have overlapping free time                                 |
+|
+| `* *`    | user who prefers light mode | toggle the GUI between dark mode and light mode                                |                                                                        |
+|
+| `* *`    | user               | import contacts from a backup file                                             |                                                                        |
+|
+| `*`      | user               | get a notification when it is one of my contact's birthdays                    | I won't forget to wish them                                            |
+|
+| `*`      | user               | have the option to lock my contacts with a password                            | random people won't access my sensitive information                    |
+
+
+
 
 ### Use cases
 
