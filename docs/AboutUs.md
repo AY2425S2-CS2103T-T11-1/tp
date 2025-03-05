@@ -57,3 +57,12 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 * Role: Developer
 * Responsibilities: UI
+
+### Shashwat Chandra
+
+<img src="images/shashwatchan.png" width="200px">
+[[github](http://github.com/shashwatchan)]
+[[website](http://shashwatchandra.com)]
+
+* Role: PM
+* Responsibilities: Testing
