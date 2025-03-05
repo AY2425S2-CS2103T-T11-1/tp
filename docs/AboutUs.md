@@ -15,3 +15,10 @@ We are CS2103T-T11 Team 1, a team based in the [School of Computing, National Un
 
 * Role: Team Lead
 * In charge of Documentation
+
+### Vee Hua Zhi
+
+<img src="images/veehz.png" width="200px">
+
+* Role: Code Quality
+* In charge of ensuring Code Quality
