@@ -285,19 +285,19 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 |
 | `* * *`  | user               | exit the application using a command                                           | close it quickly when I am done using it                               |
 |
-| `* * *`  | user               | have my contacts saved automatically                                           | my data is not lost when I close the application                              |
+| `* * *`  | user               | have my contacts saved automatically                                           | make sure my data is not lost when I close the application             |
 |
-| `* * *`  | advanced user      | edit the data file directly                                           | modify my contact list without using the application interface                              |
+| `* * *`  | advanced user      | edit the data file directly                                                    | modify my contact list without using the application interface         |
 |
-| `* * *`  | user               | interact with a graphical interface while using command-line inputs                                          | visually confirm my actions and navigate the application more easily                             |
+| `* * *`  | user               | interact with a graphical interface while using command-line inputs            | visually confirm my actions and navigate the application more easily   |
 |
-| `* * *`  | user               | delete a person                                                                | remove entries that I no longer need                                   |
+| `* * *`  | user               | delete a person                                                                | remove contacts that I no longer need                                  |
 |
 | `* * *`  | user               | find a person by name                                                          | locate details of persons without having to go through the entire list |
 |
 | `* * *`  | user               | edit a contact’s details                                                       | update outdated or incorrect information                               |
 |
-| `* * *`  | NUS student        | record the year, major, and housing of my contact                              | record NUS-relevant information about the person                       |
+| `* * *`  | NUS student        | record the year, major, and housing of my contact                              |                                                                        |
 |
 | `* * *`  | NUS student        | fetch and store latest module information for the semester                     | use the application offline                                            |
 |
@@ -307,7 +307,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 |
 | `* * *`  | NUS student        | find contacts by module                                                        | find friends to take modules with                                      |
 |
-| `* * *`  | NUS student        | sync mine and others module info with NUSMods                                  |                                                                        |
+| `* * *`  | NUS student        | sync mine and others' module information with NUSMods                          |                                                                        |
 |
 | `* * *`  | user               | back up my contact data                                                        | make sure my data won't get lost                                       |
 |
@@ -315,9 +315,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 |
 | `* * *`  | user               | save certain contacts as favourites                                            |                                                                        |
 |
-| `* * *`  | user               | share the contact details of a contact                                         | other people can receive details easily                                |
+| `* * *`  | user               | share the contact details of a contact                                         | ensure other people can receive details of the contact easily          |
 |
-| `* * *`  | NUS student        | record the second major / minors of my contact                                 | have more detailed information on their program                        |
+| `* * *`  | NUS student        | record the second major or minors of my contact                                | have more detailed information on their program                        |
 |
 | `* * * ` | user               | record the birthday of my contact                                              |                                                                        |
 |
@@ -325,7 +325,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 |
 | `* *`    | user               | hide private contact details                                                   | minimize chance of someone else seeing them by accident                |
 |
-| `* *`    | user               | automatically back up my contact data periodically                             | it will not be lost if I forget to manually save it                    |
+| `* *`    | user               | automatically back up my contact data periodically                             | make sure data will not be lost if I forget to manually save it        |
 |
 | `* *`    | NUS student        | view where my contact is at the current moment based on their NUSMods schedule | easily meet them                                                       |
 |
@@ -335,9 +335,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 |
 | `* *`    | user               | import contacts from a backup file                                             |                                                                        |
 |
-| `*`      | user               | get a notification when it is one of my contact's birthdays                    | I won't forget to wish them                                            |
+| `*`      | user               | get a notification when it is one of my contact's birthdays                    | always remember to celabrate  for them                                 |
 |
-| `*`      | user               | have the option to lock my contacts with a password                            | random people won't access my sensitive information                    |
+| `*`      | user               | have the option to lock my contacts with a password                            | make sure random people won't access my sensitive information          |
 
 
 
@@ -374,7 +374,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+2.  Should be able to hold up to 1000 users without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  Should be able to work offline without requiring an internet connection, except when syncing course information with NUSMODS.
 5.  Searches should return results within 1 second for a dataset of 1000 contacts.
