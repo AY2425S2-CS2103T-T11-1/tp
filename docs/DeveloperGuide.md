@@ -311,7 +311,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes from step 3.
 
-**Use case: UC02 - Delete a person**
+**Use case: UC02 -- Delete a person**
 
 **MSS**
 
