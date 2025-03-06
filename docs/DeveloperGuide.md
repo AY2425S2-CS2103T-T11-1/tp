@@ -315,7 +315,28 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
 
-**Use case: Delete a person**
+**Use Case: UC01 -- Add Contacts**
+
+**MSS**
+
+1. User provides contact details to add.
+2. System adds new contact.
+3. System shows new contact.
+
+   Use Case Ends.
+
+**Extensions:**
+
+* 2a. System detects an error in the entered data.
+
+   * 2a1. System requests for correct data.
+   * 2a2. User provides new data.
+
+      Steps 2a1-2a2 are repeated until the data entered are correct.
+
+      Use case resumes from step 3.
+
+**Use case: UC02 -- Delete a person**
 
 **MSS**
 
@@ -338,7 +359,64 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-*{More to be added}*
+
+**Use Case: UC03 -- Link Contacts to NUSMods Timetable**
+
+**Actor: NUS Student**
+
+**MSS**
+1. User provides contact to link and link to timetable.
+2. System links timetable to contact, deleting the old timetable if any.
+3. System display the contact.
+
+   Use Case Ends.
+
+**Extensions**
+* 1a. System detects an error in link or contact (contact not found).
+
+   * 1a1. System requests for correct data.
+   * 1a2. User provides new link and contact.
+
+      Steps 1a1-1a2 are repeated until the link and contact is correct.
+
+      Use case resumes from step 3.
+
+**Use Case: UC04 -- Updating NUSMods Venue and Schedule**
+
+**Actor: NUS Student**
+
+**Guarantees**
+
+- Old data will be deleted only if new data is successfully fetched and parsed.
+
+**MSS**
+
+1. User requests to update data.
+2. System fetches new venue and schedule data from NUSMods.
+3. System deletes old venue and schedule data.
+
+   Use Case Ends.
+
+**Extensions**
+* 1a. System cannot connect to the internet.
+
+   * 1a1. System informs user that there is a connection problem.
+
+      Use Case Ends.
+
+* 1b. System checked that the old data is less than 24 hours old.
+
+   * 1b1. System informs user that data is unlikely to have changed.
+   * 1b2. System asks user if data should be fetched.
+   * 1b3. System fetches data if user insists and use case resume from step 3.
+
+      Use Case Ends.
+
+* 2a. There is an error when fetching or parsing data.
+
+   * 2a1. System informs user to try again in a moment.
+
+      Use Case Ends.
 
 ### Non-Functional Requirements
 
