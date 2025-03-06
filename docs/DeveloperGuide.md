@@ -262,29 +262,54 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-* has a need to manage a significant number of contacts
-* prefer desktop apps over other types
-* can type fast
-* prefers typing to mouse interactions
+NUS students who
+* want to make more connections with other students
+* want to find course mates
 * is reasonably comfortable using CLI apps
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
-
+**Value proposition**: Able to save contacts of other NUS students with NUS-specific information (ex. Year, major, modules taken by each person, housing, CCAs).
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                    | I want to …​                     | So that I can…​                                                        |
-| -------- | ------------------------------------------ | ------------------------------ | ---------------------------------------------------------------------- |
-| `* * *`  | new user                                   | see usage instructions         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person               |                                                                        |
-| `* * *`  | user                                       | delete a person                | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name          | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details   | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name           | locate a person easily                                                 |
+| Priority | As a …             | I want to …                                                                    | So that I can…                                                         |
+|:---------|--------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| `* * *`  | new user           | see usage instructions                                                         | refer to instructions when I forget how to use the App                 |
+| `* * *`  | user               | add a new person                                                               |                                                                        |
+| `* * *`  | user               | view a list of all my contacts                                                 | quickly find and access their details                                  |
+| `* * *`  | user               | clear all contacts at once                                                     | reset my address book when needed                                      |
+| `* * *`  | user               | exit the application using a command                                           | close it quickly when I am done using it                               |
+| `* * *`  | user               | have my contacts saved automatically                                           | make sure my data is not lost when I close the application             |
+| `* * *`  | advanced user      | edit the data file directly                                                    | modify my contact list without using the application interface         |
+| `* * *`  | user               | interact with a graphical interface while using command-line inputs            | visually confirm my actions and navigate the application more easily   |
+| `* * *`  | user               | delete a person                                                                | remove contacts that I no longer need                                  |
+| `* * *`  | user               | find a person by name                                                          | locate details of persons without having to go through the entire list |
+| `* * *`  | user               | edit a contact’s details                                                       | update outdated or incorrect information                               |
+| `* * *`  | NUS student        | record the year, major, and housing of my contact                              |                                                                        |
+| `* * *`  | NUS student        | fetch and store latest module information for the semester                     | use the application offline                                            |
+| `* * *`  | NUS student        | link a contact to their course timetable                                       | record the modules and timetables of contacts                          |
+| `* * *`  | NUS student        | record the timeslot and venue of the module taken by my contact                | record the information of each module                                  |
+| `* * *`  | NUS student        | find contacts by module                                                        | find friends to take modules with                                      |
+| `* * *`  | NUS student        | sync mine and others' module information with NUSMods                          |                                                                        |
+| `* * *`  | user               | back up my contact data                                                        | make sure my data won't get lost                                       |
+| `* * *`  | user               | group my contacts into different categories                                    |                                                                        |
+| `* * *`  | user               | save certain contacts as favourites                                            |                                                                        |
+| `* * *`  | user               | share the contact details of a contact                                         | ensure other people can receive details of the contact easily          |
+| `* * *`  | NUS student        | record the second major or minors of my contact                                | have more detailed information on their program                        |
+| `* * * ` | user               | record the birthday of my contact                                              |                                                                        |
+| `* * *`  | user               | merge duplicate contacts automatically                                         | avoid redundancy                                                       |
+| `* *`    | user               | hide private contact details                                                   | minimize chance of someone else seeing them by accident                |
+| `* *`    | user               | automatically back up my contact data periodically                             | make sure data will not be lost if I forget to manually save it        |
+| `* *`    | NUS student        | view where my contact is at the current moment based on their NUSMods schedule | easily meet them                                                       |
+| `* *`    | NUS student        | compare my schedule with my contacts                                           | see when we have overlapping free time                                 |
+| `* *`    | user who prefers light mode | toggle the GUI between dark mode and light mode                                |                                                                        |
+| `* *`    | user               | import contacts from a backup file                                             |                                                                        |
+| `*`      | user               | get a notification when it is one of my contact's birthdays                    | always remember to celabrate  for them                                 |
+| `*`      | user               | have the option to lock my contacts with a password                            | make sure random people won't access my sensitive information          |
 
-*{More to be added}*
+
+
 
 ### Use cases
 
@@ -318,8 +343,10 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+2.  Should be able to hold up to 1000 users without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4.  Should be able to work offline without requiring an internet connection, except when syncing course information with NUSMODS.
+5.  Searches should return results within 1 second for a dataset of 1000 contacts.
 
 *{More to be added}*
 
