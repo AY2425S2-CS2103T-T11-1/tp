@@ -326,7 +326,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
+* [**NUSMods**](https://nusmods.com/): A course information system used by NUS students, which provides information about modules, timetables, and venues
+* **Contact**: A person’s details that are stored in the address book
 * **Private contact detail**: A contact detail that is not meant to be shared with others
+* [**CLI (Command Line Interface)**](https://en.wikipedia.org/wiki/Command-line_interface):  A means of interacting with a computer program by inputting lines of text called command lines
+* [**GUI (Graphical User Interface)**](https://en.wikipedia.org/wiki/Graphical_user_interface): A means of interacting with a computer program using a graphical interface, such as windows, icons, and buttons
+* **Tag**: A keyword or label associated with a contact
+* [**Module**](https://www.nus.edu.sg/registrar/academic-information-policies/graduate/modular-system): A course component in NUS
 
 --------------------------------------------------------------------------------------------------------------------
 
