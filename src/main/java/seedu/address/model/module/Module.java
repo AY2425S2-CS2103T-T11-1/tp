@@ -1,10 +1,10 @@
 package seedu.address.model.module;
 
-import seedu.address.commons.util.ToStringBuilder;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Objects;
 
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import seedu.address.commons.util.ToStringBuilder;
 
 /**
  * Represents an NUS Module in NUSMates
@@ -25,7 +25,7 @@ public class Module {
     }
 
     /**
-     *
+     * Gets the module code
      * @return The NUS module's module code
      */
     public ModuleCode getModuleCode() {
@@ -33,7 +33,7 @@ public class Module {
     }
 
     /**
-     *
+     * Gets the module title
      * @return The NUS module's title
      */
     public Title getTitle() {
