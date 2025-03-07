@@ -9,7 +9,7 @@ public enum Year {
 
     public static final String MESSAGE_CONSTRAINTS = "Year should be 1, 2, 3, 4, 5, or 6.";
     public static final String VALIDATION_REGEX = "[1-6]";
-    private final int value;
+    public final int value;
 
     Year(int year) {
         this.value = year;
