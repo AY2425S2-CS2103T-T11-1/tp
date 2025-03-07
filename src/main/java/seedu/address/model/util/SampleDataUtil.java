@@ -6,8 +6,9 @@ import java.util.stream.Collectors;
 
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.Housing;
+import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
@@ -21,19 +22,20 @@ public class SampleDataUtil {
     public static Person[] getSamplePersons() {
         return new Person[] {
             new Person(new Name("Abi"), new Phone("87438807"), new Email("abihalim@example.com"),
-                Year.YEAR_2,
-                new Address("Blk 30 Geylang Street 29, #06-40"),
+                Year.YEAR_2, new Major("Computer Science"),
+                new Housing("Blk 30 Geylang Street 29, #06-40"),
                 getTagSet("friends")),
             new Person(new Name("Yuexi"), new Phone("99272758"), new Email("yuexi@example.com"),
-                Year.YEAR_2,
-                new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"),
+                Year.YEAR_2, new Major("Computer Science"),
+                new Housing("Blk 30 Lorong 3 Serangoon Gardens, #07-18"),
                 getTagSet("colleagues", "friends")),
             new Person(new Name("Shashwat"), new Phone("93210283"), new Email("shashwat@example.com"),
-                Year.YEAR_4,
-                new Address("Blk 11 Ang Mo Kio Street 74, #11-04"),
+                Year.YEAR_4, new Major("Computer Science"),
+                new Housing("Blk 11 Ang Mo Kio Street 74, #11-04"),
                 getTagSet("neighbours")),
-            new Person(new Name("Huazhi"), new Phone("91031282"), new Email("huazhi@example.com"), Year.YEAR_2,
-                new Address("Blk 436 Serangoon Gardens Street 26, #16-43"),
+            new Person(new Name("Huazhi"), new Phone("91031282"), new Email("huazhi@example.com"),
+                Year.YEAR_2, new Major("Computer Science"),
+                new Housing("Blk 436 Serangoon Gardens Street 26, #16-43"),
                 getTagSet("family")),
         };
     }
