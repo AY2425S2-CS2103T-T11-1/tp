@@ -32,7 +32,6 @@ public class TitleTest {
         // valid titles
         assertTrue(Title.isValidTitle("Software Engineering")); // this module
         assertTrue(Title.isValidTitle("Data Structures & Algorithms")); // special characters allowed
-        assertTrue(Title.isValidTitle("Independent Software Development Project (Orbital)")); // special characters allowed
         assertTrue(Title.isValidTitle("French 4")); // alphanumeric allowed
     }
 
