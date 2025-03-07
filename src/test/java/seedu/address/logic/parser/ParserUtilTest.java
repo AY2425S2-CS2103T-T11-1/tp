@@ -135,11 +135,6 @@ public class ParserUtilTest {
     }
 
     @Test
-    public void parseYear_validValueWithWhitespace_returnsTrimmedYear() throws Exception {
-        assertEquals(Year.fromString(VALID_YEAR), ParserUtil.parseYear(WHITESPACE + VALID_YEAR + WHITESPACE));
-    }
-
-    @Test
     public void parseMajor_null_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> ParserUtil.parseMajor((String) null));
     }

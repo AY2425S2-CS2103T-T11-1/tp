@@ -28,11 +28,11 @@ public class TypicalPersons {
             .withHousing("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
             .withPhone("94351253")
             .withYear("1")
-            .withMajor("Mechanical Engineering")
+            .withMajor("Computer Science")
             .withTags("friends").build();
     public static final Person BENSON = new PersonBuilder()
             .withName("Benson Meier")
-            .withHousing("UTown Residence North TOwer")
+            .withHousing("UTown Residence North Tower")
             .withEmail("johnd@example.com")
             .withPhone("98765432")
             .withYear("3")

@@ -16,6 +16,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_YEAR_BOB;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.commands.EditCommand.EditPersonDescriptor;
+import seedu.address.model.person.Year;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
 
 public class EditPersonDescriptorTest {
@@ -55,11 +56,11 @@ public class EditPersonDescriptorTest {
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different year -> returns false
-        editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withYear(VALID_YEAR_BOB).build();
+        editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withYear("5").build();
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different major -> returns false
-        editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withMajor(VALID_MAJOR_BOB).build();
+        editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withMajor("Computer Engineering").build();
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different tags -> returns false
