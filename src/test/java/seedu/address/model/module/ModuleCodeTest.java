@@ -31,7 +31,7 @@ public class ModuleCodeTest {
         assertFalse(ModuleCode.isValidModuleCode("cs2109s")); // contains lowercase letters
         assertFalse(ModuleCode.isValidModuleCode("CS")); // doesn't contain 4 digit number
         assertFalse(ModuleCode.isValidModuleCode("CS230S")); // contains less than 4 digits
-        assertFalse(ModuleCode.isValidModuleCode("MATH1101")); // prefix longer than 3 characters
+        assertFalse(ModuleCode.isValidModuleCode("SIGMA1101")); // prefix longer than 4 characters
         assertFalse(ModuleCode.isValidModuleCode("CS2040DSA")); // suffix longer than 2 characters
 
 
