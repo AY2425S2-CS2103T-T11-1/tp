@@ -12,12 +12,12 @@ public class ModuleCode {
             ""; //TODO
 
     /*
-     * The module code must start with a 2-3 letter prefix,
+     * The module code must start with a 2-4 letter prefix,
      * followed by a 4-digit number, and may be followed with a 1-2 letter suffix.
      * All letters must be capitalized
      *
      */
-    public static final String VALIDATION_REGEX = "[A-Z]{2,3}\\d{4}[A-Z]{0,2}";
+    public static final String VALIDATION_REGEX = "[A-Z]{2,4}\\d{4}[A-Z]{0,2}";
 
     public final String value;
 
