@@ -32,14 +32,14 @@ public class ModuleCodeTest {
         assertFalse(ModuleCode.isValidModuleCode("CS")); // doesn't contain 4 digit number
         assertFalse(ModuleCode.isValidModuleCode("CS230S")); // contains less than 4 digits
         assertFalse(ModuleCode.isValidModuleCode("SIGMA1101")); // prefix longer than 4 characters
-        assertFalse(ModuleCode.isValidModuleCode("CS2040DSA")); // suffix longer than 2 characters
 
 
         // valid module code
         assertTrue(ModuleCode.isValidModuleCode("CS2103T")); // this module
         assertTrue(ModuleCode.isValidModuleCode("MA1522")); // no suffix
         assertTrue(ModuleCode.isValidModuleCode("CS2040DE")); // contains suffix
-        assertTrue(ModuleCode.isValidModuleCode("LAF4203HM")); // 3 character prefix with suffix
+        assertTrue(ModuleCode.isValidModuleCode("UTOB2001AIS")); // 4 character prefix with suffix
+        assertTrue(ModuleCode.isValidModuleCode("DMA1402L01")); // 3 character prefix, 3 character suffix with number
     }
 
     @Test
