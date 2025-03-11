@@ -17,7 +17,7 @@ public class ModuleCode {
      * All letters must be capitalized
      *
      */
-    public static final String VALIDATION_REGEX = "[A-Z]{2,4}\\d{4}[A-Z]{0,2}";
+    public static final String VALIDATION_REGEX = "[A-Z]{2,4}\\d{4}[A-Z0-9]{0,5}";
 
     public final String value;
 
