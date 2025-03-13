@@ -23,6 +23,7 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+import seedu.address.model.mod.Mod;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Housing;
 import seedu.address.model.person.Major;
@@ -110,7 +111,7 @@ public class EditCommand extends Command {
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
 
         return new Person(updatedName, updatedPhone, updatedEmail, updatedYear,
-                updatedMajor, updatedHousing, updatedTags);
+                updatedMajor, updatedHousing, updatedTags, null);
     }
 
     @Override
@@ -149,6 +150,7 @@ public class EditCommand extends Command {
         private Major major;
         private Housing housing;
         private Set<Tag> tags;
+        private Set<Mod> mods;
 
         public EditPersonDescriptor() {}
 
@@ -164,6 +166,7 @@ public class EditCommand extends Command {
             setMajor(toCopy.major);
             setHousing(toCopy.housing);
             setTags(toCopy.tags);
+            setMods(toCopy.mods);
         }
 
         /**
@@ -236,6 +239,23 @@ public class EditCommand extends Command {
          */
         public Optional<Set<Tag>> getTags() {
             return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
+        }
+
+        /**
+         * Sets {@code mods} to this object's {@code mods}.
+         * A defensive copy of {@code mods} is used internally.
+         */
+        public void setMods(Set<Mod> mods) {
+            this.mods = (mods != null) ? new HashSet<>(mods) : null;
+        }
+
+        /**
+         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
+         * if modification is attempted.
+         * Returns {@code Optional#empty()} if {@code tags} is null.
+         */
+        public Optional<Set<Mod>> getMods() {
+            return (mods != null) ? Optional.of(Collections.unmodifiableSet(mods)) : Optional.empty();
         }
 
         @Override

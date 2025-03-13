@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.model.mod.Mod;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Housing;
 import seedu.address.model.person.Major;
@@ -33,6 +34,7 @@ class JsonAdaptedPerson {
     private final String major;
     private final String housing;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
+    private final List<JsonAdaptedMod> mods = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -40,7 +42,8 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("year") String year, @JsonProperty("major") String major,
-            @JsonProperty("housing") String housing, @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+            @JsonProperty("housing") String housing, @JsonProperty("tags") List<JsonAdaptedTag> tags,
+            List<JsonAdaptedMod> mods) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -49,6 +52,9 @@ class JsonAdaptedPerson {
         this.housing = housing;
         if (tags != null) {
             this.tags.addAll(tags);
+        }
+        if (mods != null) {
+            this.mods.addAll(mods);
         }
     }
 
@@ -65,6 +71,9 @@ class JsonAdaptedPerson {
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
+        mods.addAll(source.getMods().stream()
+                .map(JsonAdaptedMod::new)
+                .collect(Collectors.toList()));
     }
 
     /**
@@ -76,6 +85,11 @@ class JsonAdaptedPerson {
         final List<Tag> personTags = new ArrayList<>();
         for (JsonAdaptedTag tag : tags) {
             personTags.add(tag.toModelType());
+        }
+
+        final List<Mod> personMods = new ArrayList<>();
+        for (JsonAdaptedMod mod : mods) {
+            personMods.add(mod.toModelType());
         }
 
         if (name == null) {
@@ -127,7 +141,8 @@ class JsonAdaptedPerson {
         final Housing modelHousing = new Housing(housing);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelYear, modelMajor, modelHousing, modelTags);
+        final Set<Mod> modelMods = new HashSet<>(personMods);
+        return new Person(modelName, modelPhone, modelEmail, modelYear, modelMajor, modelHousing, modelTags, modelMods);
     }
 
 }

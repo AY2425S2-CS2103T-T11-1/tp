@@ -16,6 +16,15 @@ public class Mod {
     private final Title title;
 
     /**
+     * Constructs a {@code Module} with the given module code and title.
+     */
+    public Mod(String moduleCode, String title) {
+        requireAllNonNull(moduleCode, title);
+        this.moduleCode = new ModuleCode(moduleCode);
+        this.title = new Title(title);
+    }
+
+    /**
      * Every field must be present and not null.
      */
     public Mod(ModuleCode moduleCode, Title title) {
