@@ -18,7 +18,7 @@ public class ModContainsKeywordsPredicate implements Predicate<Person> {
 
     @Override
     public boolean test(Person person) {
-        return person.getModules().stream()
+        return person.getMods().stream()
                 .anyMatch(mod -> keywords.stream()
                         .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(
                                 mod.getModuleCode().toString(), keyword))

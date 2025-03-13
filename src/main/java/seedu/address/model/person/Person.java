@@ -33,7 +33,8 @@ public class Person {
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Year year, Major major, Housing housing, Set<Tag> tags) {
+    public Person(Name name, Phone phone, Email email, Year year, Major major, Housing housing, Set<Tag> tags,
+            Set<Mod> modules) {
         requireAllNonNull(name, phone, email, year, housing, tags);
         this.name = name;
         this.phone = phone;
@@ -42,7 +43,9 @@ public class Person {
         this.major = major;
         this.housing = housing;
         this.tags.addAll(tags);
-        this.modules.addAll(modules);
+        if (modules != null) {
+            this.modules.addAll(modules);
+        }
     }
 
     public Name getName() {
@@ -81,7 +84,7 @@ public class Person {
      * Returns an immutable module set, which throws
      * {@code UnsupportedOperationException} if modification is attempted.
      */
-    public Set<Mod> getModules() {
+    public Set<Mod> getMods() {
         return Collections.unmodifiableSet(modules);
     }
 
