@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_HOUSING;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
@@ -25,6 +26,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Housing;
+import seedu.address.model.person.Link;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -49,6 +51,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_YEAR + "YEAR] "
             + "[" + PREFIX_MAJOR + "MAJOR] "
             + "[" + PREFIX_HOUSING + "HOUSING] "
+            + "[" + PREFIX_LINK + "LINK] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
@@ -107,10 +110,11 @@ public class EditCommand extends Command {
         Year updatedYear = editPersonDescriptor.getYear().orElse(personToEdit.getYear());
         Major updatedMajor = editPersonDescriptor.getMajor().orElse(personToEdit.getMajor());
         Housing updatedHousing = editPersonDescriptor.getHousing().orElse(personToEdit.getHousing());
+        Link updatedLink = editPersonDescriptor.getLink().orElse(personToEdit.getLink());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
 
         return new Person(updatedName, updatedPhone, updatedEmail, updatedYear,
-                updatedMajor, updatedHousing, updatedTags);
+                updatedMajor, updatedHousing, updatedLink, updatedTags);
     }
 
     @Override
@@ -148,6 +152,7 @@ public class EditCommand extends Command {
         private Year year;
         private Major major;
         private Housing housing;
+        private Link link;
         private Set<Tag> tags;
 
         public EditPersonDescriptor() {}
@@ -163,6 +168,7 @@ public class EditCommand extends Command {
             setYear(toCopy.year);
             setMajor(toCopy.major);
             setHousing(toCopy.housing);
+            setLink(toCopy.link);
             setTags(toCopy.tags);
         }
 
@@ -219,6 +225,14 @@ public class EditCommand extends Command {
 
         public Optional<Housing> getHousing() {
             return Optional.ofNullable(housing);
+        }
+
+        public void setLink(Link link) {
+            this.link = link;
+        }
+
+        public Optional<Link> getLink() {
+            return Optional.ofNullable(link);
         }
 
         /**

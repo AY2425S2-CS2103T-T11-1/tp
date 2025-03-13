@@ -28,12 +28,15 @@ public class Person {
     private final Major major;
     private final Housing housing;
     private final Set<Tag> tags = new HashSet<>();
-    private final Set<Mod> modules = new HashSet<>();
+    private final Set<Module> modules = new HashSet<>();
+    private final Link link;
+
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Year year, Major major, Housing housing, Set<Tag> tags) {
+    public Person(Name name, Phone phone, Email email, Year year, Major major, Housing housing,
+            Link link, Set<Tag> tags) {
         requireAllNonNull(name, phone, email, year, housing, tags);
         this.name = name;
         this.phone = phone;
@@ -41,6 +44,7 @@ public class Person {
         this.year = year;
         this.major = major;
         this.housing = housing;
+        this.link = link;
         this.tags.addAll(tags);
         this.modules.addAll(modules);
     }
@@ -67,6 +71,10 @@ public class Person {
 
     public Housing getHousing() {
         return housing;
+    }
+
+    public Link getLink() {
+        return link;
     }
 
     /**
@@ -120,6 +128,7 @@ public class Person {
                 && year.equals(otherPerson.year)
                 && major.equals(otherPerson.major)
                 && housing.equals(otherPerson.housing)
+                && link.equals(otherPerson.link)
                 && tags.equals(otherPerson.tags)
                 && modules.equals(otherPerson.modules);
     }
@@ -127,7 +136,7 @@ public class Person {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, year, major, housing, tags, modules);
+        return Objects.hash(name, phone, email, year, major, housing, link, tags, modules);
     }
 
     @Override
@@ -141,6 +150,7 @@ public class Person {
                 .add("housing", housing)
                 .add("tags", tags)
                 .add("modules", modules)
+                .add("link", link)
                 .toString();
     }
 

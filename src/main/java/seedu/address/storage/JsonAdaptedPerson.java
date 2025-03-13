@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Housing;
+import seedu.address.model.person.Link;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -32,6 +33,7 @@ class JsonAdaptedPerson {
     private final String year;
     private final String major;
     private final String housing;
+    private final String link;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
 
     /**
@@ -40,13 +42,15 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("year") String year, @JsonProperty("major") String major,
-            @JsonProperty("housing") String housing, @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+            @JsonProperty("housing") String housing, @JsonProperty("link") String link,
+            @JsonProperty("tags") List<JsonAdaptedTag> tags) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.year = year;
         this.major = major;
         this.housing = housing;
+        this.link = link;
         if (tags != null) {
             this.tags.addAll(tags);
         }
@@ -62,6 +66,7 @@ class JsonAdaptedPerson {
         year = String.valueOf(source.getYear().value);
         major = source.getMajor().value;
         housing = source.getHousing().value;
+        link = source.getLink().value;
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
@@ -110,6 +115,15 @@ class JsonAdaptedPerson {
         }
         final Year modelYear = Year.fromString(year);
 
+        if (link == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Link.class.getSimpleName()));
+        }
+        if (!Link.isValidLink(link)) {
+            throw new IllegalValueException(Link.MESSAGE_CONSTRAINTS);
+        }
+        final Link modelLink = new Link(link);
+
+
         if (major == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Major.class.getSimpleName()));
         }
@@ -127,7 +141,7 @@ class JsonAdaptedPerson {
         final Housing modelHousing = new Housing(housing);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelYear, modelMajor, modelHousing, modelTags);
+        return new Person(modelName, modelPhone, modelEmail, modelYear, modelMajor, modelHousing, modelLink, modelTags);
     }
 
 }

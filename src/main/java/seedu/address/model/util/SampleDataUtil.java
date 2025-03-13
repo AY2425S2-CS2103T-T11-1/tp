@@ -8,6 +8,7 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Housing;
+import seedu.address.model.person.Link;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -24,18 +25,22 @@ public class SampleDataUtil {
             new Person(new Name("Abi"), new Phone("87438807"), new Email("abihalim@example.com"),
                 Year.YEAR_2, new Major("Computer Science"),
                 new Housing("Blk 30 Geylang Street 29, #06-40"),
+                new Link("https://nusmods.com/timetable/sem-2/share?CG1111=LEC:1,TUT:1&CS2030=LEC:1,LAB:1"),
                 getTagSet("friends")),
             new Person(new Name("Yuexi"), new Phone("99272758"), new Email("yuexi@example.com"),
                 Year.YEAR_2, new Major("Computer Science"),
                 new Housing("Blk 30 Lorong 3 Serangoon Gardens, #07-18"),
+                new Link("https://nusmods.com/timetable/sem-2/share?CG1111=LEC:1,TUT:1&CS2030=LEC:1,LAB:1"),
                 getTagSet("colleagues", "friends")),
             new Person(new Name("Shashwat"), new Phone("93210283"), new Email("shashwat@example.com"),
                 Year.YEAR_4, new Major("Computer Science"),
                 new Housing("Blk 11 Ang Mo Kio Street 74, #11-04"),
+                new Link("https://nusmods.com/timetable/sem-2/share?CG1111=LEC:1,TUT:1&CS2030=LEC:1,LAB:1"),
                 getTagSet("neighbours")),
             new Person(new Name("Huazhi"), new Phone("91031282"), new Email("huazhi@example.com"),
                 Year.YEAR_2, new Major("Computer Science"),
                 new Housing("Blk 436 Serangoon Gardens Street 26, #16-43"),
+                new Link("https://nusmods.com/timetable/sem-2/share?CG1111=LEC:1,TUT:1&CS2030=LEC:1,LAB:1"),
                 getTagSet("family")),
         };
     }
