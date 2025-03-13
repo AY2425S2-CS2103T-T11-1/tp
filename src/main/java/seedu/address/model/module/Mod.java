@@ -10,7 +10,7 @@ import seedu.address.commons.util.ToStringBuilder;
  * Represents an NUS Module in NUSMates
  * Guarantees: details are present and not null, field values are validated, immutable.
  */
-public class Module {
+public class Mod {
     // Identity fields
     private final ModuleCode moduleCode;
     private final Title title;
@@ -18,7 +18,7 @@ public class Module {
     /**
      * Every field must be present and not null.
      */
-    public Module(ModuleCode moduleCode, Title title) {
+    public Mod(ModuleCode moduleCode, Title title) {
         requireAllNonNull(moduleCode, title);
         this.moduleCode = moduleCode;
         this.title = title;
@@ -44,13 +44,13 @@ public class Module {
      * Returns true if both modules have the same code.
      * This defines a weaker notion of equality between two modules.
      */
-    public boolean isSameModule(Module otherModule) {
-        if (otherModule == this) {
+    public boolean isSameModule(Mod otherMod) {
+        if (otherMod == this) {
             return true;
         }
 
-        return otherModule != null
-                && otherModule.getModuleCode().equals(this.getModuleCode());
+        return otherMod != null
+                && otherMod.getModuleCode().equals(this.getModuleCode());
     }
 
     @Override
