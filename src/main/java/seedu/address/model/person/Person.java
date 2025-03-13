@@ -12,7 +12,8 @@ import seedu.address.model.tag.Tag;
 
 /**
  * Represents a Person in the address book.
- * Guarantees: details are present and not null, field values are validated, immutable.
+ * Guarantees: details are present and not null, field values are validated,
+ * immutable.
  */
 public class Person {
 
@@ -26,6 +27,7 @@ public class Person {
     private final Major major;
     private final Housing housing;
     private final Set<Tag> tags = new HashSet<>();
+    private final Set<Module> modules = new HashSet<>();
 
     /**
      * Every field must be present and not null.
@@ -39,6 +41,7 @@ public class Person {
         this.major = major;
         this.housing = housing;
         this.tags.addAll(tags);
+        this.modules.addAll(modules);
     }
 
     public Name getName() {
@@ -66,11 +69,19 @@ public class Person {
     }
 
     /**
-     * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
-     * if modification is attempted.
+     * Returns an immutable tag set, which throws
+     * {@code UnsupportedOperationException} if modification is attempted.
      */
     public Set<Tag> getTags() {
         return Collections.unmodifiableSet(tags);
+    }
+
+    /**
+     * Returns an immutable module set, which throws
+     * {@code UnsupportedOperationException} if modification is attempted.
+     */
+    public Set<Module> getModules() {
+        return Collections.unmodifiableSet(modules);
     }
 
     /**
@@ -108,13 +119,14 @@ public class Person {
                 && year.equals(otherPerson.year)
                 && major.equals(otherPerson.major)
                 && housing.equals(otherPerson.housing)
-                && tags.equals(otherPerson.tags);
+                && tags.equals(otherPerson.tags)
+                && modules.equals(otherPerson.modules);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, year, major, housing, tags);
+        return Objects.hash(name, phone, email, year, major, housing, tags, modules);
     }
 
     @Override
@@ -127,6 +139,7 @@ public class Person {
                 .add("major", major)
                 .add("housing", housing)
                 .add("tags", tags)
+                .add("modules", modules)
                 .toString();
     }
 
