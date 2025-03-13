@@ -29,6 +29,7 @@ public class TypicalPersons {
             .withPhone("94351253")
             .withYear("1")
             .withMajor("Computer Science")
+            .withLink("www.nusmods.com")
             .withTags("friends").build();
     public static final Person BENSON = new PersonBuilder()
             .withName("Benson Meier")
@@ -37,6 +38,7 @@ public class TypicalPersons {
             .withPhone("98765432")
             .withYear("3")
             .withMajor("Computer Engineering")
+            .withLink("www.nusmods.com")
             .withTags("owesMoney", "friends").build();
     public static final Person CARL = new PersonBuilder()
             .withName("Carl Kurz")

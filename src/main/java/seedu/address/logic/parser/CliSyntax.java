@@ -13,5 +13,6 @@ public class CliSyntax {
     public static final Prefix PREFIX_MAJOR = new Prefix("m/");
     public static final Prefix PREFIX_HOUSING = new Prefix("h/");
     public static final Prefix PREFIX_TAG = new Prefix("t/");
+    public static final Prefix PREFIX_LINK = new Prefix("l/");
 
 }

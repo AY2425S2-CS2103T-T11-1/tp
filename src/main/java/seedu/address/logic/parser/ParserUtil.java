@@ -11,6 +11,7 @@ import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Housing;
+import seedu.address.model.person.Link;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
@@ -129,6 +130,21 @@ public class ParserUtil {
             throw new ParseException(Major.MESSAGE_CONSTRAINTS);
         }
         return new Major(trimmedMajor);
+    }
+
+    /**
+     * Parses a {@code String link} into a {@code Link}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code link} is invalid.
+     */
+    public static Link parseLink(String link) throws ParseException {
+        requireNonNull(link);
+        String trimmedLink = link.trim();
+        if (!Link.isValidLink(trimmedLink)) {
+            throw new ParseException(Link.MESSAGE_CONSTRAINTS);
+        }
+        return new Link(trimmedLink);
     }
 
     /**

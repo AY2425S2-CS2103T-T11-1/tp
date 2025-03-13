@@ -5,6 +5,7 @@ import java.util.Set;
 
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Housing;
+import seedu.address.model.person.Link;
 import seedu.address.model.person.Major;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -24,6 +25,7 @@ public class PersonBuilder {
     public static final String DEFAULT_HOUSING = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_YEAR = "1";
     public static final String DEFAULT_MAJOR = "Computer Science";
+    public static final String DEFAULT_LINK = "www.nusmods.com";
 
     private Name name;
     private Phone phone;
@@ -31,6 +33,7 @@ public class PersonBuilder {
     private Year year;
     private Major major;
     private Housing housing;
+    private Link link;
     private Set<Tag> tags;
 
     /**
@@ -43,6 +46,7 @@ public class PersonBuilder {
         year = Year.fromString(DEFAULT_YEAR);
         major = new Major(DEFAULT_MAJOR);
         housing = new Housing(DEFAULT_HOUSING);
+        link = new Link(DEFAULT_LINK);
         tags = new HashSet<>();
     }
 
@@ -56,6 +60,7 @@ public class PersonBuilder {
         year = personToCopy.getYear();
         major = personToCopy.getMajor();
         housing = personToCopy.getHousing();
+        link = personToCopy.getLink();
         tags = new HashSet<>(personToCopy.getTags());
     }
 
@@ -115,8 +120,16 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code Link} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withLink(String link) {
+        this.link = new Link(link);
+        return this;
+    }
+
     public Person build() {
-        return new Person(name, phone, email, year, major, housing, tags);
+        return new Person(name, phone, email, year, major, housing, link, tags);
     }
 
 }
