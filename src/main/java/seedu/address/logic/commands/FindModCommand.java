@@ -18,7 +18,7 @@ public class FindModCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all people who are enrolled in any of "
             + "the specified modules (case-insensitive) and displays them as a list with index numbers.\n"
             + "Parameters: MODULE_CODE [MORE_MODULE_CODES]...\n"
-            + "Example: " + COMMAND_WORD + " CS2100 CS2103T";
+            + "Example: " + COMMAND_WORD + "CS2100 CS2103T";
 
     private final ModContainsKeywordsPredicate predicate;
 
