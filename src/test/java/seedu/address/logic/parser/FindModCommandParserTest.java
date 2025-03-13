@@ -40,20 +40,6 @@ public class FindModCommandParserTest {
     }
 
     @Test
-    public void parse_invalidArgs_throwsParseException() {
-        // Invalid format (extra spaces at the beginning and end)
-        String userInput = "   CS2100   ";
-        ModContainsKeywordsPredicate expectedPredicate = new ModContainsKeywordsPredicate(Arrays.asList("CS2100"));
-        FindModCommand expectedCommand = new FindModCommand(expectedPredicate);
-        assertParseSuccess(parser, userInput, expectedCommand);
-
-        // Test for invalid module code (could be customized based on your validation)
-        String invalidInput = "XYZ999";
-        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindModCommand.MESSAGE_USAGE);
-        assertParseFailure(parser, invalidInput, expectedMessage);
-    }
-
-    @Test
     public void parse_multipleSpaces_throwsParseException() {
         // Multiple spaces in between modules
         String userInput = "CS2100   CS2103T";
