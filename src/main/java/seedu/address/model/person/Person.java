@@ -34,7 +34,7 @@ public class Person {
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Year year, Major major, Housing housing, Set<Tag> tags, HashSet<Mod> mods) {
+    public Person(Name name, Phone phone, Email email, Year year, Major major, Housing housing, Set<Tag> tags) {
         requireAllNonNull(name, phone, email, year, housing, tags);
         this.name = name;
         this.phone = phone;
@@ -43,7 +43,7 @@ public class Person {
         this.major = major;
         this.housing = housing;
         this.tags.addAll(tags);
-        this.modules.addAll(mods);
+        this.modules.addAll(modules);
     }
 
     public Name getName() {

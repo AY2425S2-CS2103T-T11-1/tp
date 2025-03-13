@@ -37,7 +37,7 @@ public class ModContainsKeywordsPredicate implements Predicate<Person> {
             return false;
         }
 
-        NameContainsKeywordsPredicate otherNameContainsKeywordsPredicate = (NameContainsKeywordsPredicate) other;
+        ModContainsKeywordsPredicate otherNameContainsKeywordsPredicate = (ModContainsKeywordsPredicate) other;
         return keywords.equals(otherNameContainsKeywordsPredicate.keywords);
     }
 
