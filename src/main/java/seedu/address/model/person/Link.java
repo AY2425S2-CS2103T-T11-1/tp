@@ -41,12 +41,12 @@ public class Link {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof Email)) {
+        if (!(other instanceof Link)) {
             return false;
         }
 
-        Email otherEmail = (Email) other;
-        return value.equals(otherEmail.value);
+        Link otherLink = (Link) other;
+        return value.equals(otherLink.value);
     }
 
     @Override
