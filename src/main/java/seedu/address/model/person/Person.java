@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.mod.Mod;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -27,7 +28,7 @@ public class Person {
     private final Major major;
     private final Housing housing;
     private final Set<Tag> tags = new HashSet<>();
-    private final Set<Module> modules = new HashSet<>();
+    private final Set<Mod> modules = new HashSet<>();
 
     /**
      * Every field must be present and not null.
@@ -80,7 +81,7 @@ public class Person {
      * Returns an immutable module set, which throws
      * {@code UnsupportedOperationException} if modification is attempted.
      */
-    public Set<Module> getModules() {
+    public Set<Mod> getModules() {
         return Collections.unmodifiableSet(modules);
     }
 
