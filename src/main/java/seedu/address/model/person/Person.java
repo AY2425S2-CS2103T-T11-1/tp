@@ -9,7 +9,6 @@ import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.mod.Mod;
-import seedu.address.model.mod.ModuleCode;
 import seedu.address.model.tag.Tag;
 
 /**
