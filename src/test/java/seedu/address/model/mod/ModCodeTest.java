@@ -1,4 +1,4 @@
-package seedu.address.model.module;
+package seedu.address.model.mod;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -6,7 +6,7 @@ import static seedu.address.testutil.Assert.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-public class ModuleCodeTest {
+public class ModCodeTest {
 
     @Test
     public void constructor_null_throwsNullPointerException() {
