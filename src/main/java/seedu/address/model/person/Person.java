@@ -9,6 +9,8 @@ import java.util.Set;
 
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.mod.Mod;
+import seedu.address.model.mod.ModuleCode;
+import seedu.address.model.mod.Title;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -28,7 +30,7 @@ public class Person {
     private final Major major;
     private final Housing housing;
     private final Set<Tag> tags = new HashSet<>();
-    private final Set<Module> modules = new HashSet<>();
+    private final Set<Mod> modules = new HashSet<>();
     private final Link link;
 
 
@@ -46,7 +48,11 @@ public class Person {
         this.housing = housing;
         this.link = link;
         this.tags.addAll(tags);
-        this.modules.addAll(modules);
+        Set<String> stringModules = Link.extractCodes(link.value);
+        for (String module : stringModules) {
+            this.modules.add(new Mod(new ModuleCode(module), new Title(module)));
+        }
+        // this.modules.addAll(modules);
     }
 
     public Name getName() {
