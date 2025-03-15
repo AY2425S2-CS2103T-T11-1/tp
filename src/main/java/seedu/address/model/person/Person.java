@@ -28,7 +28,7 @@ public class Person {
     private final Major major;
     private final Housing housing;
     private final Set<Tag> tags = new HashSet<>();
-    private final Set<Module> modules = new HashSet<>();
+    private final Set<Mod> modules = new HashSet<>();
     private final Link link;
 
 
