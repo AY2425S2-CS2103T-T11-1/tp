@@ -6,6 +6,7 @@
     "year": "1",
     "major": "Computer Science",
     "housing": "123, Jurong West Ave 6, #08-111",
+    "link": "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12",
     "tags": ["friends"]
   }, {
     "name": "Alice Pauline",
@@ -14,6 +15,7 @@
     "year": "1",
     "major": "Computer Science",
     "housing": "123, Jurong West Ave 6, #08-111",
+    "link": "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12",
     "tags": ["friends"]
   } ]
 }

@@ -10,7 +10,7 @@ import java.util.Set;
 
 /**
  * Represents a Person's NUSMods link in the address book.
- * Guarantees: immutable; is valid as declared in {@link #isValidEmail(String)}
+ * Guarantees: immutable; is valid as declared in {@link #isValidLink(String)}
  */
 public class Link {
     public static final String MESSAGE_CONSTRAINTS =

@@ -52,7 +52,6 @@ public class Person {
         for (String module : stringModules) {
             this.modules.add(new Mod(new ModuleCode(module), new Title(module)));
         }
-        // this.modules.addAll(modules);
     }
 
     public Name getName() {

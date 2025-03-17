@@ -8,6 +8,7 @@
       "year": "1",
       "major": "Computer Science",
       "housing": "123, Jurong West Ave 6, #08-111",
+      "link": "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12",
       "tags": ["friends"]
     },
     {
@@ -17,6 +18,7 @@
       "year": "3",
       "major": "Computer Engineering",
       "housing": "UTown Residence North Tower",
+      "link": "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12",
       "tags": ["owesMoney", "friends"]
     },
     {
@@ -26,6 +28,7 @@
       "year": "4",
       "major": "Mathematics",
       "housing": "Lives in CLB",
+      "link": "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12",
       "tags": []
     },
     {
@@ -35,6 +38,7 @@
       "year": "1",
       "major": "Law",
       "housing": "PGPR R1",
+      "link": "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12",
       "tags": ["friends"]
     },
     {
@@ -44,6 +48,7 @@
       "year": "4",
       "major": "Physics",
       "housing": "Tembusu College",
+      "link": "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12",
       "tags": []
     },
     {
@@ -53,6 +58,7 @@
       "year": "1",
       "major": "Political Science",
       "housing": "Temasek Hall",
+      "link": "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12",
       "tags": []
     },
     {
@@ -62,6 +68,7 @@
       "year": "2",
       "major": "Computer Science",
       "housing": "Lighthouse",
+      "link": "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12",
       "tags": []
     }
   ]
