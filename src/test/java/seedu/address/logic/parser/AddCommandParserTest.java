@@ -12,6 +12,8 @@ import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_PHONE_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
 import static seedu.address.logic.commands.CommandTestUtil.INVALID_YEAR_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.LINK_DESC_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.LINK_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.MAJOR_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.MAJOR_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_AMY;
@@ -66,14 +68,15 @@ public class AddCommandParserTest {
 
         // whitespace only preamble
         assertParseSuccess(parser, PREAMBLE_WHITESPACE + NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB
-                + YEAR_DESC_BOB + MAJOR_DESC_BOB + HOUSING_DESC_BOB + TAG_DESC_FRIEND, new AddCommand(expectedPerson));
+                + YEAR_DESC_BOB + MAJOR_DESC_BOB + HOUSING_DESC_BOB + LINK_DESC_BOB + TAG_DESC_FRIEND,
+                new AddCommand(expectedPerson));
 
         // multiple tags - all accepted
         Person expectedPersonMultipleTags = new PersonBuilder(BOB).withTags(VALID_TAG_FRIEND, VALID_TAG_HUSBAND)
                 .build();
         assertParseSuccess(parser,
                 NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB + YEAR_DESC_BOB + MAJOR_DESC_BOB
-                        + HOUSING_DESC_BOB + TAG_DESC_HUSBAND + TAG_DESC_FRIEND,
+                        + HOUSING_DESC_BOB + LINK_DESC_BOB + TAG_DESC_HUSBAND + TAG_DESC_FRIEND,
                 new AddCommand(expectedPersonMultipleTags));
     }
 
@@ -111,7 +114,7 @@ public class AddCommandParserTest {
     public void parse_optionalFieldsMissing_success() {
         Person expectedPerson = new PersonBuilder(AMY).withTags().build();
         assertParseSuccess(parser, NAME_DESC_AMY + PHONE_DESC_AMY + EMAIL_DESC_AMY + YEAR_DESC_AMY + MAJOR_DESC_AMY
-                        + HOUSING_DESC_AMY,
+                        + HOUSING_DESC_AMY + LINK_DESC_AMY,
                 new AddCommand(expectedPerson));
     }
 
@@ -171,7 +174,7 @@ public class AddCommandParserTest {
                 + TAG_DESC_HUSBAND + TAG_DESC_FRIEND, Housing.MESSAGE_CONSTRAINTS);
 
         assertParseFailure(parser, NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB
-                + YEAR_DESC_BOB + MAJOR_DESC_BOB + HOUSING_DESC_BOB
+                + YEAR_DESC_BOB + MAJOR_DESC_BOB + HOUSING_DESC_BOB + LINK_DESC_BOB
                 + INVALID_TAG_DESC + VALID_TAG_FRIEND, Tag.MESSAGE_CONSTRAINTS);
 
         assertParseFailure(parser, INVALID_NAME_DESC + PHONE_DESC_BOB + EMAIL_DESC_BOB
