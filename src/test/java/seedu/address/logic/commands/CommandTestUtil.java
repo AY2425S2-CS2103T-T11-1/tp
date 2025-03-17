@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_HOUSING;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
@@ -42,6 +43,10 @@ public class CommandTestUtil {
     public static final String VALID_HOUSING_BOB = "Block 123, Bobby Street 3";
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
+    public static final String VALID_LINK_AMY = "https://nusmods.com/timetable/sem-2/share?"
+            + "ACC1701X=TUT:X06,LEC:X2&CS2101=&CS2103T=LEC:G12&CS2109S=TUT:34,LEC:1&ST2334=LEC:1,TUT:4";
+    public static final String VALID_LINK_BOB = "https://nusmods.com/timetable/sem-2/share?"
+            + "CS2101=&CS2109S=TUT:34,LEC:1&ST2334=LEC:1,TUT:4";
 
     public static final String NAME_DESC_AMY = " " + PREFIX_NAME + VALID_NAME_AMY;
     public static final String NAME_DESC_BOB = " " + PREFIX_NAME + VALID_NAME_BOB;
@@ -57,6 +62,8 @@ public class CommandTestUtil {
     public static final String HOUSING_DESC_BOB = " " + PREFIX_HOUSING + VALID_HOUSING_BOB;
     public static final String TAG_DESC_FRIEND = " " + PREFIX_TAG + VALID_TAG_FRIEND;
     public static final String TAG_DESC_HUSBAND = " " + PREFIX_TAG + VALID_TAG_HUSBAND;
+    public static final String LINK_DESC_AMY = " " + PREFIX_LINK + VALID_LINK_AMY;
+    public static final String LINK_DESC_BOB = " " + PREFIX_LINK + VALID_LINK_BOB;
 
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
     public static final String INVALID_PHONE_DESC = " " + PREFIX_PHONE + "911a"; // 'a' not allowed in phones

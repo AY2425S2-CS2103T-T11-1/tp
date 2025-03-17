@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_HOUSING;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
@@ -38,6 +39,7 @@ public class AddCommand extends Command {
             + PREFIX_YEAR + "2 "
             + PREFIX_MAJOR + "Computer Science "
             + PREFIX_HOUSING + "Lighthouse Block 29 "
+            + PREFIX_LINK + "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G07"
             + PREFIX_TAG + "friends "
             + PREFIX_TAG + "teammate";
 
