@@ -2,6 +2,7 @@ package seedu.address.testutil;
 
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_HOUSING;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_LINK;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_MAJOR;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
@@ -38,6 +39,7 @@ public class PersonUtil {
         sb.append(PREFIX_YEAR + String.valueOf(person.getYear().value) + " ");
         sb.append(PREFIX_MAJOR + person.getMajor().value + " ");
         sb.append(PREFIX_HOUSING + person.getHousing().value + " ");
+        sb.append(PREFIX_LINK + person.getLink().value + " ");
         person.getTags().stream().forEach(
             s -> sb.append(PREFIX_TAG + s.tagName + " ")
         );

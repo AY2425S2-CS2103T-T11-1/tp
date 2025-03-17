@@ -40,6 +40,7 @@ public class EditPersonDescriptorBuilder {
         descriptor.setYear(person.getYear());
         descriptor.setMajor(person.getMajor());
         descriptor.setHousing(person.getHousing());
+        descriptor.setLink(person.getLink());
         descriptor.setTags(person.getTags());
     }
 

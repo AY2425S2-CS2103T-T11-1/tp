@@ -31,7 +31,7 @@ public class TypicalPersons {
             .withPhone("94351253")
             .withYear("1")
             .withMajor("Computer Science")
-            .withLink("www.nusmods.com")
+            .withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12")
             .withTags("friends").build();
     public static final Person BENSON = new PersonBuilder()
             .withName("Benson Meier")
@@ -40,7 +40,7 @@ public class TypicalPersons {
             .withPhone("98765432")
             .withYear("3")
             .withMajor("Computer Engineering")
-            .withLink("www.nusmods.com")
+            .withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12")
             .withTags("owesMoney", "friends").build();
     public static final Person CARL = new PersonBuilder()
             .withName("Carl Kurz")
@@ -48,26 +48,29 @@ public class TypicalPersons {
             .withEmail("heinz@example.com")
             .withYear("4")
             .withMajor("Mathematics")
-            .withHousing("Lives in CLB").build();
+            .withHousing("Lives in CLB")
+            .withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
     public static final Person DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
             .withEmail("cornelia@example.com").withHousing("PGPR R1").withYear("1").withMajor("Law")
+            .withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12")
             .withTags("friends").build();
     public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("9482224")
-            .withEmail("werner@example.com").withHousing("Tembusu College").withYear("4").withMajor("Physics").build();
+            .withEmail("werner@example.com").withHousing("Tembusu College").withYear("4").withMajor("Physics")
+            .withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
     public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("9482427")
             .withEmail("lydia@example.com").withYear("1").withMajor("Political Science")
-            .withHousing("Temasek Hall").build();
+            .withHousing("Temasek Hall").withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
     public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
             .withEmail("anna@example.com").withYear("2").withMajor("Computer Science")
-            .withHousing("Lighthouse").build();
+            .withHousing("Lighthouse").withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
 
     // Manually added
     public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("8482424")
             .withEmail("stefan@example.com").withYear("2").withMajor("Quantitative Finance")
-            .withHousing("little india").build();
+            .withHousing("little india").withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
     public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("8482131")
             .withEmail("hans@example.com").withYear("5").withMajor("Computer Science")
-            .withHousing("chicago ave").build();
+            .withHousing("chicago ave").withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
 
     // Manually added - Person's details found in {@code CommandTestUtil}
     public static final Person AMY = new PersonBuilder().withName(VALID_NAME_AMY).withPhone(VALID_PHONE_AMY)
