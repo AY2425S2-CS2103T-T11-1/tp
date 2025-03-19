@@ -36,9 +36,9 @@ public class CommandTestUtil {
     public static final String VALID_EMAIL_AMY = "amy@example.com";
     public static final String VALID_EMAIL_BOB = "bob@example.com";
     public static final String VALID_YEAR_AMY = "1";
-    public static final String VALID_YEAR_BOB = "1";
+    public static final String VALID_YEAR_BOB = "2";
     public static final String VALID_MAJOR_AMY = "Computer Science";
-    public static final String VALID_MAJOR_BOB = "Computer Science";
+    public static final String VALID_MAJOR_BOB = "Computer Engineering";
     public static final String VALID_HOUSING_AMY = "Block 312, Amy Street 1";
     public static final String VALID_HOUSING_BOB = "Block 123, Bobby Street 3";
     public static final String VALID_TAG_HUSBAND = "husband";
