@@ -21,7 +21,7 @@ public class ModContainsKeywordsPredicate implements Predicate<Person> {
         return person.getModules().stream()
                 .anyMatch(mod -> keywords.stream()
                         .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(
-                                mod.getModuleCode().toString(), keyword))
+                                mod.value, keyword))
                 );
 
     }
