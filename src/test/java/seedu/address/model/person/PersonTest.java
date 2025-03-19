@@ -5,9 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_HOUSING_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_LINK_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_MAJOR_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_YEAR_BOB;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.BOB;
@@ -33,8 +36,9 @@ public class PersonTest {
         assertFalse(ALICE.isSamePerson(null));
 
         // same name, all other attributes different -> returns true
-        Person editedAlice = new PersonBuilder(ALICE).withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB)
-                .withHousing(VALID_HOUSING_BOB).withTags(VALID_TAG_HUSBAND).build();
+        Person editedAlice =
+                new PersonBuilder(ALICE).withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB)
+                        .withHousing(VALID_HOUSING_BOB).withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSamePerson(editedAlice));
 
         // different name, all other attributes same -> returns false
@@ -81,8 +85,20 @@ public class PersonTest {
         editedAlice = new PersonBuilder(ALICE).withEmail(VALID_EMAIL_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
 
+        // different year -> returns false
+        editedAlice = new PersonBuilder(ALICE).withYear(VALID_YEAR_BOB).build();
+        assertFalse(ALICE.equals(editedAlice));
+
+        // different major -> returns false
+        editedAlice = new PersonBuilder(ALICE).withMajor(VALID_MAJOR_BOB).build();
+        assertFalse(ALICE.equals(editedAlice));
+
         // different housing -> returns false
         editedAlice = new PersonBuilder(ALICE).withHousing(VALID_HOUSING_BOB).build();
+        assertFalse(ALICE.equals(editedAlice));
+
+        // different link -> returns false
+        editedAlice = new PersonBuilder(ALICE).withLink(VALID_LINK_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
 
         // different tags -> returns false
@@ -92,10 +108,11 @@ public class PersonTest {
 
     @Test
     public void toStringMethod() {
-        String expected = Person.class.getCanonicalName() + "{name=" + ALICE.getName() + ", phone=" + ALICE.getPhone()
-                + ", email=" + ALICE.getEmail() + ", year=" + ALICE.getYear() + ", major=" + ALICE.getMajor()
-                + ", housing=" + ALICE.getHousing() + ", tags=" + ALICE.getTags() + ", modules=" + ALICE.getModules()
-                + ", link=" + ALICE.getLink() + "}";
+        String expected = Person.class.getCanonicalName() + "{name=" + ALICE.getName() + ", phone="
+                + ALICE.getPhone() + ", email=" + ALICE.getEmail() + ", year=" + ALICE.getYear()
+                + ", major=" + ALICE.getMajor() + ", housing=" + ALICE.getHousing() + ", tags="
+                + ALICE.getTags() + ", modules=" + ALICE.getModules() + ", link=" + ALICE.getLink()
+                + "}";
         assertEquals(expected, ALICE.toString());
     }
 }
