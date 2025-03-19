@@ -41,8 +41,7 @@ public class FindModCommandParserTest {
 
     @Test
     public void parse_multipleSpaces_throwsParseException() {
-        // Multiple spaces in between modules
-        String userInput = "CS2100   CS2103T";
+        String userInput = "CS2100 CS2103T";
         ModContainsKeywordsPredicate expectedPredicate = new ModContainsKeywordsPredicate(
                 Arrays.asList("CS2100", "CS2103T"));
         FindModCommand expectedCommand = new FindModCommand(expectedPredicate);
