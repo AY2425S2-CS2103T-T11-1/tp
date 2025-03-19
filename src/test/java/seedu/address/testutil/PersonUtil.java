@@ -57,12 +57,13 @@ public class PersonUtil {
         descriptor.getYear().ifPresent(year -> sb.append(PREFIX_YEAR).append(year.value).append(" "));
         descriptor.getMajor().ifPresent(major -> sb.append(PREFIX_MAJOR).append(major.value).append(" "));
         descriptor.getHousing().ifPresent(housing -> sb.append(PREFIX_HOUSING).append(housing.value).append(" "));
+        descriptor.getLink().ifPresent(link -> sb.append(PREFIX_LINK).append(link.value).append(" "));
         if (descriptor.getTags().isPresent()) {
             Set<Tag> tags = descriptor.getTags().get();
             if (tags.isEmpty()) {
                 sb.append(PREFIX_TAG);
             } else {
-                tags.forEach(s -> sb.append(PREFIX_TAG).append(s.tagName).append(" "));
+                tags.forEach(s -> sb.append(PREFIX_TAG).append(s.tagName));
             }
         }
         return sb.toString();
