@@ -11,12 +11,14 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
@@ -94,7 +96,7 @@ public class EditCommand extends Command {
 
         model.setPerson(personToEdit, editedPerson);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson)));
+        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, //TODO: EDITED FIELDS));
     }
 
     /**
@@ -177,6 +179,28 @@ public class EditCommand extends Command {
          */
         public boolean isAnyFieldEdited() {
             return CollectionUtil.isAnyNonNull(name, phone, email, year, major, housing, link, tags);
+        }
+
+        /**
+         * Gets all fields which have been edited, if any.
+         * @return An Optional of Set containing any fields, otherwise an empty Optional
+         */
+        private Optional<Set<Object>> getEditedFields() {
+            if (!isAnyFieldEdited()) {
+                return Optional.empty();
+            } else {
+                List<Object> fieldsArray = Arrays.asList(name, phone, email, year, major, housing, link, tags);
+                Stream<Object> nonNullFieldsStream = fieldsArray.stream().filter(Objects::nonNull);
+                return Optional.of(Set.of(nonNullFieldsStream));
+            }
+        }
+
+        /**
+         * Gets a String which tells which fields were edited, for the command success message.
+         * @return String detailing fields which have been edited
+         */
+        public String getEditedFieldsMessage() {
+            
         }
 
         public void setName(Name name) {
