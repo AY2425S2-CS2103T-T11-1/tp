@@ -90,8 +90,6 @@ Notes:
 - A person can have any number of **tags**, including none.
 - `LINK` refers to the student's NUSMODS course schedule original link.
 
-### Example:
-
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com y/1 m/Electrical Engineering h/PGPR p/1234567 l/https://nusmods.com/timetable/sem-2/share?CS2040=TUT:12,LAB:06,LEC:1`
