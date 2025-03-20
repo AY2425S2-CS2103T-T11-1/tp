@@ -184,15 +184,15 @@ public class EditCommand extends Command {
 
         /**
          * Gets all fields which have been edited
-         * @return An Optional of Set containing any edited fields, otherwise an empty Optional if none were edited
+         * @return An Optional of List containing any edited fields, otherwise an empty Optional if none were edited
          */
-        private Optional<Set<Object>> getEditedFields() {
+        private Optional<List<Object>> getEditedFields() {
             if (!isAnyFieldEdited()) {
                 return Optional.empty();
             } else {
                 List<Object> fieldsArray = Arrays.asList(name, phone, email, year, major, housing, link, tags);
                 Stream<Object> nonNullFieldsStream = fieldsArray.stream().filter(Objects::nonNull);
-                return Optional.of(Set.of(nonNullFieldsStream));
+                return Optional.of(nonNullFieldsStream.toList());
             }
         }
 
@@ -201,12 +201,13 @@ public class EditCommand extends Command {
          * @return String detailing fields which have been edited, otherwise an empty String if none were edited
          */
         public String getEditedFieldsMessage() {
-            Optional<Set<Object>> editedFields = this.getEditedFields();
+            Optional<List<Object>> editedFields = this.getEditedFields();
             StringBuilder message = new StringBuilder();
-            if (!editedFields.isEmpty()) {
+            if (editedFields.isPresent()) {
                 for (Object field : editedFields.get()) {
-                    message.append(field.getClass().getName()).append(field.toString());
+                    message.append(field.getClass().getSimpleName() + ": " + field.toString() + ", ");
                 }
+                message.setLength(message.length() - 2);
             }
             return message.toString();
         }
