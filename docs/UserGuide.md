@@ -110,6 +110,22 @@ Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
+### Locating persons by module: `findMod`
+
+Finds persons who is contain any of the given modules.
+
+Format: `findMod KEYWORD [MORE_KEYWORDS]`
+
+* The search is case-insensitive. e.g `cs2030` will match `CS2030`
+* The order of the keywords does not matter. e.g. `CS2030 CS2103T` will match `CS2103T CS2030`
+* Only the module is searched.
+* Only full words will be matched e.g. `CS2103` will not match `CS2103T`
+* Persons matching at least one of the modules searched will be returned (i.e. `OR` search).
+
+Examples:
+* `findMod CS2030` returns `Abi`
+  ![result for 'find alex david'](images/findAlexDavidResult.png)
+
 ### Locating persons by name: `find`
 
 Finds persons whose names contain any of the given keywords.
@@ -196,5 +212,6 @@ Action | Format, Examples
 **Delete** | `delete INDEX`<br> e.g., `delete 3`
 **Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
+**FindMod** | `findMod KEYWORD [MORE_KEYWORDS]`<br> e.g., `findMod CS2103T`
 **List** | `list`
 **Help** | `help`
