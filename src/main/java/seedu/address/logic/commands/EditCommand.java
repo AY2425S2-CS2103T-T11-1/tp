@@ -196,6 +196,18 @@ public class EditCommand extends Command {
             }
         }
 
+        private String buildTagsMessage(Set<?> tags) {
+            StringBuilder message = new StringBuilder("Tags: ");
+            for (Object tag : tags) {
+                message.append(tag.toString()).append(", ");
+            }
+            return message.toString();
+        }
+
+        private String buildFieldMessage(Object field) {
+            return field.getClass().getSimpleName() + ": " + field.toString() + ", ";
+        }
+
         /**
          * Gets a String which tells which fields were edited, for the command success message.
          * @return String detailing fields which have been edited, otherwise an empty String if none were edited
@@ -203,12 +215,17 @@ public class EditCommand extends Command {
         public String getEditedFieldsMessage() {
             Optional<List<Object>> editedFields = this.getEditedFields();
             StringBuilder message = new StringBuilder();
-            if (editedFields.isPresent()) {
-                for (Object field : editedFields.get()) {
-                    message.append(field.getClass().getSimpleName() + ": " + field.toString() + ", ");
-                }
-                message.setLength(message.length() - 2);
+            if (!editedFields.isPresent()) {
+                return "";
             }
+            for (Object field : editedFields.get()) {
+                if (field instanceof Set<?>) {
+                    message.append(buildTagsMessage((Set<?>) field));
+                } else {
+                    message.append(buildFieldMessage(field));
+                }
+            }
+            message.setLength(message.length() - 2);
             return message.toString();
         }
 
