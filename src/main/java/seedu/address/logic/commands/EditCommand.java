@@ -96,7 +96,8 @@ public class EditCommand extends Command {
 
         model.setPerson(personToEdit, editedPerson);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, //TODO: EDITED FIELDS));
+        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS,
+                editPersonDescriptor.getEditedFieldsMessage()));
     }
 
     /**
@@ -182,8 +183,8 @@ public class EditCommand extends Command {
         }
 
         /**
-         * Gets all fields which have been edited, if any.
-         * @return An Optional of Set containing any fields, otherwise an empty Optional
+         * Gets all fields which have been edited
+         * @return An Optional of Set containing any edited fields, otherwise an empty Optional if none were edited
          */
         private Optional<Set<Object>> getEditedFields() {
             if (!isAnyFieldEdited()) {
@@ -197,10 +198,17 @@ public class EditCommand extends Command {
 
         /**
          * Gets a String which tells which fields were edited, for the command success message.
-         * @return String detailing fields which have been edited
+         * @return String detailing fields which have been edited, otherwise an empty String if none were edited
          */
         public String getEditedFieldsMessage() {
-            
+            Optional<Set<Object>> editedFields = this.getEditedFields();
+            StringBuilder message = new StringBuilder();
+            if (!editedFields.isEmpty()) {
+                for (Object field : editedFields.get()) {
+                    message.append(field.getClass().getName()).append(field.toString());
+                }
+            }
+            return message.toString();
         }
 
         public void setName(Name name) {
