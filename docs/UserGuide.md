@@ -50,7 +50,7 @@ NUSMates is a **desktop app for NUS Students to record and manage the contact de
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source: Notes about the command format:**<br>
+**information_source: Notes about the command format:**<br>
 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
@@ -146,9 +146,9 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `find Huazhi` returns `Huazhi` 
+* `find Abi Yuexi` returns `Abi`, `Yuexi`<br>
+  ![result for 'find Abi Yuexi'](images/findAbiYuexi.png)
 
 ### Deleting a person : `delete`
 
