@@ -11,12 +11,14 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_YEAR;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
@@ -94,7 +96,8 @@ public class EditCommand extends Command {
 
         model.setPerson(personToEdit, editedPerson);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson)));
+        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS,
+                editPersonDescriptor.getEditedFieldsMessage()));
     }
 
     /**
@@ -177,6 +180,53 @@ public class EditCommand extends Command {
          */
         public boolean isAnyFieldEdited() {
             return CollectionUtil.isAnyNonNull(name, phone, email, year, major, housing, link, tags);
+        }
+
+        /**
+         * Gets all fields which have been edited
+         * @return An Optional of List containing any edited fields, otherwise an empty Optional if none were edited
+         */
+        private Optional<List<Object>> getEditedFields() {
+            if (!isAnyFieldEdited()) {
+                return Optional.empty();
+            } else {
+                List<Object> fieldsArray = Arrays.asList(name, phone, email, year, major, housing, link, tags);
+                Stream<Object> nonNullFieldsStream = fieldsArray.stream().filter(Objects::nonNull);
+                return Optional.of(nonNullFieldsStream.toList());
+            }
+        }
+
+        private String buildTagsMessage(Set<?> tags) {
+            StringBuilder message = new StringBuilder("Tags: ");
+            for (Object tag : tags) {
+                message.append(tag.toString()).append(", ");
+            }
+            return message.toString();
+        }
+
+        private String buildFieldMessage(Object field) {
+            return field.getClass().getSimpleName() + ": " + field.toString() + ", ";
+        }
+
+        /**
+         * Gets a String which tells which fields were edited, for the command success message.
+         * @return String detailing fields which have been edited, otherwise an empty String if none were edited
+         */
+        public String getEditedFieldsMessage() {
+            Optional<List<Object>> editedFields = this.getEditedFields();
+            StringBuilder message = new StringBuilder();
+            if (!editedFields.isPresent()) {
+                return "";
+            }
+            for (Object field : editedFields.get()) {
+                if (field instanceof Set<?>) {
+                    message.append(buildTagsMessage((Set<?>) field));
+                } else {
+                    message.append(buildFieldMessage(field));
+                }
+            }
+            message.setLength(message.length() - 2);
+            return message.toString();
         }
 
         public void setName(Name name) {
