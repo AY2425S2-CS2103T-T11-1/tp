@@ -3,14 +3,20 @@ layout: page
 title: User Guide
 ---
 
-AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB3 can get your contact management tasks done faster than traditional GUI apps.
+# NUSMates
 
-* Table of Contents
-{:toc}
+NUSMates is a **desktop app for NUS Students to record and manage the contact details of fellow NUS Students, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, NUSMates can get your contact management tasks done faster than traditional GUI apps.
+
+## Table of Contents
+1. Quick Start
+2. Features
+3. FAQ
+4. Known Issues
+5. Command Summary
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick start
+## Quick Start
 
 1. Ensure you have Java `17` or above installed in your Computer.<br>
    **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
@@ -28,7 +34,7 @@ AddressBook Level 3 (AB3) is a **desktop app for managing contacts, optimized fo
 
    * `list` : Lists all contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
+   * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12` : Adds a contact named `John Doe` to NUSMates.
 
    * `delete 3` : Deletes the 3rd contact shown in the current list.
 
@@ -77,15 +83,15 @@ Format: `help`
 
 Adds a person to the address book.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK [t/TAG]…​`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A person can have any number of tags (including 0)
 </div>
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+* `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
+* `add n/Betsy Crowe t/friend e/betsycrowe@example.com y/1 m/Electrical Engineering h/PGPR p/1234567 l/https://nusmods.com/timetable/sem-2/share?CS2040=TUT:12,LAB:06,LEC:1`
 
 ### Listing all persons : `list`
 
@@ -97,7 +103,7 @@ Format: `list`
 
 Edits an existing person in the address book.
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
+Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]…​`
 
 * Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
@@ -112,7 +118,7 @@ Examples:
 
 ### Locating persons by module: `findMod`
 
-Finds persons who is contain any of the given modules.
+Finds persons who's NUSMods Link contains any of the given modules.
 
 Format: `findMod KEYWORD [MORE_KEYWORDS]`
 
@@ -123,8 +129,8 @@ Format: `findMod KEYWORD [MORE_KEYWORDS]`
 * Persons matching at least one of the modules searched will be returned (i.e. `OR` search).
 
 Examples:
-* `findMod CS2030` returns `Abi`
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `findMod CS2109S` returns `Abi, Yuexi`
+  ![result for 'findMod CS2109S'](images/findCS2109Sresult.png)
 
 ### Locating persons by name: `find`
 
@@ -203,14 +209,14 @@ _Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## Command Summary
 
 Action | Format, Examples
 --------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
+**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK [t/TAG]…​` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu`
 **Clear** | `clear`
 **Delete** | `delete INDEX`<br> e.g., `delete 3`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
+**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
 **FindMod** | `findMod KEYWORD [MORE_KEYWORDS]`<br> e.g., `findMod CS2103T`
 **List** | `list`

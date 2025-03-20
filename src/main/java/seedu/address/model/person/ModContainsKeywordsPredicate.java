@@ -23,7 +23,6 @@ public class ModContainsKeywordsPredicate implements Predicate<Person> {
                         .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(
                                 mod.value, keyword))
                 );
-
     }
 
     @Override
