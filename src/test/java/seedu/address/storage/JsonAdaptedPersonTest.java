@@ -1,5 +1,6 @@
 package seedu.address.storage;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static seedu.address.storage.JsonAdaptedPerson.MISSING_FIELD_MESSAGE_FORMAT;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -34,7 +35,8 @@ public class JsonAdaptedPersonTest {
     private static final String VALID_YEAR = "1";
     private static final String VALID_MAJOR = "Computer Science";
     private static final String VALID_HOUSING = BENSON.getHousing().toString();
-    private static final String VALID_LINK = "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12";
+    private static final String VALID_LINK =
+            "https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12";
     private static final List<JsonAdaptedTag> VALID_TAGS = BENSON.getTags().stream()
             .map(JsonAdaptedTag::new)
             .collect(Collectors.toList());
@@ -58,7 +60,8 @@ public class JsonAdaptedPersonTest {
     public void toModelType_nullName_throwsIllegalValueException() {
         JsonAdaptedPerson person = new JsonAdaptedPerson(null, VALID_PHONE, VALID_EMAIL, VALID_YEAR,
                 VALID_MAJOR, VALID_HOUSING, VALID_LINK, VALID_TAGS);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName());
+        String expectedMessage =
+                String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
     }
 
@@ -72,11 +75,10 @@ public class JsonAdaptedPersonTest {
     }
 
     @Test
-    public void toModelType_nullPhone_throwsIllegalValueException() {
+    public void toModelType_nullPhone_doesNotThrow() throws Exception {
         JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, null, VALID_EMAIL, VALID_YEAR,
                 VALID_MAJOR, VALID_HOUSING, VALID_LINK, VALID_TAGS);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertDoesNotThrow(person::toModelType);
     }
 
     @Test
@@ -89,11 +91,10 @@ public class JsonAdaptedPersonTest {
     }
 
     @Test
-    public void toModelType_nullEmail_throwsIllegalValueException() {
+    public void toModelType_nullEmail_doesNotThrow() throws Exception {
         JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, null, VALID_YEAR,
                 VALID_MAJOR, VALID_HOUSING, VALID_LINK, VALID_TAGS);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Email.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertDoesNotThrow(person::toModelType);
     }
 
     @Test
@@ -106,13 +107,11 @@ public class JsonAdaptedPersonTest {
     }
 
     @Test
-    public void toModelType_nullYear_throwsIllegalValueException() {
+    public void toModelType_nullYear_doesNotThrow() throws Exception {
         JsonAdaptedPerson person =
                 new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_EMAIL, null,
                         VALID_MAJOR, VALID_HOUSING, VALID_LINK, VALID_TAGS);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT,
-                seedu.address.model.person.Year.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertDoesNotThrow(person::toModelType);
     }
 
     @Test
@@ -125,13 +124,11 @@ public class JsonAdaptedPersonTest {
     }
 
     @Test
-    public void toModelType_nullMajor_throwsIllegalValueException() {
+    public void toModelType_nullMajor_doesNotThrow() throws Exception {
         JsonAdaptedPerson person =
                 new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_EMAIL, VALID_YEAR,
                         null, VALID_HOUSING, VALID_LINK, VALID_TAGS);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT,
-                seedu.address.model.person.Major.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+        assertDoesNotThrow(person::toModelType);
     }
 
     @Test
@@ -144,11 +141,11 @@ public class JsonAdaptedPersonTest {
     }
 
     @Test
-    public void toModelType_nullHousing_throwsIllegalValueException() {
-        JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_EMAIL, VALID_YEAR,
-                VALID_MAJOR, null, VALID_LINK, VALID_TAGS);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Housing.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+    public void toModelType_nullHousing_doesNotThrow() throws Exception {
+        JsonAdaptedPerson person =
+                new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_EMAIL, VALID_YEAR,
+                        VALID_MAJOR, null, VALID_LINK, VALID_TAGS);
+        assertDoesNotThrow(person::toModelType);
     }
 
     @Test
@@ -161,11 +158,11 @@ public class JsonAdaptedPersonTest {
     }
 
     @Test
-    public void toModelType_nullLink_throwsIllegalValueException() {
-        JsonAdaptedPerson person = new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_EMAIL, VALID_YEAR,
-                VALID_MAJOR, VALID_HOUSING, null, VALID_TAGS);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Link.class.getSimpleName());
-        assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
+    public void toModelType_nullLink_doesNotThrow() throws Exception {
+        JsonAdaptedPerson person =
+                new JsonAdaptedPerson(VALID_NAME, VALID_PHONE, VALID_EMAIL, VALID_YEAR,
+                        VALID_MAJOR, VALID_HOUSING, null, VALID_TAGS);
+        assertDoesNotThrow(person::toModelType);
     }
 
     @Test
