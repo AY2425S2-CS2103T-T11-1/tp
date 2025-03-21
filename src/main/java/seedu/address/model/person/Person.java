@@ -35,7 +35,7 @@ public class Person {
      */
     public Person(Name name, Phone phone, Email email, Year year, Major major, Housing housing,
             Link link, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, year, housing, link, tags);
+        requireAllNonNull(name);
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -43,7 +43,9 @@ public class Person {
         this.major = major;
         this.housing = housing;
         this.link = link;
-        this.tags.addAll(tags);
+        if (tags != null) {
+            this.tags.addAll(tags);
+        }
     }
 
     public Name getName() {
@@ -87,6 +89,9 @@ public class Person {
      * modification is attempted.
      */
     public Set<ModuleCode> getModules() {
+        if (link == null) {
+            return new HashSet<ModuleCode>();
+        }
         Set<String> stringModules = Link.extractCodes(link.value);
         Set<ModuleCode> modules = new HashSet<ModuleCode>();
         for (String module : stringModules) {
