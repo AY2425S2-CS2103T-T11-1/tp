@@ -1,5 +1,6 @@
 package seedu.address.model.person;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,11 +16,30 @@ import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.BOB;
 
+import java.util.HashSet;
+import java.util.Set;
 import org.junit.jupiter.api.Test;
-
+import seedu.address.model.mod.ModuleCode;
+import seedu.address.model.tag.Tag;
 import seedu.address.testutil.PersonBuilder;
 
 public class PersonTest {
+
+    @Test
+    public void constructor() {
+        // name is null -> throws NullPointerException
+        assertThrows(NullPointerException.class,
+                () -> new Person(null, null, null, null, null, null, null, null));
+        assertThrows(NullPointerException.class,
+                () -> new Person(null, new Phone(VALID_PHONE_BOB), new Email(VALID_EMAIL_BOB),
+                        Year.fromString(VALID_YEAR_BOB), new Major(VALID_MAJOR_BOB),
+                        new Housing(VALID_HOUSING_BOB), new Link(VALID_LINK_BOB),
+                        new HashSet<Tag>()));
+
+        // name is not null -> returns Person object
+        assertDoesNotThrow(
+                () -> new Person(new Name("Alice"), null, null, null, null, null, null, null));
+    }
 
     @Test
     public void asObservableList_modifyList_throwsUnsupportedOperationException() {
@@ -104,6 +124,16 @@ public class PersonTest {
         // different tags -> returns false
         editedAlice = new PersonBuilder(ALICE).withTags(VALID_TAG_HUSBAND).build();
         assertFalse(ALICE.equals(editedAlice));
+    }
+
+    @Test
+    public void getModulesMethod() {
+        Set<ModuleCode> expected = new HashSet<ModuleCode>();
+        expected.add(new ModuleCode("CS2103T"));
+        assertEquals(expected, ALICE.getModules());
+
+        Person emptyAlice = new Person(new Name("Alice"), null, null, null, null, null, null, null);
+        assertEquals(new HashSet<ModuleCode>(), emptyAlice.getModules());
     }
 
     @Test

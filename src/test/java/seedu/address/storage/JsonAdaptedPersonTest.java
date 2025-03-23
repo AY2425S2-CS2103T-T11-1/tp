@@ -17,7 +17,9 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Housing;
 import seedu.address.model.person.Link;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.testutil.PersonBuilder;
 
 public class JsonAdaptedPersonTest {
     private static final String INVALID_NAME = "R@chel";
@@ -40,6 +42,13 @@ public class JsonAdaptedPersonTest {
     private static final List<JsonAdaptedTag> VALID_TAGS = BENSON.getTags().stream()
             .map(JsonAdaptedTag::new)
             .collect(Collectors.toList());
+
+    @Test
+    public void constructor_nonmandatoryFieldsNull_success() {
+        Person person = new PersonBuilder().withEmail(null).withHousing(null).withLink(null)
+                .withMajor(null).withPhone(null).withYear(null).build();
+        assertDoesNotThrow(() -> new JsonAdaptedPerson(person));
+    }
 
     @Test
     public void toModelType_validPersonDetails_returnsPerson() throws Exception {
