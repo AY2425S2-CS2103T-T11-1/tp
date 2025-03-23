@@ -18,7 +18,9 @@ import static seedu.address.testutil.TypicalPersons.BOB;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import org.junit.jupiter.api.Test;
+
 import seedu.address.model.mod.ModuleCode;
 import seedu.address.model.tag.Tag;
 import seedu.address.testutil.PersonBuilder;
@@ -28,17 +30,17 @@ public class PersonTest {
     @Test
     public void constructor() {
         // name is null -> throws NullPointerException
-        assertThrows(NullPointerException.class,
-                () -> new Person(null, null, null, null, null, null, null, null));
-        assertThrows(NullPointerException.class,
-                () -> new Person(null, new Phone(VALID_PHONE_BOB), new Email(VALID_EMAIL_BOB),
+        assertThrows(NullPointerException.class, () ->
+                new Person(null, null, null, null, null, null, null, null));
+        assertThrows(NullPointerException.class, () ->
+                new Person(null, new Phone(VALID_PHONE_BOB), new Email(VALID_EMAIL_BOB),
                         Year.fromString(VALID_YEAR_BOB), new Major(VALID_MAJOR_BOB),
                         new Housing(VALID_HOUSING_BOB), new Link(VALID_LINK_BOB),
                         new HashSet<Tag>()));
 
         // name is not null -> returns Person object
-        assertDoesNotThrow(
-                () -> new Person(new Name("Alice"), null, null, null, null, null, null, null));
+        assertDoesNotThrow(() ->
+                new Person(new Name("Alice"), null, null, null, null, null, null, null));
     }
 
     @Test
