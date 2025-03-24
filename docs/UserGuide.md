@@ -6,7 +6,7 @@ title: User Guide
 # NUSMates User Guide
 
 NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students. With NUSMates, you can record NUS-specific contact information such as [year](#year), [major](#major), housing, and [modules](#module). 
-NUSMates also makes it seamless to record [module](#module) information using [NUSMods link](#nusmods), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
+NUSMates also makes it seamless to record [module](#module) information using an [NUSMods link](#nusmods-link), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
 
 > 💡 You can quickly look up all commands in the [Command Summary](#command-summary), or check the [Glossary](#glossary) if you’re unsure about any technical terms used.
 
@@ -69,17 +69,17 @@ NUSMates also makes it seamless to record [module](#module) information using [N
 ## Command Summary
 💡 For more detailed information regarding the command format and each command, refer to the [Features](#features) section.
 
-| Command     | Format, Examples                                                                                                                                                                                                                                                                 |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMods link](#nusmods) t/[tag](#tag)…​` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
-| **Edit**    | `edit [index](#index) n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMods link](#nusmods) t/[tag](#tag)…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                    |
-| **Delete**  | `delete [index](#index)`<br> e.g., `delete 3`                                                                                                                                                                                                                                    |
-| **Find**    | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                                                                                                                                    |
-| **FindMod** | `findMod KEYWORD...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                                          |
-| **List**    | `list`                                                                                                                                                                                                                                                                           |
-| **Clear**   | `clear`                                                                                                                                                                                                                                                                          |
-| **Exit**    | `exit`                                                                                                                                                                                                                                                                           |
-| **Help**    | `help`                                                                                                                                                                                                                                                                           |
+| Command     | Format, Examples                                                                                                                                                                                                                                                       |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMODS_LINK] t/[tag](#tag)…​` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
+| **Edit**    | `edit [index](#index) n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMODS_LINK] t/[tag](#tag)…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                    |
+| **Delete**  | `delete [index](#index)`<br> e.g., `delete 3`                                                                                                                                                                                                                          |
+| **Find**    | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                                                                                                                          |
+| **FindMod** | `findMod KEYWORD...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                                |
+| **List**    | `list`                                                                                                                                                                                                                                                                 |
+| **Clear**   | `clear`                                                                                                                                                                                                                                                                |
+| **Exit**    | `exit`                                                                                                                                                                                                                                                                 |
+| **Help**    | `help`                                                                                                                                                                                                                                                                 |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -102,25 +102,25 @@ NUSMates also makes it seamless to record [module](#module) information using [N
 
 Adds a person to NUSMates.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMods link](#nusmods) t/[tag](#tag)…​`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMODS_LINK] t/[tag](#tag)…​`
 
 * All parameters **except for `NAME`** are optional.<br>
 e.g. You can add a contact with only name, [year](#year), and [major](#major) using `add n/John Doe y/2 m/Computer Science`<br>
 * A person can have any number of **[tags](#tag)**, including none.<br>
-* `LINK` refers to the student's [NUSMods link](#nusmods) course schedule original link.
+* `LINK` refers to the student's [NUSMods link](#nusmods-link) course schedule original link.
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com y/1 m/Electrical Engineering h/PGPR p/1234567 l/https://nusmods.com/timetable/sem-2/share?CS2040=TUT:12,LAB:06,LEC:1`
 
-> 💡For details on the NUSMods link parameter and how to get it, go to [How to get the NUSMods link](#how-to-get-the-nusmods-link)
+> 💡For details on the NUSMods link parameter and how to get it, read [here](#how-to-get-the-nusmods-link)
 
 ###
 ### Editing a person : `edit`
 
 Edits an existing person in NUSMates.
 
-Format: `edit [index](#index) n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMods link](#nusmods) t/[tag](#tag)…​`
+Format: `edit [index](#index) n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMODS_LINK] t/[tag](#tag)…​`
 
 * `[Index](#index)` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
 * At least one of the [parameters](#parameter) must be provided.
@@ -170,7 +170,7 @@ Examples:
 ###
 ### Locating persons by [module](#module): `findMod`
 
-Finds persons who's [NUSMods link](#nusmods) contains any of the given [modules](#module).
+Finds persons who's [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
 
 Format: `findMod KEYWORD [MORE_KEYWORDS]`
 
@@ -228,13 +228,26 @@ NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file loc
 
 ## How to get the NUSMods Link
 
-#TODO
+>💡 What is NUSMods? <br>NUSMods is a website used by NUS students to view and plan their module timetables. A typical NUSMods timetable might look something like this:
+![nusmods_sample.png](images%2Fnusmods_sample.png)
+>You can share your NUSMods timetable with others using an NUSMods link. NUSMates uses this NUSMods link to record the module information of a contact.
+
+To obtain the NUSMods link:
+
+1. Click on the `Share/Sync` button on the top right.
+![nusmods_step1.png](images%2Fnusmods_step1.png)
+2. Click on the `Show original link` button to convert the shortened NUSMods link to the original one.
+![nusmods_step2.png](images%2Fnusmods_step2.png)
+3. Copy the link, and you're done!
+![nusmods_step3.png](images%2Fnusmods_step3.png)
+
+You can now use this link as the `l/[NUSMODS_LINK]` parameter in the [add](#adding-a-person-add) or [edit](#editing-a-person--edit) commands.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Detailed Installation Guide
 
-#TODO
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -279,8 +292,8 @@ A label you can add to a contact to help categorise them, e.g. `t/friend` or `t/
 ### JSON file
 A type of file used to store data in a structured format. NUSMates uses a JSON file to save your contact data.
 
-### NUSMods
-A website used by NUS students to view and plan their module timetables. NUSMates uses NUSMods links to associate contacts with their class schedules.
+### NUSMods Link
+NUSMods is a website used by NUS students to view and plan their module timetables. You can share your NUSMods timetable using an NUSMods link. For more information, refer to [how to get the NUSMods link](#how-to-get-the-nusmods-link).
 
 ### Module
 A subject or course that NUS students take as part of their degree programme. Each module has a unique code (e.g., CS2103T) and typically includes lectures, tutorials, and/or labs.
