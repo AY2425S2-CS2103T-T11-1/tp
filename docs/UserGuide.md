@@ -27,11 +27,15 @@ NUSMates also makes it seamless to record [module](#module) information using an
     9. [Viewing help: `help`](#viewing-help--help)
    10. [Saving and editing the data file](#saving-and-editing-the-data-file)
 4. [How to get the NUSMods link](#how-to-get-the-nusmods-link)
-5. [Glossary](#glossary)
+5. [Detailed installation guide](#detailed-installation-guide)
+6. [Troubleshooting](#troubleshooting)
+7. [Glossary](#glossary)
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick Start
+
+> ⚠️ Having trouble installing the app or confused by any of the steps? Check out the [Detailed Installation Guide](#detailed-installation-guide) for step-by-step help.
 
 1. Make sure you have **[Java](#java) 17 or later** installed in your computer.<br>
    ⚠️ **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
@@ -224,7 +228,6 @@ NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file loc
 
 --------------------------------------------------------------------------------------------------------------------
 
-
 ## How to get the NUSMods Link
 
 >💡 What is NUSMods? <br>NUSMods is a website used by NUS students to view and plan their module timetables. A typical NUSMods timetable might look something like this:
@@ -233,14 +236,91 @@ NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file loc
 
 To obtain the NUSMods link:
 
-1. Click on the `Share/Sync` button on the top right.
+### Step 1: Share/Sync
+Click on the `Share/Sync` button on the top right.
 ![nusmods_step1.png](images/nusmods_step1.png)
-2. Click on the `Show original link` button to convert the shortened NUSMods link to the original one.
+### Step 2: Show original link
+Click on the `Show original link` button to convert the shortened NUSMods link to the original one.
 ![nusmods_step2.png](images/nusmods_step2.png)
-3. Copy the link, and you're done!
+### Step 3. Copy
+Copy the link, and you're done!
 ![nusmods_step3.png](images/nusmods_step3.png)
 
 You can now use this link as the `l/[NUSMODS_LINK]` parameter in the [add](#adding-a-person-add) or [edit](#editing-a-person--edit) commands.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Detailed Installation Guide
+
+This section helps you install and run NUSMates, even if you have never used a [terminal](#terminal) or heard of [Java](#java) before. Just follow the steps one by one!
+
+
+### Step 1: Check if you already have Java
+
+NUSMates runs using [Java](#java), which is a common tool installed on many computers.
+
+#### To check:
+1. Open your [terminal](#terminal):
+   - On **Windows**: Press the `Windows` key, type `cmd`, and press Enter.
+   - On **macOS**: Press `Cmd + Space`, type `Terminal`, and hit Enter.
+
+2. Type this into the terminal and press Enter:
+   ```
+   java -version
+   ```
+
+3. If you see a version number that starts with `17` or higher, you’re good to go. Move to [Step 2](#step-2-download-the-nusmates-jar-file).
+
+4. If you see an error, or a number less than 17, you’ll need to install Java. Follow the guide for your operating system below:
+
+   - [Java Installation Guide (Windows & macOS)](https://se-education.org/guides/tutorials/javaInstallation.html)
+
+
+### Step 2: Download the NUSMates `.jar` file
+
+1. Go to the latest release of NUSMates by [downloading the `.jar` file](https://github.com/AY2425S2-CS2103T-T11-1/tp/releases)
+
+2. Click on the most recent version, and download the file that ends with `.jar`. (e.g. `nusmates.jar`)
+
+
+### Step 3: Choose a [home folder](#home-folder)
+
+1. Create a new folder anywhere you like, e.g., on your `Desktop` or in `Documents`.
+2. Give it a name like `NUSMates`.
+3. Move the downloaded `.jar` file into this folder.
+
+
+### Step 4: Open the [terminal](#terminal) in that folder
+
+You’ll now “go into” the folder using the terminal.
+
+#### On Windows:
+1. Open **File Explorer** and navigate to your NUSMates folder.
+2. In the address bar at the top, type `cmd` and press Enter.
+3. A [terminal](#terminal) window will appear, already inside the folder.
+
+#### On macOS:
+1. Open the **Terminal** app.
+2. Type `cd ` (with a space), then drag and drop your NUSMates folder into the terminal.
+3. Press Enter.
+
+> 💡 If you're curious, `cd` means “[change directory](#cd-command)” — it tells your terminal to go into a folder.
+
+
+### Step 5: Run NUSMates
+
+Now that you’re in the correct folder, run this command:
+
+```
+java -jar nusmates.jar
+```
+
+If everything works, a window will pop up showing NUSMates with some sample contacts.
+
+❌ If you see an error:
+  - Double-check that you're in the correct folder and that the file name is exactly `nusmates.jar`.
+  - Make sure [Java](#java) was installed properly.
+  - Visit the [Troubleshooting](#troubleshooting) section for more help.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -258,13 +338,13 @@ Here are the definitions of some uncommon or domain-specific terms used frequent
 ### Java
 A programming language and platform used to run NUSMates. You need Java 17 or above installed on your computer to run the `.jar` file.
 
-### .jar file
+### `.jar` file
 A Java Archive file that packages a Java application. You run it using the `java -jar` command.
 
 ### Terminal
 A text-based interface that allows users to interact with the computer using commands. On Windows, this is called the Command Prompt; on macOS, it’s called Terminal.
 
-### cd command
+### `cd` command
 Short for “change directory.” This command is used in the terminal to navigate to the folder where your `.jar` file is located.
 
 ### Home folder
