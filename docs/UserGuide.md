@@ -5,36 +5,56 @@ title: User Guide
 
 # NUSMates
 
-NUSMates is a **desktop app for NUS Students to record and manage the contact details of fellow NUS Students, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, NUSMates can get your contact management tasks done faster than traditional GUI apps.
+NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students. With NUSMates, you can record NUS-specific contact information such as year, major, housing, and modules. 
+NUSMates also makes it seamless to record module information using NUSMods links, helping you easily find friends who are taking the same modules - so you can form project groups, share notes, or know who to reach out to for help.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Table of Contents
-1. Quick Start
-2. Features
-3. FAQ
-4. Known Issues
-5. Command Summary
+1. [Quick Start](#Quick-Start)
+2. [Command Summary](#Command-Summary)
+3. [Features](#Features)
+   1. Adding a contact: `add`
+   2. Editing a contact: `edit`
+   3. Deleting a contact: `delete`
+   4. Finding a contact by name: `find`
+   5. Finding a contact by modules: `findMod`
+   6. Listing all contacts: `list`
+   7. Clearing all contacts: `clear`
+   8. Exiting the app: `exit`
+   8. Viewing help: `help`
+4. Troubleshooting
+   1. Detailed installation guide
+   2. FAQ
+   3. Known Issues
+5. Glossary
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick Start
+> 💡 You can quickly look up all commands in the [Command Summary](#command-summary), or check the [Glossary](#glossary) if you’re unsure about any technical terms used.
+> 
+> ⚠️ Having trouble installing the app or confused by any of the steps? Check out the [Detailed Installation Guide](#detailed-installation-guide) in the [Troubleshooting](#troubleshooting) section for step-by-step help.
 
-1. Ensure you have Java `17` or above installed in your Computer.<br>
-   **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
+1. Make sure you have **Java 17 or later** installed in your computer.<br>
+   ⚠️ **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-1. Download the latest `.jar` file from [here](https://github.com/se-edu/addressbook-level3/releases).
+2. Download the latest `.jar` file from [here](#https://github.com/AY2425S2-CS2103T-T11-1/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
+3. Copy the file to the folder you want to use as the home folder for NUSMates. NUSMates will later generate files in this folder, including save data.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar addressbook.jar` command to run the application.<br>
+4. Open a command terminal and `cd` into the folder you put the jar file in.
+
+5. Use the command `java -jar nusmates.jar` to run the application. 
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
-   Some example commands you can try:
+6. Type the command in the command box and press Enter to execute it. <br>
+   💡 Some example commands you can try:
 
    * `list` : Lists all contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12` : Adds a contact named `John Doe` to NUSMates.
+   * `add n/John Doe y/2 m/Computer Science` : Adds a contact named `John Doe` to NUSMates.
 
    * `delete 3` : Deletes the 3rd contact shown in the current list.
 
@@ -42,46 +62,51 @@ NUSMates is a **desktop app for NUS Students to record and manage the contact de
 
    * `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+7. Refer to the [Features](#features) below for details of each command.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Command Summary
+💡 For more detailed information regarding the command format and each command, refer to the [Features](#features) section.
+
+| Command     | Format, Examples                                                                                                                                                                                                                                               |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK [t/TAG]…​` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
+| **Edit**    | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                |
+| **Delete**  | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                                                                                                            |
+| **Find**    | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                                                     |
+| **FindMod** | `findMod KEYWORD [MORE_KEYWORDS]`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                           |
+| **List**    | `list`                                                                                                                                                                                                                                                         |
+| **Clear**   | `clear`                                                                                                                                                                                                                                                        |
+| **Exit**    | `exit`                                                                                                                                                                                                                                                         |
+| **Help**    | `help`                                                                                                                                                                                                                                                         |
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Features
 
-<div markdown="block" class="alert alert-info">
-
-**:information_source: Notes about the command format:**<br>
-
-* Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
+> 💡 Notes about the command format:
+> 
+> * Words in `UPPER_CASE` are the parameters you must supply when entering the command.<br>
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
-
-* Items in square brackets are optional.<br>
-  e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
-
-* Items with `…`​ after them can be used multiple times including zero times.<br>
+>
+> * All parameters **except for `NAME`** are optional.<br>
+> e.g. You can add a contact with only name, year, and major using `add n/John Doe y/2 m/Computer Science`
+>
+> * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
-
-* Parameters can be in any order.<br>
+> 
+> * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
-
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
+> 
+> * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
-
-* If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
-</div>
-
-### Viewing help : `help`
-
-Shows a message explaning how to access the help page.
-
-![help message](images/helpMessage.png)
-
-Format: `help`
-
+> 
+> * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 ### Adding a person: `add`
 
-Adds a person to the address book.
+Adds a person to NUSMates.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK [t/TAG]…​`
 
@@ -94,12 +119,7 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com y/1 m/Electrical Engineering h/PGPR p/1234567 l/https://nusmods.com/timetable/sem-2/share?CS2040=TUT:12,LAB:06,LEC:1`
 
-### Listing all persons : `list`
-
-Shows a list of all persons in the address book.
-
-Format: `list`
-
+###
 ### Editing a person : `edit`
 
 Edits an existing person in the address book.
@@ -111,28 +131,28 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] 
 * Existing values will be updated to the input values.
 * When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
 * You can remove all the person’s tags by typing `t/` without
-    specifying any tags after it.
+  specifying any tags after it.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
-### Locating persons by module: `findMod`
+###
+### Deleting a person : `delete`
 
-Finds persons who's NUSMods Link contains any of the given modules.
+Deletes the specified person from the address book.
 
-Format: `findMod KEYWORD [MORE_KEYWORDS]`
+Format: `delete INDEX`
 
-* The search is case-insensitive. e.g `cs2030` will match `CS2030`
-* The order of the keywords does not matter. e.g. `CS2030 CS2103T` will match `CS2103T CS2030`
-* Only the module is searched.
-* Only full words will be matched e.g. `CS2103` will not match `CS2103T`
-* Persons matching at least one of the modules searched will be returned (i.e. `OR` search).
+* Deletes the person at the specified `INDEX`.
+* The index refers to the index number shown in the displayed person list.
+* The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `findMod CS2109S` returns `Abi, Yuexi`
-  ![result for 'findMod CS2109S'](images/findCS2109Sresult.png)
+* `list` followed by `delete 2` deletes the 2nd person in the address book.
+* `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
 
+###
 ### Locating persons by name: `find`
 
 Finds persons whose names contain any of the given keywords.
@@ -151,31 +171,52 @@ Examples:
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 
-### Deleting a person : `delete`
+###
+### Locating persons by module: `findMod`
 
-Deletes the specified person from the address book.
+Finds persons who's NUSMods Link contains any of the given modules.
 
-Format: `delete INDEX`
+Format: `findMod KEYWORD [MORE_KEYWORDS]`
 
-* Deletes the person at the specified `INDEX`.
-* The index refers to the index number shown in the displayed person list.
-* The index **must be a positive integer** 1, 2, 3, …​
+* The search is case-insensitive. e.g `cs2030` will match `CS2030`
+* The order of the keywords does not matter. e.g. `CS2030 CS2103T` will match `CS2103T CS2030`
+* Only the module is searched.
+* Only full words will be matched e.g. `CS2103` will not match `CS2103T`
+* Persons matching at least one of the modules searched will be returned (i.e. `OR` search).
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd person in the address book.
-* `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
+* `findMod CS2109S` returns `Abi, Yuexi`
+  ![result for 'findMod CS2109S'](images/findCS2109Sresult.png)
 
+###
+### Listing all persons : `list`
+
+Shows a list of all persons in the address book.
+
+Format: `list`
+
+###
 ### Clearing all entries : `clear`
 
 Clears all entries from the address book.
 
 Format: `clear`
 
+###
 ### Exiting the program : `exit`
 
 Exits the program.
 
 Format: `exit`
+
+###
+### Viewing help : `help`
+
+Shows a message explaning how to access the help page.
+
+![help message](images/helpMessage.png)
+
+Format: `help`
 
 ### Saving the data
 
@@ -190,35 +231,18 @@ If your changes to the data file makes its format invalid, AddressBook will disc
 Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
 
-### Archiving data files `[coming in v2.0]`
-
-_Details coming soon ..._
-
 --------------------------------------------------------------------------------------------------------------------
 
-## FAQ
+## Troubleshooting
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous AddressBook home folder.
-
---------------------------------------------------------------------------------------------------------------------
-
-## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command Summary
+## Glossary
 
-Action | Format, Examples
---------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK [t/TAG]…​` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu`
-**Clear** | `clear`
-**Delete** | `delete INDEX`<br> e.g., `delete 3`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
-**Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
-**FindMod** | `findMod KEYWORD [MORE_KEYWORDS]`<br> e.g., `findMod CS2103T`
-**List** | `list`
-**Help** | `help`
+--------------------------------------------------------------------------------------------------------------------
