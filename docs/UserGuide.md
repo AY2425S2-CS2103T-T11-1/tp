@@ -27,14 +27,11 @@ NUSMates also makes it seamless to record [module](#module) information using an
     9. [Viewing help: `help`](#viewing-help--help)
    10. [Saving and editing the data file](#saving-and-editing-the-data-file)
 4. [How to get the NUSMods link](#how-to-get-the-nusmods-link)
-5. [Detailed installation guide](#detailed-installation-guide)
-6. [Troubleshooting](#troubleshooting)
-7. [Glossary](#glossary)
+5. [Glossary](#glossary)
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick Start 
-> ⚠️ Having trouble installing the app or confused by any of the steps? Check out the [Detailed Installation Guide](#detailed-installation-guide) for step-by-step help.
+## Quick Start
 
 1. Make sure you have **[Java](#java) 17 or later** installed in your computer.<br>
    ⚠️ **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
@@ -214,6 +211,7 @@ Shows a message explaining how to access the help page.
 
 Format: `help`
 
+###
 ### Saving and editing the data [file](#json-file)
 
 NUSMates data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
@@ -226,28 +224,23 @@ NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file loc
 
 --------------------------------------------------------------------------------------------------------------------
 
+
 ## How to get the NUSMods Link
 
 >💡 What is NUSMods? <br>NUSMods is a website used by NUS students to view and plan their module timetables. A typical NUSMods timetable might look something like this:
-![nusmods_sample.png](images%2Fnusmods_sample.png)
+![nusmods_sample.png](images/nusmods_sample.png)
 >You can share your NUSMods timetable with others using an NUSMods link. NUSMates uses this NUSMods link to record the module information of a contact.
 
 To obtain the NUSMods link:
 
 1. Click on the `Share/Sync` button on the top right.
-![nusmods_step1.png](images%2Fnusmods_step1.png)
+![nusmods_step1.png](images/nusmods_step1.png)
 2. Click on the `Show original link` button to convert the shortened NUSMods link to the original one.
-![nusmods_step2.png](images%2Fnusmods_step2.png)
+![nusmods_step2.png](images/nusmods_step2.png)
 3. Copy the link, and you're done!
-![nusmods_step3.png](images%2Fnusmods_step3.png)
+![nusmods_step3.png](images/nusmods_step3.png)
 
 You can now use this link as the `l/[NUSMODS_LINK]` parameter in the [add](#adding-a-person-add) or [edit](#editing-a-person--edit) commands.
-
---------------------------------------------------------------------------------------------------------------------
-
-## Detailed Installation Guide
-
-
 
 --------------------------------------------------------------------------------------------------------------------
 
