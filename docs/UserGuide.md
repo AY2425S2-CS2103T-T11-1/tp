@@ -23,11 +23,13 @@ NUSMates also makes it seamless to record module information using NUSMods links
     7. [Clearing all contacts: `clear`](#clearing-all-entries--clear)
     8. [Exiting the app: `exit`](#exiting-the-program--exit)
     9. [Viewing help: `help`](#viewing-help--help)
-4. [Troubleshooting](#troubleshooting)
-    1. [Detailed installation guide](#detailed-installation-guide) 
+   10. [Saving and editing the data file](#saving-and-editing-the-data-file)
+4. [How to get the NUSMods Link](#how-to-get-the-nusmods-link)
+5. [Detailed installation guide](#detailed-installation-guide)
+6. [Troubleshooting](#troubleshooting)
     2. [FAQ](#faq) 
     3. [Known Issues](#known-issues) 
-5. [Glossary](#glossary)
+7. [Glossary](#glossary)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -212,18 +214,16 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
-### Saving the data
+### Saving and editing the data file
 
-AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+NUSMates data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
-### Editing the data file
+NUSMates data is saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
 
-AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
+>⚠️ **Caution:** <br>
+> If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
+> Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
-</div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -238,5 +238,45 @@ Furthermore, certain edits can cause the AddressBook to behave in unexpected way
 --------------------------------------------------------------------------------------------------------------------
 
 ## Glossary
+Here are some definitions of some uncommon or domain-specific terms frequently used in this user guide. 
 
---------------------------------------------------------------------------------------------------------------------
+### Java
+A programming language and platform used to run NUSMates. You need Java 17 or above installed on your computer to run the `.jar` file.
+
+### .jar file
+A Java Archive file that packages a Java application. You run it using the `java -jar` command.
+
+### Terminal
+A text-based interface that allows users to interact with the computer using commands. On Windows, this is called the Command Prompt; on macOS, it’s called Terminal.
+
+### `cd` command
+Short for “change directory.” This command is used in the terminal to navigate to different folders, such as where your `.jar` file is located.
+
+### Home folder
+The folder where you place the `nusmates.jar` file. NUSMates stores its data in this folder.
+
+### GUI
+Short for Graphical User Interface. It’s the visual interface of the app with windows and buttons.
+
+### Parameter
+A specific piece of information the user provides when entering a command. Parameters are usually written in `UPPER_CASE` in the command format.
+
+### Index
+A number that represents the position of a contact in the list shown in the app. For example, the first contact has index 1.
+
+### JSON file
+A type of file used to store data in a structured format. NUSMates uses a JSON file to save your contact data.
+
+### NUSMods
+A website used by NUS students to view and plan their module timetables. NUSMates uses NUSMods links to associate contacts with their class schedules.
+
+### Module
+A subject or course that NUS students take as part of their degree programme. Each module has a unique code (e.g., CS2103T) and typically includes lectures, tutorials, and/or labs.
+
+### Major
+The primary field of study that a student is specialising in at NUS, such as Computer Science or Electrical Engineering.
+
+### Year
+Refers to the student's current year of study at NUS, e.g., Year 1 (first-year student), Year 2, and so on.
+
+
