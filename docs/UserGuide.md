@@ -29,8 +29,6 @@ NUSMates also makes it seamless to record [module](#module) information using [N
 4. [How to get the NUSMods link](#how-to-get-the-nusmods-link)
 5. [Detailed installation guide](#detailed-installation-guide)
 6. [Troubleshooting](#troubleshooting)
-    2. [FAQ](#faq) 
-    3. [Known Issues](#known-issues) 
 7. [Glossary](#glossary)
 
 --------------------------------------------------------------------------------------------------------------------
@@ -71,17 +69,17 @@ NUSMates also makes it seamless to record [module](#module) information using [N
 ## Command Summary
 💡 For more detailed information regarding the command format and each command, refer to the [Features](#features) section.
 
-| Command     | Format, Examples                                                                                                                                                                                                                                             |
-|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Command     | Format, Examples                                                                                                                                                                                                                                                                 |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMods link](#nusmods) t/[tag](#tag)…​` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
-| **Edit**    | `edit [index](#index) n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMods link](#nusmods) t/[tag](#tag)…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                              |
-| **Delete**  | `delete [index](#index)`<br> e.g., `delete 3`                                                                                                                                                                                                                          |
-| **Find**    | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                                                                                                                |
-| **FindMod** | `findMod KEYWORD...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                      |
-| **List**    | `list`                                                                                                                                                                                                                                                       |
-| **Clear**   | `clear`                                                                                                                                                                                                                                                      |
-| **Exit**    | `exit`                                                                                                                                                                                                                                                       |
-| **Help**    | `help`                                                                                                                                                                                                                                                       |
+| **Edit**    | `edit [index](#index) n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMods link](#nusmods) t/[tag](#tag)…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                    |
+| **Delete**  | `delete [index](#index)`<br> e.g., `delete 3`                                                                                                                                                                                                                                    |
+| **Find**    | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                                                                                                                                    |
+| **FindMod** | `findMod KEYWORD...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                                          |
+| **List**    | `list`                                                                                                                                                                                                                                                                           |
+| **Clear**   | `clear`                                                                                                                                                                                                                                                                          |
+| **Exit**    | `exit`                                                                                                                                                                                                                                                                           |
+| **Help**    | `help`                                                                                                                                                                                                                                                                           |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -226,16 +224,25 @@ NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file loc
 > If your changes to the data [file](#json-file) makes its format invalid, AddressBook will discard all data and start with an empty data [file](#json-file) at the next run. Hence, it is recommended to take a backup of the [file](#json-file) before editing it.<br>
 > Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data [file](#json-file) only if you are confident that you can update it correctly.
 
+--------------------------------------------------------------------------------------------------------------------
+
+## How to get the NUSMods Link
+
+#TODO
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Detailed Installation Guide
+
+#TODO
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Troubleshooting
 
-**Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data [file](#json-file) it creates with the [file](#json-file) that contains the data of your previous AddressBook [home folder](#home-folder).
-
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the [GUI](#gui) will open off-screen. The remedy is to delete the `preferences.json` [file](#json-file) created by the application before running the application again.
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
+3. **To transfer your data to another computer,** install the app in the other computer and overwrite the empty data [file](#json-file) it creates with the [file](#json-file) that contains the data of your previous AddressBook [home folder](#home-folder).
 
 --------------------------------------------------------------------------------------------------------------------
 
