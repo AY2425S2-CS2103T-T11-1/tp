@@ -11,23 +11,23 @@ NUSMates also makes it seamless to record module information using NUSMods links
 --------------------------------------------------------------------------------------------------------------------
 
 ## Table of Contents
-1. [Quick Start](#Quick-Start)
-2. [Command Summary](#Command-Summary)
-3. [Features](#Features)
-   1. Adding a contact: `add`
-   2. Editing a contact: `edit`
-   3. Deleting a contact: `delete`
-   4. Finding a contact by name: `find`
-   5. Finding a contact by modules: `findMod`
-   6. Listing all contacts: `list`
-   7. Clearing all contacts: `clear`
-   8. Exiting the app: `exit`
-   8. Viewing help: `help`
-4. Troubleshooting
-   1. Detailed installation guide
-   2. FAQ
-   3. Known Issues
-5. Glossary
+1. [Quick Start](#quick-start)
+2. [Command Summary](#command-summary)
+3. [Features](#features)
+    1. [Adding a contact: `add`](#adding-a-person-add)
+    2. [Editing a contact: `edit`](#editing-a-person--edit)
+    3. [Deleting a contact: `delete`](#deleting-a-person--delete)
+    4. [Finding a contact by name: `find`](#locating-persons-by-name-find)
+    5. [Finding a contact by modules: `findMod`](#locating-persons-by-module-findmod)
+    6. [Listing all contacts: `list`](#listing-all-persons--list)
+    7. [Clearing all contacts: `clear`](#clearing-all-entries--clear)
+    8. [Exiting the app: `exit`](#exiting-the-program--exit)
+    9. [Viewing help: `help`](#viewing-help--help)
+4. [Troubleshooting](#troubleshooting)
+    1. [Detailed installation guide](#detailed-installation-guide) 
+    2. [FAQ](#faq) 
+    3. [Known Issues](#known-issues) 
+5. [Glossary](#glossary)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -69,17 +69,17 @@ NUSMates also makes it seamless to record module information using NUSMods links
 ## Command Summary
 💡 For more detailed information regarding the command format and each command, refer to the [Features](#features) section.
 
-| Command     | Format, Examples                                                                                                                                                                                                                                               |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK [t/TAG]…​` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
-| **Edit**    | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                |
-| **Delete**  | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                                                                                                            |
-| **Find**    | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                                                                                                                     |
-| **FindMod** | `findMod KEYWORD [MORE_KEYWORDS]`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                           |
-| **List**    | `list`                                                                                                                                                                                                                                                         |
-| **Clear**   | `clear`                                                                                                                                                                                                                                                        |
-| **Exit**    | `exit`                                                                                                                                                                                                                                                         |
-| **Help**    | `help`                                                                                                                                                                                                                                                         |
+| Command     | Format, Examples                                                                                                                                                                                                                                             |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG…​` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
+| **Edit**    | `edit INDEX n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                              |
+| **Delete**  | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                                                                                                          |
+| **Find**    | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                                                                                                                |
+| **FindMod** | `findMod KEYWORD...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                      |
+| **List**    | `list`                                                                                                                                                                                                                                                       |
+| **Clear**   | `clear`                                                                                                                                                                                                                                                      |
+| **Exit**    | `exit`                                                                                                                                                                                                                                                       |
+| **Help**    | `help`                                                                                                                                                                                                                                                       |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -90,30 +90,24 @@ NUSMates also makes it seamless to record module information using NUSMods links
 > * Words in `UPPER_CASE` are the parameters you must supply when entering the command.<br>
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 >
-> * All parameters **except for `NAME`** are optional.<br>
-> e.g. You can add a contact with only name, year, and major using `add n/John Doe y/2 m/Computer Science`
->
 > * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 > 
 > * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 > 
-> * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
-  e.g. if the command specifies `help 123`, it will be interpreted as `help`.
-> 
-> * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
+> * ⚠️ If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 ### Adding a person: `add`
 
 Adds a person to NUSMates.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK [t/TAG]…​`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG…​`
 
-
-Notes:
-- A person can have any number of **tags**, including none.
-- `LINK` refers to the student's NUSMODS course schedule original link.
+* All parameters **except for `NAME`** are optional.<br>
+e.g. You can add a contact with only name, year, and major using `add n/John Doe y/2 m/Computer Science`<br>
+* A person can have any number of **tags**, including none.<br>
+* `LINK` refers to the student's NUSMODS course schedule original link.
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
@@ -122,16 +116,16 @@ Examples:
 ###
 ### Editing a person : `edit`
 
-Edits an existing person in the address book.
+Edits an existing person in NUSMates.
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]…​`
+Format: `edit INDEX n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG…​`
 
-* Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
-* At least one of the optional fields must be provided.
+* `INDEX` refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+* At least one of the parameters must be provided.
 * Existing values will be updated to the input values.
+* For all fields except `name`, you can set it to nothing by typing the prefix without anything following it. <br>
+e.g. You can remove all the person’s tags by typing `t/` without specifying any tags after it.
 * When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
-* You can remove all the person’s tags by typing `t/` without
-  specifying any tags after it.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
@@ -167,7 +161,7 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
-* `find John` returns `john` and `John Doe`
+* `find John` returns `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 
