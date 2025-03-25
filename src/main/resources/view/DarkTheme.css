@@ -132,6 +132,12 @@
     -fx-text-fill: #010504;
 }
 
+.cell_middle_label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-text-fill: #FFA500;
+}
+
 .stack-pane {
      -fx-background-color: derive(#1d1d1d, 20%);
 }
