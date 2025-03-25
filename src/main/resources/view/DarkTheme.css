@@ -135,7 +135,7 @@
 .cell_middle_label {
     -fx-font-family: "Segoe UI";
     -fx-font-size: 13px;
-    -fx-text-fill: #FFA500;
+    -fx-text-fill: rgb(130, 180, 240);
 }
 
 .stack-pane {
