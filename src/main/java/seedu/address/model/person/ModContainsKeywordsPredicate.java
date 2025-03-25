@@ -12,6 +12,11 @@ import seedu.address.commons.util.ToStringBuilder;
 public class ModContainsKeywordsPredicate implements Predicate<Person> {
     private final List<String> keywords;
 
+    /**
+     * Constructs a {@code ModContainsKeywordsPredicate} with the given keywords.
+     *
+     * @param keywords The list of module keywords to filter persons by.
+     */
     public ModContainsKeywordsPredicate(List<String> keywords) {
         this.keywords = keywords;
     }

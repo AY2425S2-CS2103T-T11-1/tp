@@ -8,7 +8,7 @@ import seedu.address.model.Model;
 import seedu.address.model.person.ModContainsKeywordsPredicate;
 
 /**
- * Finds and lists all persons in address book whose name contains any of the argument keywords.
+ * Finds and lists all persons in address book who are taking any of the specified modules.
  * Keyword matching is case insensitive.
  */
 public class FindModCommand extends Command {
@@ -22,6 +22,11 @@ public class FindModCommand extends Command {
 
     private final ModContainsKeywordsPredicate predicate;
 
+    /**
+     * Constructs a {@code FindModCommand} with the specified predicate.
+     *
+     * @param predicate Predicate to filter persons by module enrollment.
+     */
     public FindModCommand(ModContainsKeywordsPredicate predicate) {
         this.predicate = predicate;
     }
