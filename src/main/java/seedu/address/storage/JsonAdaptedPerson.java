@@ -94,63 +94,57 @@ class JsonAdaptedPerson {
         final Name modelName = new Name(name);
 
         Phone modelPhone;
-        if (phone != null) {
-            if (!Phone.isValidPhone(phone)) {
-                throw new IllegalValueException(Phone.MESSAGE_CONSTRAINTS);
-            }
-            modelPhone = new Phone(phone);
-        } else {
+        if (phone == null) {
             modelPhone = null;
+        } else if (!Phone.isValidPhone(phone)) {
+            throw new IllegalValueException(Phone.MESSAGE_CONSTRAINTS);
+        } else {
+            modelPhone = new Phone(phone);
         }
 
         Email modelEmail;
-        if (email != null) {
-            if (!Email.isValidEmail(email)) {
-                throw new IllegalValueException(Email.MESSAGE_CONSTRAINTS);
-            }
-            modelEmail = new Email(email);
-        } else {
+        if (email == null) {
             modelEmail = null;
+        } else if (!Email.isValidEmail(email)) {
+            throw new IllegalValueException(Email.MESSAGE_CONSTRAINTS);
+        } else {
+            modelEmail = new Email(email);
         }
 
         Year modelYear;
-        if (year != null) {
-            if (!Year.isValidYear(year)) {
-                throw new IllegalValueException(Year.MESSAGE_CONSTRAINTS);
-            }
-            modelYear = Year.fromString(year);
-        } else {
+        if (year == null) {
             modelYear = null;
+        } else if (!Year.isValidYear(year)) {
+            throw new IllegalValueException(Year.MESSAGE_CONSTRAINTS);
+        } else {
+            modelYear = Year.fromString(year);
         }
 
         Link modelLink;
-        if (link != null) {
-            if (!Link.isValidLink(link)) {
-                throw new IllegalValueException(Link.MESSAGE_CONSTRAINTS);
-            }
-            modelLink = new Link(link);
-        } else {
+        if (link == null) {
             modelLink = null;
+        } else if (!Link.isValidLink(link)) {
+            throw new IllegalValueException(Link.MESSAGE_CONSTRAINTS);
+        } else {
+            modelLink = new Link(link);
         }
 
         Major modelMajor;
-        if (major != null) {
-            if (!Major.isValidMajor(major)) {
-                throw new IllegalValueException(Major.MESSAGE_CONSTRAINTS);
-            }
-            modelMajor = new Major(major);
-        } else {
+        if (major == null) {
             modelMajor = null;
+        } else if (!Major.isValidMajor(major)) {
+            throw new IllegalValueException(Major.MESSAGE_CONSTRAINTS);
+        } else {
+            modelMajor = new Major(major);
         }
 
         Housing modelHousing;
-        if (housing != null) {
-            if (!Housing.isValidHousing(housing)) {
-                throw new IllegalValueException(Housing.MESSAGE_CONSTRAINTS);
-            }
-            modelHousing = new Housing(housing);
-        } else {
+        if (housing == null) {
             modelHousing = null;
+        } else if (!Housing.isValidHousing(housing)) {
+            throw new IllegalValueException(Housing.MESSAGE_CONSTRAINTS);
+        } else {
+            modelHousing = new Housing(housing);
         }
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
