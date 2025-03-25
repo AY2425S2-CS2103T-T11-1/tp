@@ -47,6 +47,8 @@ public class Messages {
                 .append(person.getMajor())
                 .append("; Housing: ")
                 .append(person.getHousing())
+                .append("; Link: ")
+                .append(person.getLink())
                 .append("; Tags: ");
         person.getTags().forEach(builder::append);
         return builder.toString();
