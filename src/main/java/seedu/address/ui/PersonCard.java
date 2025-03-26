@@ -60,11 +60,29 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName);
-        phone.setText(person.getPhone().value);
-        year.setText(String.valueOf(person.getYear()));
-        major.setText(person.getMajor().value);
-        housing.setText(person.getHousing().value);
-        email.setText(person.getEmail().value);
+
+        // For non-mandatory fields don't show if is null.
+        // Managed: https://stackoverflow.com/a/28559958
+        phone.setText(person.getPhone() != null ? person.getPhone().value : "");
+        phone.setVisible(person.getPhone() != null);
+        phone.setManaged(person.getPhone() != null);
+
+        year.setText(person.getYear() != null ? String.valueOf(person.getYear()) : "");
+        year.setVisible(person.getYear() != null);
+        year.setManaged(person.getYear() != null);
+
+        major.setText(person.getMajor() != null ? person.getMajor().value : "");
+        major.setVisible(person.getMajor() != null);
+        major.setManaged(person.getMajor() != null);
+
+        housing.setText(person.getHousing() != null ? person.getHousing().value : "");
+        housing.setVisible(person.getHousing() != null);
+        housing.setManaged(person.getHousing() != null);
+
+        email.setText(person.getEmail() != null ? person.getEmail().value : "");
+        email.setVisible(person.getEmail() != null);
+        email.setManaged(person.getEmail() != null);
+
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));

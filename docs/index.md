@@ -1,6 +1,6 @@
 ---
 layout: page
-title: AddressBook Level-3
+title: NUSMates
 ---
 
 [![CI Status](https://github.com/se-edu/addressbook-level3/workflows/Java%20CI/badge.svg)](https://github.com/se-edu/addressbook-level3/actions)
@@ -8,10 +8,11 @@ title: AddressBook Level-3
 
 ![Ui](images/Ui.png)
 
-**AddressBook is a desktop application for managing your contact details.** While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).
+**NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students.** With NUSMates, you can record NUS-specific contact information such as year, major, housing, and modules.
+NUSMates also makes it seamless to record module information using an NUSMods link, helping you easily find friends who are taking the same modules - so you can form project groups, share notes, or know who to reach out to for help.
 
-* If you are interested in using AddressBook, head over to the [_Quick Start_ section of the **User Guide**](UserGuide.html#quick-start).
-* If you are interested about developing AddressBook, the [**Developer Guide**](DeveloperGuide.html) is a good place to start.
+* If you are interested in using NUSMates, head over to the [_Quick Start_ section of the **User Guide**](UserGuide.html#quick-start).
+* If you are interested about developing NUSMates, the [**Developer Guide**](DeveloperGuide.html) is a good place to start.
 
 
 **Acknowledgements**
