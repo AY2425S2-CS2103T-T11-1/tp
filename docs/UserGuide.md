@@ -8,6 +8,13 @@ title: User Guide
 NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students. With NUSMates, you can record NUS-specific contact information such as [year](#year), [major](#major), [housing](#housing), and [modules](#module).
 NUSMates also makes it seamless to record [module](#module) information using an [NUSMods link](#nusmods-link), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
 
+#### You will love NUSMates if you are:
+* An NUS undergraduate student who frequently uses NUSMods
+* Socially active in NUS with a need to manage the contacts of your fellow NUS undergraduate students
+* Frequently use NUSMods to plan, record, and share your course schedules
+* Tech-savvy and familiar with installing jar files
+* Can type fast and prefer using CLI apps over mouse interactions
+
 > 💡 You can quickly look up all commands in the [Command Summary](#command-summary), or check the [Glossary](#glossary) if you’re unsure about any technical terms used.
 
 --------------------------------------------------------------------------------------------------------------------
@@ -40,7 +47,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
 1. Make sure you have **[Java](#java) 17 or later** installed in your computer.<br>
    ⚠️ **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-2. Download the latest `[.jar file]` from [here](#https://github.com/AY2425S2-CS2103T-T11-1/tp/releases).
+2. Download the latest `[.jar file]` from [here](https://github.com/AY2425S2-CS2103T-T11-1/tp/releases).
 
 3. Copy the file to the [home folder](#home-folder) you want to use as the [home folder](#home-folder) for NUSMates. NUSMates will later generate files in this folder, including save data.
 
@@ -86,11 +93,13 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 ## Features
 
-> 💡 Notes about the command format:
-> * Words in `UPPER_CASE` are the [parameters](#parameter) you must supply when entering the command.<br>
+#### Notes about the command format:
+* Words in `UPPER_CASE` are the [parameters](#parameter) you must supply when entering the command.<br>
   e.g. in `add n/NAME`, `NAME` is a [parameter](#parameter) which can be used as `add n/John Doe`.
-> * Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/tag]...` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+* Items with `…`​ after them can be used multiple times including zero times.<br>
+    e.g. `[t/tag]...` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+
+> 💡 Tips and advice
 > * [Parameters](#parameter) can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 > * ⚠️ If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
@@ -104,7 +113,7 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LI
 * All parameters **except for `NAME`** are optional.<br>
 e.g. You can add a contact with only name, [year](#year), and [major](#major) using `add n/John Doe y/2 m/Computer Science`<br>
 * A person can have any number of **[tags](#tag)**, including none.<br>
-* `LINK` refers to the student's [NUSMods link](#nusmods-link) course schedule original link.
+* `NUSMODS_LINK` refers to the student's [NUSMods link](#nusmods-link) course schedule original link.
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
