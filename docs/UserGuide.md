@@ -160,9 +160,9 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
-* `find John` returns `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `find Huazhi` returns `Huazhi` 
+* `find Abi Yuexi` returns `Abi`, `Yuexi`<br>
+  ![result for 'find Abi Yuexi'](images/findAbiYuexi.png)
 
 ###
 ### Locating persons by [module](#module): `findMod`
