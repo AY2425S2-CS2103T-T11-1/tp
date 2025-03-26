@@ -25,7 +25,7 @@ public class PersonBuilder {
     public static final String DEFAULT_HOUSING = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_YEAR = "1";
     public static final String DEFAULT_MAJOR = "Computer Science";
-    public static final String DEFAULT_LINK = "https://nusmods.com/timetable/";
+    public static final String DEFAULT_LINK = "https://nusmods.com/timetable/sem-1/share?CS1010=TUT:06,LAB:E07";
 
     private Name name;
     private Phone phone;

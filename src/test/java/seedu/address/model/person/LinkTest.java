@@ -35,6 +35,7 @@ public class LinkTest {
         assertFalse(Link.isValidLink("www.nusmods.com/timetable/sem-2/share?CS2101")); // missing https
         // valid link
         assertTrue(Link.isValidLink("https://nusmods.com/timetable/sem-2/share?CS2101"));
+        assertTrue(Link.isValidLink("https://nusmods.com/timetable/sem-1/share?"));
     }
 
     @Test
