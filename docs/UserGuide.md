@@ -5,7 +5,7 @@ title: User Guide
 
 # NUSMates User Guide
 
-NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students. With NUSMates, you can record NUS-specific contact information such as [year](#year), [major](#major), housing, and [modules](#module). 
+NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students. With NUSMates, you can record NUS-specific contact information such as [year](#year), [major](#major), housing, and [modules](#module).
 NUSMates also makes it seamless to record [module](#module) information using an [NUSMods link](#nusmods-link), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
 
 > 💡 You can quickly look up all commands in the [Command Summary](#command-summary), or check the [Glossary](#glossary) if you’re unsure about any technical terms used.
@@ -46,7 +46,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 4. Open a [terminal](#terminal) and `cd` into the folder you put the `[.jar file](#jar-file)` in.
 
-5. Use the command `java -jar nusmates.jar` to run the application. 
+5. Use the command `java -jar nusmates.jar` to run the application.
    A [GUI](#gui) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
@@ -87,16 +87,12 @@ NUSMates also makes it seamless to record [module](#module) information using an
 ## Features
 
 > 💡 Notes about the command format:
-> 
 > * Words in `UPPER_CASE` are the [parameters](#parameter) you must supply when entering the command.<br>
   e.g. in `add n/NAME`, `NAME` is a [parameter](#parameter) which can be used as `add n/John Doe`.
->
 > * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/[tag](#tag)]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
-> 
 > * [Parameters](#parameter) can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
-> 
 > * ⚠️ If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 ### Adding a person: `add`
