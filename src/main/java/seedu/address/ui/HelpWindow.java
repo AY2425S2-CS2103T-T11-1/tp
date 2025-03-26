@@ -90,7 +90,7 @@ public class HelpWindow extends UiPart<Stage> {
     }
 
     /**
-     * Copies the URL to the user guide to the clipboard.
+     * Copies the URL of the user guide to the clipboard.
      */
     @FXML
     private void copyUrl() {
