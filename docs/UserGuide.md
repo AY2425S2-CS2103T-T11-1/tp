@@ -47,7 +47,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
 1. Make sure you have **[Java](#java) 17 or later** installed in your computer.<br>
    ⚠️ **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-2. Download the latest `[.jar file]` from [here](https://github.com/AY2425S2-CS2103T-T11-1/tp/releases).
+2. Download the latest `[.jar file]` from [here](https://github.com/{{site.repository}}/releases).
 
 3. Copy the file to the [home folder](#home-folder) you want to use as the [home folder](#home-folder) for NUSMates. NUSMates will later generate files in this folder, including save data.
 
@@ -274,7 +274,7 @@ NUSMates runs using [Java](#java), which is a common tool installed on many comp
 
 ### Step 2: Download the NUSMates `.jar` file
 
-1. Go to the latest release of NUSMates by [downloading the `.jar` file](https://github.com/AY2425S2-CS2103T-T11-1/tp/releases)
+1. Go to the latest release of NUSMates by [downloading the `.jar` file](https://github.com/{{site.repository}}/releases)
 
 2. Click on the most recent version, and download the file that ends with `.jar`. (e.g. `nusmates.jar`)
 
