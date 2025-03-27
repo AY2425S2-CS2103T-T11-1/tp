@@ -14,10 +14,11 @@ public class Messages {
 
     public static final String MESSAGE_UNKNOWN_COMMAND = "Unknown command";
     public static final String MESSAGE_INVALID_COMMAND_FORMAT = "Invalid command format! \n%1$s";
-    public static final String MESSAGE_INVALID_PERSON_DISPLAYED_INDEX = "The person index provided is invalid";
+    public static final String MESSAGE_INVALID_PERSON_DISPLAYED_INDEX =
+            "The person index provided is invalid";
     public static final String MESSAGE_PERSONS_LISTED_OVERVIEW = "%1$d persons listed!";
     public static final String MESSAGE_DUPLICATE_FIELDS =
-                "Multiple values specified for the following single-valued field(s): ";
+            "Multiple values specified for the following single-valued field(s): ";
 
     /**
      * Returns an error message indicating the duplicate prefixes.
@@ -37,20 +38,41 @@ public class Messages {
     public static String format(Person person) {
         final StringBuilder builder = new StringBuilder();
         builder.append(person.getName())
-                .append("; Phone: ")
-                .append(person.getPhone())
-                .append("; Email: ")
-                .append(person.getEmail())
-                .append("; Year: ")
-                .append(person.getYear())
-                .append("; Major: ")
-                .append(person.getMajor())
-                .append("; Housing: ")
-                .append(person.getHousing())
-                .append("; Link: ")
-                .append(person.getLink())
-                .append("; Tags: ");
-        person.getTags().forEach(builder::append);
+                .append("; ");
+        if (person.getPhone() != null) {
+            builder.append("Phone: ")
+                    .append(person.getPhone())
+                    .append("; ");
+        }
+        if (person.getEmail() != null) {
+            builder.append("Email: ")
+                    .append(person.getEmail())
+                    .append("; ");
+        }
+        if (person.getYear() != null) {
+            builder.append("Year: ")
+                    .append(person.getYear())
+                    .append("; ");
+        }
+        if (person.getMajor() != null) {
+            builder.append("Major: ")
+                    .append(person.getMajor())
+                    .append("; ");
+        }
+        if (person.getHousing() != null) {
+            builder.append("Housing: ")
+                    .append(person.getHousing())
+                    .append("; ");
+        }
+        if (person.getLink() != null) {
+            builder.append("Link: ")
+                    .append(person.getLink())
+                    .append("; ");
+        }
+        if (!person.getTags().isEmpty()) {
+            builder.append("Tags: ");
+            person.getTags().forEach(builder::append);
+        }
         return builder.toString();
     }
 

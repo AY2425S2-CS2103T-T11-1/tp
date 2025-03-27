@@ -41,9 +41,9 @@ class JsonAdaptedPerson {
      */
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
-            @JsonProperty("email") String email, @JsonProperty("year") String year, @JsonProperty("major") String major,
-            @JsonProperty("housing") String housing, @JsonProperty("link") String link,
-            @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+            @JsonProperty("email") String email, @JsonProperty("year") String year,
+            @JsonProperty("major") String major, @JsonProperty("housing") String housing,
+            @JsonProperty("link") String link, @JsonProperty("tags") List<JsonAdaptedTag> tags) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -61,12 +61,12 @@ class JsonAdaptedPerson {
      */
     public JsonAdaptedPerson(Person source) {
         name = source.getName().fullName;
-        phone = source.getPhone().value;
-        email = source.getEmail().value;
-        year = String.valueOf(source.getYear().value);
-        major = source.getMajor().value;
-        housing = source.getHousing().value;
-        link = source.getLink().value;
+        phone = source.getPhone() != null ? source.getPhone().value : null;
+        email = source.getEmail() != null ? source.getEmail().value : null;
+        year = source.getYear() != null ? String.valueOf(source.getYear().value) : null;
+        major = source.getMajor() != null ? source.getMajor().value : null;
+        housing = source.getHousing() != null ? source.getHousing().value : null;
+        link = source.getLink() != null ? source.getLink().value : null;
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
@@ -75,7 +75,8 @@ class JsonAdaptedPerson {
     /**
      * Converts this Jackson-friendly adapted person object into the model's {@code Person} object.
      *
-     * @throws IllegalValueException if there were any data constraints violated in the adapted person.
+     * @throws IllegalValueException if there were any data constraints violated in the adapted
+     *         person.
      */
     public Person toModelType() throws IllegalValueException {
         final List<Tag> personTags = new ArrayList<>();
@@ -84,64 +85,71 @@ class JsonAdaptedPerson {
         }
 
         if (name == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));
+            throw new IllegalValueException(
+                    String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName()));
         }
         if (!Name.isValidName(name)) {
             throw new IllegalValueException(Name.MESSAGE_CONSTRAINTS);
         }
         final Name modelName = new Name(name);
 
+        Phone modelPhone;
         if (phone == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName()));
-        }
-        if (!Phone.isValidPhone(phone)) {
+            modelPhone = null;
+        } else if (!Phone.isValidPhone(phone)) {
             throw new IllegalValueException(Phone.MESSAGE_CONSTRAINTS);
+        } else {
+            modelPhone = new Phone(phone);
         }
-        final Phone modelPhone = new Phone(phone);
 
+        Email modelEmail;
         if (email == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Email.class.getSimpleName()));
-        }
-        if (!Email.isValidEmail(email)) {
+            modelEmail = null;
+        } else if (!Email.isValidEmail(email)) {
             throw new IllegalValueException(Email.MESSAGE_CONSTRAINTS);
+        } else {
+            modelEmail = new Email(email);
         }
-        final Email modelEmail = new Email(email);
 
+        Year modelYear;
         if (year == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Year.class.getSimpleName()));
-        }
-        if (!Year.isValidYear(year)) {
+            modelYear = null;
+        } else if (!Year.isValidYear(year)) {
             throw new IllegalValueException(Year.MESSAGE_CONSTRAINTS);
+        } else {
+            modelYear = Year.fromString(year);
         }
-        final Year modelYear = Year.fromString(year);
 
+        Link modelLink;
         if (link == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Link.class.getSimpleName()));
-        }
-        if (!Link.isValidLink(link)) {
+            modelLink = null;
+        } else if (!Link.isValidLink(link)) {
             throw new IllegalValueException(Link.MESSAGE_CONSTRAINTS);
+        } else {
+            modelLink = new Link(link);
         }
-        final Link modelLink = new Link(link);
 
-
+        Major modelMajor;
         if (major == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Major.class.getSimpleName()));
-        }
-        if (!Major.isValidMajor(major)) {
+            modelMajor = null;
+        } else if (!Major.isValidMajor(major)) {
             throw new IllegalValueException(Major.MESSAGE_CONSTRAINTS);
+        } else {
+            modelMajor = new Major(major);
         }
-        final Major modelMajor = new Major(major);
 
+        Housing modelHousing;
         if (housing == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Housing.class.getSimpleName()));
-        }
-        if (!Housing.isValidHousing(housing)) {
+            modelHousing = null;
+        } else if (!Housing.isValidHousing(housing)) {
             throw new IllegalValueException(Housing.MESSAGE_CONSTRAINTS);
+        } else {
+            modelHousing = new Housing(housing);
         }
-        final Housing modelHousing = new Housing(housing);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelYear, modelMajor, modelHousing, modelLink, modelTags);
+        return new Person(modelName, modelPhone, modelEmail, modelYear, modelMajor, modelHousing,
+                modelLink, modelTags);
     }
 
 }
