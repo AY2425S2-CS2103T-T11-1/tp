@@ -2,12 +2,13 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.logging.Logger;
+
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.person.ModContainsKeywordsPredicate;
 
-import java.util.logging.Logger;
 
 /**
  * Finds and lists all persons in address book whose name contains any of the argument keywords.
@@ -25,7 +26,12 @@ public class FindModCommand extends Command {
     private static final Logger logger = Logger.getLogger(FindModCommand.class.getName());
 
     private final ModContainsKeywordsPredicate predicate;
-
+    /**
+     * Constructs a {@code FindModCommand} with the specified {@code ModContainsKeywordsPredicate}.
+     * This constructor initializes the command with the provided predicate and logs the creation of the command.
+     *
+     * @param predicate The predicate to filter persons by module enrollment.
+     */
     public FindModCommand(ModContainsKeywordsPredicate predicate) {
         this.predicate = predicate;
         logger.info("FindModCommand created with predicate: " + predicate);
@@ -38,7 +44,8 @@ public class FindModCommand extends Command {
 
         model.updateFilteredPersonList(predicate);
 
-        String resultMessage = String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW, model.getFilteredPersonList().size());
+        String resultMessage = String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW,
+                model.getFilteredPersonList().size());
         logger.info("Command executed successfully, " + model.getFilteredPersonList().size() + " persons found.");
 
         return new CommandResult(resultMessage);
@@ -69,3 +76,4 @@ public class FindModCommand extends Command {
                 .toString();
     }
 }
+
