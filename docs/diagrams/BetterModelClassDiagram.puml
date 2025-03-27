@@ -13,13 +13,12 @@ UniqueTagList -right-> "*" Tag
 UniquePersonList -right-> Person
 
 Person -up-> "*" Tag
-
-Person *--> Name
-Person *--> Phone
-Person *--> Email
-Person *--> Housing
-Person *--> Link
-Person *--> Major
-Person *--> Year
+Person *--> "1" Name
+Person *--> "0..1" Phone
+Person *--> "0..1" Email
+Person *--> "0..1" Housing
+Person *--> "0..1" Link
+Person *--> "0..1" Major
+Person *--> "0..1" Year
 
 @enduml
