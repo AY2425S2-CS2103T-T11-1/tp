@@ -19,7 +19,10 @@ public class FindModCommandParser implements Parser<FindModCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the FindModCommand
      * and returns a FindModCommand object for execution.
-     * @throws ParseException if the user input does not conform the expected format
+     *
+     * @param args The input arguments provided by the user.
+     * @return A new FindModCommand object containing the parsed module keywords.
+     * @throws ParseException if the user input does not conform to the expected format.
      */
     public FindModCommand parse(String args) throws ParseException {
         logger.info("Parsing arguments: " + args);

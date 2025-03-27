@@ -25,7 +25,7 @@ public class PersonBuilder {
     public static final String DEFAULT_HOUSING = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_YEAR = "1";
     public static final String DEFAULT_MAJOR = "Computer Science";
-    public static final String DEFAULT_LINK = "https://nusmods.com/timetable/";
+    public static final String DEFAULT_LINK = "https://nusmods.com/timetable/sem-1/share?CS1010=TUT:06,LAB:E07";
 
     private Name name;
     private Phone phone;
@@ -84,6 +84,10 @@ public class PersonBuilder {
      * Sets the {@code Housing} of the {@code Person} that we are building.
      */
     public PersonBuilder withHousing(String housing) {
+        if (housing == null) {
+            this.housing = null;
+            return this;
+        }
         this.housing = new Housing(housing);
         return this;
     }
@@ -92,6 +96,10 @@ public class PersonBuilder {
      * Sets the {@code Year} of the {@code Person} that we are building.
      */
     public PersonBuilder withYear(String year) {
+        if (year == null) {
+            this.year = null;
+            return this;
+        }
         this.year = Year.fromString(year);
         return this;
     }
@@ -100,6 +108,10 @@ public class PersonBuilder {
      * Sets the {@code Major} of the {@code Person} that we are building.
      */
     public PersonBuilder withMajor(String major) {
+        if (major == null) {
+            this.major = null;
+            return this;
+        }
         this.major = new Major(major);
         return this;
     }
@@ -108,6 +120,10 @@ public class PersonBuilder {
      * Sets the {@code Phone} of the {@code Person} that we are building.
      */
     public PersonBuilder withPhone(String phone) {
+        if (phone == null) {
+            this.phone = null;
+            return this;
+        }
         this.phone = new Phone(phone);
         return this;
     }
@@ -116,6 +132,10 @@ public class PersonBuilder {
      * Sets the {@code Email} of the {@code Person} that we are building.
      */
     public PersonBuilder withEmail(String email) {
+        if (email == null) {
+            this.email = null;
+            return this;
+        }
         this.email = new Email(email);
         return this;
     }
@@ -124,6 +144,10 @@ public class PersonBuilder {
      * Sets the {@code Link} of the {@code Person} that we are building.
      */
     public PersonBuilder withLink(String link) {
+        if (link == null) {
+            this.link = null;
+            return this;
+        }
         this.link = new Link(link);
         return this;
     }

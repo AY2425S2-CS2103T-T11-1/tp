@@ -1,0 +1,16 @@
+@startuml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
+start
+:User inputs command to add person;
+:System checks if input is valid;
+
+if () then ([input is valid])
+    :New person is added;
+    :System indicates success;
+else ([else])
+:System indicates error;
+endif
+stop
+@enduml

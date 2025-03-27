@@ -4,6 +4,9 @@
 /bin/
 src/main/resources/docs/
 
+# VSCode files
+/.vscode/
+
 # IDEA files
 /.idea/
 /out/
