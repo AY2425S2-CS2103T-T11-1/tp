@@ -19,7 +19,7 @@ Class Email
 Class Name
 Class Phone
 Class Tag
-Class ModuleCode
+Class Link
 
 Class I #FFFFFF
 }
@@ -43,7 +43,7 @@ Person *--> "0..1" Phone
 Person *--> "0..1" Email
 Person *--> "0..1" Address
 Person *--> "*" Tag
-Person *--> "*" ModuleCode
+Person *--> "0..1" Link
 
 Person -[hidden]up--> I
 UniquePersonList -[hidden]right-> I
