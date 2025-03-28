@@ -1,5 +1,6 @@
 ---
 layout: page
+nav_exclude: true
 title: John Doe's Project Portfolio Page
 ---
 
