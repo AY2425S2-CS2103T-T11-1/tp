@@ -163,7 +163,7 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
-* `find Huazhi` returns `Huazhi` 
+* `find Huazhi` returns `Huazhi`
 * `find Abi Yuexi` returns `Abi`, `Yuexi`<br>
   ![result for 'find Abi Yuexi'](images/findAbiYuexi.png)
 
