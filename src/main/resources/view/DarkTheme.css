@@ -136,6 +136,16 @@
     -fx-font-family: "Segoe UI";
     -fx-font-size: 13px;
     -fx-text-fill: rgb(130, 180, 240);
+    -fx-padding: 0 0 0 0; /* No extra padding */
+    -fx-alignment: center-left; /* Aligns text properly */
+}
+
+.hyperlink {
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: rgb(130, 180, 240);
+    -fx-background-color: transparent;
+    -fx-padding: 0; /* Make sure no extra padding is affecting alignment */
 }
 
 .stack-pane {
