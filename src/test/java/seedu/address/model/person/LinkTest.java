@@ -36,6 +36,7 @@ public class LinkTest {
         // invalid parts
         assertFalse(Link.isValidLink("www.nusmods.com/timetable/sem-2/share?CS2101")); // missing https
         // valid link
+        assertTrue(Link.isValidLink(Link.TA_EXAMPLE));
         assertTrue(Link.isValidLink("https://nusmods.com/timetable/sem-2/share?CS2101"));
         assertTrue(Link.isValidLink("https://nusmods.com/timetable/sem-1/share?"));
     }
@@ -52,6 +53,8 @@ public class LinkTest {
         codes =
             Link.extractCodes("https://nusmods.com/timetable/st-ii/share?AH3550=&CS1010E=TUT:05,SEC:1&MA3289=");
         assertTrue(codes.size() == 3);
+        codes = Link.extractCodes(Link.TA_EXAMPLE);
+        assertTrue(codes.contains("CS3230 (TA)"));
     }
 
     @Test
