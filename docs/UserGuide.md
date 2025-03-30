@@ -5,8 +5,15 @@ title: User Guide
 
 # NUSMates User Guide
 
-NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students. With NUSMates, you can record NUS-specific contact information such as [year](#year), [major](#major), housing, and [modules](#module).
+NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students. With NUSMates, you can record NUS-specific contact information such as [year](#year), [major](#major), [housing](#housing), and [modules](#module).
 NUSMates also makes it seamless to record [module](#module) information using an [NUSMods link](#nusmods-link), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
+
+#### You will love NUSMates if you are:
+* An NUS undergraduate student who frequently uses NUSMods
+* Socially active in NUS with a need to manage the contacts of your fellow NUS undergraduate students
+* Frequently use NUSMods to plan, record, and share your course schedules
+* Tech-savvy and familiar with installing jar files
+* Can type fast and prefer using CLI apps over mouse interactions
 
 > 💡 You can quickly look up all commands in the [Command Summary](#command-summary), or check the [Glossary](#glossary) if you’re unsure about any technical terms used.
 
@@ -40,11 +47,11 @@ NUSMates also makes it seamless to record [module](#module) information using an
 1. Make sure you have **[Java](#java) 17 or later** installed in your computer.<br>
    ⚠️ **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-2. Download the latest `[.jar file](#jar-file)` from [here](#https://github.com/AY2425S2-CS2103T-T11-1/tp/releases).
+2. Download the latest `[.jar file]` from [here](https://github.com/AY2425S2-CS2103T-T11-1/tp/releases).
 
 3. Copy the file to the [home folder](#home-folder) you want to use as the [home folder](#home-folder) for NUSMates. NUSMates will later generate files in this folder, including save data.
 
-4. Open a [terminal](#terminal) and `cd` into the folder you put the `[.jar file](#jar-file)` in.
+4. Open a [terminal](#terminal) and `cd` into the folder you put the `[.jar file]` in.
 
 5. Use the command `java -jar nusmates.jar` to run the application.
    A [GUI](#gui) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
@@ -70,27 +77,29 @@ NUSMates also makes it seamless to record [module](#module) information using an
 ## Command Summary
 💡 For more detailed information regarding the command format and each command, refer to the [Features](#features) section.
 
-| Command     | Format, Examples                                                                                                                                                                                                                                                       |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMODS_LINK] t/[tag](#tag)…​` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
-| **Edit**    | `edit [index](#index) n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMODS_LINK] t/[tag](#tag)…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                    |
-| **Delete**  | `delete [index](#index)`<br> e.g., `delete 3`                                                                                                                                                                                                                          |
-| **Find**    | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                                                                                                                          |
-| **FindMod** | `findMod KEYWORD...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                                |
-| **List**    | `list`                                                                                                                                                                                                                                                                 |
-| **Clear**   | `clear`                                                                                                                                                                                                                                                                |
-| **Exit**    | `exit`                                                                                                                                                                                                                                                                 |
-| **Help**    | `help`                                                                                                                                                                                                                                                                 |
+| Command     | Format, Examples                                                                                                                                                                                                                                              |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
+| **Edit**    | `edit index n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                              |
+| **Delete**  | `delete index`<br> e.g., `delete 3`                                                                                                                                                                                                                           |
+| **Find**    | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                                                                                                                 |
+| **FindMod** | `findMod KEYWORD...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                       |
+| **List**    | `list`                                                                                                                                                                                                                                                        |
+| **Clear**   | `clear`                                                                                                                                                                                                                                                       |
+| **Exit**    | `exit`                                                                                                                                                                                                                                                        |
+| **Help**    | `help`                                                                                                                                                                                                                                                        |
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Features
 
-> 💡 Notes about the command format:
-> * Words in `UPPER_CASE` are the [parameters](#parameter) you must supply when entering the command.<br>
+#### Notes about the command format:
+* Words in `UPPER_CASE` are the [parameters](#parameter) you must supply when entering the command.<br>
   e.g. in `add n/NAME`, `NAME` is a [parameter](#parameter) which can be used as `add n/John Doe`.
-> * Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/[tag](#tag)]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+* Items with `…`​ after them can be used multiple times including zero times.<br>
+    e.g. `[t/tag]...` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+
+> 💡 Tips and advice
 > * [Parameters](#parameter) can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 > * ⚠️ If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
@@ -99,12 +108,12 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 Adds a person to NUSMates.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMODS_LINK] t/[tag](#tag)…​`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...`
 
 * All parameters **except for `NAME`** are optional.<br>
 e.g. You can add a contact with only name, [year](#year), and [major](#major) using `add n/John Doe y/2 m/Computer Science`<br>
 * A person can have any number of **[tags](#tag)**, including none.<br>
-* `LINK` refers to the student's [NUSMods link](#nusmods-link) course schedule original link.
+* `NUSMODS_LINK` refers to the student's [NUSMods link](#nusmods-link) course schedule original link.
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
@@ -112,14 +121,13 @@ Examples:
 
 > 💡For details on the NUSMods link parameter and how to get it, read [here](#how-to-get-the-nusmods-link)
 
-###
 ### Editing a person : `edit`
 
 Edits an existing person in NUSMates.
 
-Format: `edit [index](#index) n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/[NUSMODS_LINK] t/[tag](#tag)…​`
+Format: `edit INDEX n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...`
 
-* `[Index](#index)` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
+* `Index` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
 * At least one of the [parameters](#parameter) must be provided.
 * Existing values will be updated to the input values.
 * For all fields except `name`, you can set it to nothing by typing the prefix without anything following it. <br>
@@ -130,14 +138,13 @@ Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing [tags](#tag).
 
-###
 ### Deleting a person : `delete`
 
 Deletes the specified person from the address book.
 
-Format: `delete [index](#index)`
+Format: `delete INDEX`
 
-* Deletes the person at the specified `[index](#index)`.
+* Deletes the person at the specified `index`.
 * The [index](#index) refers to the [index](#index) number shown in the displayed person list.
 * The [index](#index) **must be a positive integer** 1, 2, 3, …​
 
@@ -145,7 +152,6 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd person in the address book.
 * `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
 
-###
 ### Locating persons by name: `find`
 
 Finds persons whose names contain any of the given keywords.
@@ -160,11 +166,10 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
-* `find John` returns `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `find Huazhi` returns `Huazhi` 
+* `find Abi Yuexi` returns `Abi`, `Yuexi`<br>
+  ![result for 'find Abi Yuexi'](images/findAbiYuexi.png)
 
-###
 ### Locating persons by [module](#module): `findMod`
 
 Finds persons who's [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
@@ -181,28 +186,24 @@ Examples:
 * `findMod CS2109S` returns `Abi, Yuexi`
   ![result for 'findMod CS2109S'](images/findCS2109Sresult.png)
 
-###
 ### Listing all persons : `list`
 
 Shows a list of all persons in the address book.
 
 Format: `list`
 
-###
 ### Clearing all entries : `clear`
 
 Clears all entries from the address book.
 
 Format: `clear`
 
-###
 ### Exiting the program : `exit`
 
 Exits the program.
 
 Format: `exit`
 
-###
 ### Viewing help : `help`
 
 Shows a message explaining how to access the help page.
@@ -211,7 +212,6 @@ Shows a message explaining how to access the help page.
 
 Format: `help`
 
-###
 ### Saving and editing the data [file](#json-file)
 
 NUSMates data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
@@ -242,7 +242,7 @@ Click on the `Show original link` button to convert the shortened NUSMods link t
 Copy the link, and you're done!
 ![nusmods_step3.png](images/nusmods_step3.png)
 
-You can now use this link as the `l/[NUSMODS_LINK]` parameter in the [add](#adding-a-person-add) or [edit](#editing-a-person--edit) commands.
+You can now use this link as the `l/NUSMODS_LINK` parameter in the [add](#adding-a-person-add) or [edit](#editing-a-person--edit) commands.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -372,3 +372,6 @@ The primary field of study that a student is specialising in at NUS, such as Com
 
 ### Year
 Refers to the student's current year of study at NUS, e.g., Year 1 (first-year student), Year 2, and so on.
+
+### Housing
+Refers to the student's housing option at NUS or where they live in general such as UTown Residence, Lighthouse, or their address off campus.
