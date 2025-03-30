@@ -189,7 +189,7 @@ Examples:
 
 ### Locating persons by [module](#module): `findMod`
 
-Finds persons who's [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
+Finds persons whose [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
 
 Format: `findMod KEYWORD [MORE_KEYWORDS]`
 
