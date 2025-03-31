@@ -4,8 +4,12 @@
 }
 
 .list-cell:empty {
-    /* Empty cells will not have alternating colours */
+    /* Empty cells will not have alternating colours and no border*/
     -fx-background: #222324;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
 }
 
 .tag-selector {
