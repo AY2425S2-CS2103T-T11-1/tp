@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import seedu.address.model.mod.ModuleCode;
+
 /**
  * Represents a Person's NUSMods link in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidLink(String)}
@@ -104,10 +106,16 @@ public class Link {
                     }
                 }
             }
-            return true;
         } catch (URISyntaxException e) {
             return false;
         }
+        Set<String> codes = extractCodes(test);
+        for (String code : codes) {
+            if (!ModuleCode.isValidModuleCode(code)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
