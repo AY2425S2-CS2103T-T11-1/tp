@@ -28,14 +28,19 @@
         </Label>
         <Label fx:id="name" text="\$first" styleClass="cell_big_label" />
       </HBox>
+      <Region prefHeight="5" />
       <FlowPane fx:id="tags" />
+      <Region prefHeight="5" />
       <FlowPane fx:id="modules" />
+      <Region prefHeight="5" />
       <Label fx:id="year" styleClass="cell_small_label" text="\$year" />
       <Label fx:id="major" styleClass="cell_small_label" text="\$major" />
       <Label fx:id="phone" styleClass="cell_small_label" text="\$phone" />
       <Label fx:id="housing" styleClass="cell_small_label" text="\$housing" />
       <Label fx:id="email" styleClass="cell_small_label" text="\$email" />
-      <Hyperlink fx:id="link" styleClass="cell_middle_label" text="check schedule" />
+      <HBox spacing="0.5" alignment="CENTER_LEFT">
+        <Hyperlink fx:id="link" styleClass="cell_middle_label" text="NUSMods Schedule" />
+      </HBox>
     </VBox>
   </GridPane>
 </HBox>

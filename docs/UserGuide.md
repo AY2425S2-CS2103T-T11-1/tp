@@ -15,14 +15,15 @@ NUSMates also makes it seamless to record [module](#module) information using an
 * Tech-savvy and familiar with installing jar files
 * Can type fast and prefer using CLI apps over mouse interactions
 
-> 💡 You can quickly look up all commands in the [Command Summary](#command-summary), or check the [Glossary](#glossary) if you’re unsure about any technical terms used.
+> 💡 You can quickly look up all commands in the [Command Summary](#command-summary), and check the [Glossary](#glossary) if you’re unsure about any technical terms used.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Table of Contents
 1. [Quick Start](#quick-start)
 2. [Command Summary](#command-summary)
-3. [Features](#features)
+3. [Storing a contact](#storing-a-contact)
+4. [Features](#features)
     1. [Adding a contact: `add`](#adding-a-person-add)
     2. [Editing a contact: `edit`](#editing-a-person--edit)
     3. [Deleting a contact: `delete`](#deleting-a-person--delete)
@@ -33,16 +34,16 @@ NUSMates also makes it seamless to record [module](#module) information using an
     8. [Exiting the app: `exit`](#exiting-the-program--exit)
     9. [Viewing help: `help`](#viewing-help--help)
    10. [Saving and editing the data file](#saving-and-editing-the-data-file)
-4. [How to get the NUSMods link](#how-to-get-the-nusmods-link)
-5. [Detailed installation guide](#detailed-installation-guide)
-6. [Troubleshooting](#troubleshooting)
-7. [Glossary](#glossary)
+5. [How to get the NUSMods link](#how-to-get-the-nusmods-link)
+6. [Detailed installation guide](#detailed-installation-guide)
+7. [Troubleshooting](#troubleshooting)
+8. [Glossary](#glossary)
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick Start
 
-> ⚠️ Having trouble installing the app or confused by any of the steps? Check out the [Detailed Installation Guide](#detailed-installation-guide) for step-by-step help.
+> 💡️ Having trouble installing the app or confused by any of the steps? Check out the [Detailed Installation Guide](#detailed-installation-guide) for step-by-step help.
 
 1. Make sure you have **[Java](#java) 17 or later** installed in your computer.<br>
    ⚠️ **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
@@ -73,9 +74,8 @@ NUSMates also makes it seamless to record [module](#module) information using an
 7. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
-
 ## Command Summary
-💡 For more detailed information regarding the command format and each command, refer to the [Features](#features) section.
+> 💡 For more detailed information regarding the command format and each command, refer to the [Features](#features) section.
 
 | Command     | Format, Examples                                                                                                                                                                                                                                              |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -91,24 +91,40 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 --------------------------------------------------------------------------------------------------------------------
 
+## Storing a contact
+
+This section explains the meaning of each contact field you can include when storing a contact. These fields are also used as parameters in some commands.
+
+| Field         | Explanation                                                                                                                                                                                    |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `n/NAME`      | The name of the person. This is the only required field.                                                                                                                                       |
+| `p/PHONE`     | The person’s phone number.                                                                                                                                                                     |
+| `e/EMAIL`     | The person’s email address.                                                                                                                                                                    |
+| `y/YEAR`      | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>Year can take values from 1 to 6, which is the maximum candidature period                                                  |
+| `m/MAJOR`     | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   |
+| `h/HOUSING`   | Where the person stays, such as UTown Residence or off-campus.                                                                                                                                 |
+| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking.                                                                                              |
+| `t/TAG`       | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! |
+
+
+--------------------------------------------------------------------------------------------------------------------
+
 ## Features
 
 #### Notes about the command format:
-* Words in `UPPER_CASE` are the [parameters](#parameter) you must supply when entering the command.<br>
+* Words in `UPPER_CASE` are the [parameters](#parameter) you must supply when entering commands such as `add` or `edit`.<br>
   e.g. in `add n/NAME`, `NAME` is a [parameter](#parameter) which can be used as `add n/John Doe`.
-* Items with `…`​ after them can be used multiple times including zero times.<br>
-    e.g. `[t/tag]...` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
-
-> 💡 Tips and advice
-> * [Parameters](#parameter) can be in any order.<br>
-  e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
-> * ⚠️ If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
+* Items with `…`​ after them can be used multiple times.<br>
+  e.g. `[t/tag]...` can be used as `t/NUS Amplified`, `t/NUS Amplified t/NUS Computing Club` etc.
+* [Parameters](#parameter) can be in any order.<br>
+    e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
+* ⚠️ If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 ### Adding a person: `add`
 
 Adds a person to NUSMates.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
 
 * All parameters **except for `NAME`** are optional.<br>
 e.g. You can add a contact with only name, [year](#year), and [major](#major) using `add n/John Doe y/2 m/Computer Science`<br>
@@ -119,13 +135,13 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com y/1 m/Electrical Engineering h/PGPR p/1234567 l/https://nusmods.com/timetable/sem-2/share?CS2040=TUT:12,LAB:06,LEC:1`
 
-> 💡For details on the NUSMods link parameter and how to get it, read [here](#how-to-get-the-nusmods-link)
+> 💡 For details on the NUSMods link parameter and how to get it, read [here](#how-to-get-the-nusmods-link)
 
 ### Editing a person : `edit`
 
 Edits an existing person in NUSMates.
 
-Format: `edit INDEX n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...`
+Format: `edit INDEX n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
 
 * `Index` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
 * At least one of the [parameters](#parameter) must be provided.
@@ -156,9 +172,10 @@ Examples:
 
 Finds persons whose names contain any of the given keywords.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+Format: `find KEYWORD...`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
+* You can use multiple keywords separated by spaces, e.g. `Hans Bo`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 * Only the name is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`
@@ -172,7 +189,7 @@ Examples:
 
 ### Locating persons by [module](#module): `findMod`
 
-Finds persons who's [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
+Finds persons whose [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
 
 Format: `findMod KEYWORD [MORE_KEYWORDS]`
 
@@ -356,7 +373,7 @@ A specific piece of information the user provides when entering a command. Param
 A number that represents the position of a contact in the list shown in the app. For example, the first contact has index 1.
 
 ### Tag
-A label you can add to a contact to help categorise them, e.g. `t/friend` or `t/project`.
+A label you can add to a contact to help categorise them, such as storing CCA information e.g. `t/NUS Amplified` or `t/NUS Computing Club`.
 
 ### JSON file
 A type of file used to store data in a structured format. NUSMates uses a JSON file to save your contact data.
