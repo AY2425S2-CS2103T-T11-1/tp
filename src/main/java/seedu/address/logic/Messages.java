@@ -73,6 +73,12 @@ public class Messages {
             builder.append("Tags: ");
             person.getTags().forEach(builder::append);
         }
+
+        int length = builder.length();
+        if (length > 0 && builder.charAt(length - 2) == ';') {
+            builder.delete(length - 2, length);
+        }
+
         return builder.toString();
     }
 
