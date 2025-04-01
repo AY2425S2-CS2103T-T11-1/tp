@@ -266,12 +266,14 @@ _{Explain here how the data archiving feature will be implemented}_
 
 **Target user profile**:
 
-NUS students who
-* want to make more connections with other students
-* want to find course mates
-* is reasonably comfortable using CLI apps
+NUS undergraduate students who
+* frequently use NUSMods to plan, record, and share their course schedules
+* are socially active in NUS with a need to manage the contacts of their fellow NUS undergraduate students
+* are tech-savvy and familiar with installing jar files
+* can type fast and prefer using CLI apps over mouse interactions
 
-**Value proposition**: Able to save contacts of other NUS students with NUS-specific information (ex. Year, major, modules taken by each person, housing, CCAs).
+**Value proposition**: NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students with NUS-specific contact information such as year, major, housing, and modules. 
+Tailored towards frequent NUSMods users, the app makes it seamless to record module information using NUSMods links, helping users easily find friends who are taking the same modules - so they can form project groups, share notes, or know who to reach out to for help.
 
 ### User stories
 
@@ -366,7 +368,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Use Case: UC03 -- Link Contacts to NUSMods Timetable**
 
-**Actor: NUS Student**
+**Actor: NUS Undergraduate Student**
 
 **MSS**
 1. User provides contact to link and link to timetable.
@@ -387,7 +389,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Use Case: UC04 -- Updating NUSMods Venue and Schedule**
 
-**Actor: NUS Student**
+**Actor: NUS Undergraduate Student**
 
 **Guarantees**
 
