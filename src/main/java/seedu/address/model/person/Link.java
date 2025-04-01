@@ -52,7 +52,7 @@ public class Link {
                 String value = pair.substring(equalPos + 1);
                 if ("ta".equals(key)) {
                     // Process the "ta" parameter: split by comma to get individual module codes
-                    String[] taModules = value.split(",");
+                    String[] taModules = value.split("\\),");
                     for (String taModule : taModules) {
                         int parenIndex = taModule.indexOf('(');
                         String code = taModule.substring(0, parenIndex);
