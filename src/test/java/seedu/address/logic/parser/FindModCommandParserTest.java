@@ -51,21 +51,21 @@ public class FindModCommandParserTest {
     @Test
     public void parse_invalidModuleCode_throwsParseException() {
         String userInput = "qweqweqwe";
-        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindModCommand.MESSAGE_USAGE);
+        String expectedMessage = String.format("ModuleCode format invalid!\n" + MESSAGE_INVALID_COMMAND_FORMAT, FindModCommand.MESSAGE_USAGE);
         assertParseFailure(parser, userInput, expectedMessage);
     }
 
     @Test
     public void parse_notAllValidModuleCode_throwsParseException() {
         String userInput = "qweqweqwe CS2103T";
-        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindModCommand.MESSAGE_USAGE);
+        String expectedMessage = String.format("ModuleCode format invalid!\n" + MESSAGE_INVALID_COMMAND_FORMAT, FindModCommand.MESSAGE_USAGE);
         assertParseFailure(parser, userInput, expectedMessage);
     }
 
     @Test
     public void parse_notAllValidModuleCode_throwsParseException2() {
         String userInput = "CS2103T 123123";
-        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindModCommand.MESSAGE_USAGE);
+        String expectedMessage = String.format("ModuleCode format invalid!\n" + MESSAGE_INVALID_COMMAND_FORMAT, FindModCommand.MESSAGE_USAGE);
         assertParseFailure(parser, userInput, expectedMessage);
     }
 }
