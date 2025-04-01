@@ -36,8 +36,9 @@ NUSMates also makes it seamless to record [module](#module) information using an
    10. [Saving and editing the data file](#saving-and-editing-the-data-file)
 5. [How to get the NUSMods link](#how-to-get-the-nusmods-link)
 6. [Detailed installation guide](#detailed-installation-guide)
-7. [Troubleshooting](#troubleshooting)
-8. [Glossary](#glossary)
+7. [FAQ](#FAQ)
+8. [Troubleshooting](#troubleshooting)
+9. [Glossary](#glossary)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -337,11 +338,33 @@ If everything works, a window will pop up showing NUSMates with some sample cont
 
 --------------------------------------------------------------------------------------------------------------------
 
+## FAQ
+
+**Q**: How do I transfer my data to another Computer?<br>
+**A**: Install the app in the other computer and overwrite the empty data [file](#json-file) it creates with the [file](#json-file) that contains the data of your previous AddressBook [home folder](#home-folder).
+
+**Q**:  Can I use NUSMates on my mobile device?<br>
+**A**: NUSMates is a command-line application that may not be optimized for mobile devices. 
+It’s best used on desktop environments where a terminal or command prompt is available.
+
+**Q**: How do I get the NUSMods link?<br>
+**A**: You may refer to the detailed step-by-step guide [here](#how-to-get-the-nusmods-link).
+
+**Q**: Can I add two contacts with the same name?<br>
+**A**: No, AddressBook3 (AB3) does not allow duplicate names when adding contacts. 
+Each contact must have a unique name in the system.
+To add multiple people with the same name, distinguish them in some way such as adding a descriptor (e.g., John Doe (Work)) or a number (Amy1, Amy2).
+
+**Q**: Can I edit a contact's module information manually?<br>
+**A**: No, a contact's module information is automatically retrieved from the NUSMods link they provided.
+If their schedule changes, simply ask them to send you the updated link, and you can update their module information using the [edit](#editing-a-person--edit) command.
+
+--------------------------------------------------------------------------------------------------------------------
+
 ## Troubleshooting
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the [GUI](#gui) will open off-screen. The remedy is to delete the `preferences.json` [file](#json-file) created by the application before running the application again.
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
-3. **To transfer your data to another computer,** install the app in the other computer and overwrite the empty data [file](#json-file) it creates with the [file](#json-file) that contains the data of your previous AddressBook [home folder](#home-folder).
 
 --------------------------------------------------------------------------------------------------------------------
 
