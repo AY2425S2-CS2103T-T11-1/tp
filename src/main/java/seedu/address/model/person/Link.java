@@ -79,7 +79,6 @@ public class Link {
      * Returns if a given string is a valid NUSMods timetable link.
      */
     public static boolean isValidLink(String test) {
-        System.out.println(test);
         try {
             URI uri = new URI(test);
             // Validate scheme and host.
