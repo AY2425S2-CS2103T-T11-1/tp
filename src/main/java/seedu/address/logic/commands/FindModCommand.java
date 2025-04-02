@@ -44,9 +44,17 @@ public class FindModCommand extends Command {
         logger.info("Executing FindModCommand with predicate: " + predicate);
 
         model.updateFilteredPersonList(predicate);
+        String resultMessage;
 
-        String resultMessage = String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW,
-                model.getFilteredPersonList().size());
+        if (model.getFilteredPersonList().size() == 1) {
+            resultMessage = String.format(Messages.MESSAGE_PERSON_LISTED_OVERVIEW,
+                    model.getFilteredPersonList().size());
+        } else {
+            resultMessage = String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW,
+                    model.getFilteredPersonList().size());
+        }
+
+
         logger.info("Command executed successfully, " + model.getFilteredPersonList().size() + " persons found.");
 
         return new CommandResult(resultMessage);

@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.Messages.MESSAGE_PERSONS_LISTED_OVERVIEW;
+import static seedu.address.logic.Messages.MESSAGE_PERSON_LISTED_OVERVIEW;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.BENSON;
@@ -70,7 +71,7 @@ public class FindModCommandTest {
 
     @Test
     public void execute_singlePersonFound() {
-        String expectedMessage = String.format(MESSAGE_PERSONS_LISTED_OVERVIEW, 1);
+        String expectedMessage = String.format(MESSAGE_PERSON_LISTED_OVERVIEW, 1);
         ModContainsKeywordsPredicate predicate = preparePredicate("CS3230");
         FindModCommand command = new FindModCommand(predicate);
         expectedModel.updateFilteredPersonList(predicate);
@@ -82,6 +83,16 @@ public class FindModCommandTest {
     public void execute_multiplePersonsFound() {
         String expectedMessage = String.format(MESSAGE_PERSONS_LISTED_OVERVIEW, 6);
         ModContainsKeywordsPredicate predicate = preparePredicate("CS2103T");
+        FindModCommand command = new FindModCommand(predicate);
+        expectedModel.updateFilteredPersonList(predicate);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
+        assertEquals(Arrays.asList(ALICE, BENSON, CARL, DANIEL, ELLE, GEORGE), model.getFilteredPersonList());
+    }
+
+    @Test
+    public void execute_multiplePersonsFound_multipleKeywords() {
+        String expectedMessage = String.format(MESSAGE_PERSONS_LISTED_OVERVIEW, 6);
+        ModContainsKeywordsPredicate predicate = preparePredicate("CS2103T CS2101");
         FindModCommand command = new FindModCommand(predicate);
         expectedModel.updateFilteredPersonList(predicate);
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
