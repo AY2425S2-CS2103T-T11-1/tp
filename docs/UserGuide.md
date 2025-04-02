@@ -135,6 +135,8 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com y/1 m/Electrical Engineering h/PGPR p/1234567 l/https://nusmods.com/timetable/sem-2/share?CS2040=TUT:12,LAB:06,LEC:1`
 
+Note: the application does not allow for two contacts to have the same name! However, other fields may have duplicates. 
+
 > 💡 For details on the NUSMods link parameter and how to get it, read [here](#how-to-get-the-nusmods-link)
 
 ### Editing a person : `edit`
@@ -198,6 +200,7 @@ Format: `findMod KEYWORD [MORE_KEYWORDS]`
 * Only the [module](#module) is searched.
 * Only full words will be matched e.g. `CS2103` will not match `CS2103T`
 * Persons matching at least one of the [modules](#module) searched will be returned (i.e. `OR` search).
+* Note that NUSMates can distinguish between modules added as student or as a TA on NUSMods. Modules with the TA option enabled are appended with a ` (TA)`, so `CS2030` would become `CS2030 (TA)` instead. 
 
 Examples:
 * `findMod CS2109S` returns `Abi, Yuexi`
@@ -225,7 +228,7 @@ Format: `exit`
 
 Shows a message explaining how to access the help page.
 
-![help message](images/helpMessage.png)
+![help message](images/helpCommand.png)
 
 Format: `help`
 
