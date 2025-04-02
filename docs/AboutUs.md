@@ -1,7 +1,10 @@
 ---
 layout: page
+nav_order: 4
 title: About Us
 ---
+
+# About Us
 
 We are CS2103T-T11 Team 1, a team based in the [School of Computing, National University of Singapore](https://www.comp.nus.edu.sg).
 
