@@ -20,7 +20,7 @@ public class MessagesTest {
         Person emptyPerson = new PersonBuilder().withName("Alice Pauline").withEmail(null)
                 .withHousing(null).withLink(null).withMajor(null).withPhone(null).withYear(null)
                 .build();
-        assertEquals(Messages.format(emptyPerson), "Alice Pauline; ");
+        assertEquals(Messages.format(emptyPerson), "Alice Pauline");
     }
 
 }

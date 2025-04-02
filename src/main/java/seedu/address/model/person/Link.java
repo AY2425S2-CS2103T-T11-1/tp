@@ -8,17 +8,20 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import seedu.address.model.mod.ModuleCode;
+
 /**
  * Represents a Person's NUSMods link in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidLink(String)}
  */
 public class Link {
-    public static final String MESSAGE_CONSTRAINTS =
-            "Link needs to be a valid NUSMods timetable link, e.g., "
+    public static final String MESSAGE_CONSTRAINTS = "Link needs to be a valid NUSMods timetable link, e.g., "
             + "https://nusmods.com/timetable/sem-1/share?CS1010=TUT:06,LAB:E07";
-    private static final Pattern PATH_PATTERN =
-        Pattern.compile("^/timetable/(sem-(?:1|2)|st-(?:i{1,2}))/share$");
+    public static final String TA_EXAMPLE = "https://nusmods.com/timetable/sem-2/share?CS2101=&CS2103T="
+            + "LEC:G12&CS3230=LEC:1,TUT:10&MA3211=LEC:1,TUT:2&ta=CS3230(TUT:10)";
+    private static final Pattern PATH_PATTERN = Pattern.compile("^/timetable/(sem-(?:1|2)|st-(?:i{1,2}))/share$");
     public final String value;
+
     /**
      * Constructs an {@code Link}.
      *
@@ -29,6 +32,7 @@ public class Link {
         checkArgument(isValidLink(link), MESSAGE_CONSTRAINTS);
         value = link;
     }
+
     /**
      * Extract Module Codes from a given link.
      */
@@ -44,13 +48,33 @@ public class Link {
         for (String pair : pairs) {
             int equalPos = pair.indexOf('=');
             if (equalPos != -1) {
-                codes.add(pair.substring(0, equalPos));
+                String key = pair.substring(0, equalPos);
+                String value = pair.substring(equalPos + 1);
+                if ("ta".equals(key)) {
+                    // Process the "ta" parameter: split by comma to get individual module codes
+                    String[] taModules = value.split("\\),");
+                    for (String taModule : taModules) {
+                        int parenIndex = taModule.indexOf('(');
+                        String code = taModule.substring(0, parenIndex);
+                        if (parenIndex != -1) {
+                            // Extract module code before '('
+                            codes.remove(code); // remove the module code without the suffix
+                            codes.add(code + " (TA)"); // add the module code with the suffix
+                        } else {
+                            codes.add(taModule);
+                        }
+                    }
+                } else {
+                    codes.add(key);
+                }
             } else {
                 codes.add(pair); // handles case with no '='
             }
         }
         return codes;
     }
+
+
     /**
      * Returns if a given string is a valid NUSMods timetable link.
      */
@@ -69,7 +93,8 @@ public class Link {
             }
             String query = uri.getQuery();
             if (query != null && !query.trim().isEmpty()) {
-                // Validate query parameters: each should be a key=value pair (value may be empty).
+                // Validate query parameters: each should be a key=value pair (value may be
+                // empty).
                 String[] pairs = query.split("&");
                 for (String pair : pairs) {
                     if (pair.isEmpty()) {
@@ -81,15 +106,23 @@ public class Link {
                     }
                 }
             }
-            return true;
         } catch (URISyntaxException e) {
             return false;
         }
+        Set<String> codes = extractCodes(test);
+        for (String code : codes) {
+            if (!ModuleCode.isValidModuleCode(code)) {
+                return false;
+            }
+        }
+        return true;
     }
+
     @Override
     public String toString() {
         return value;
     }
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -101,6 +134,7 @@ public class Link {
         Link otherLink = (Link) other;
         return value.equals(otherLink.value);
     }
+
     @Override
     public int hashCode() {
         return value.hashCode();

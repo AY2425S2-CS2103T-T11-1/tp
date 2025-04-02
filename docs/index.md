@@ -1,7 +1,10 @@
 ---
 layout: page
-title: NUSMates
+nav_order: 1
+title: Home
 ---
+
+# NUSMates
 
 [![CI Status](https://github.com/{{site.repository}}/workflows/Java%20CI/badge.svg)](https://github.com/{{site.repository}}/actions)
 [![codecov](https://codecov.io/gh/{{site.repository}}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{site.repository}})
