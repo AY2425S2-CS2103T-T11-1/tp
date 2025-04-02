@@ -79,7 +79,7 @@ public class AddressBookParserTest {
 
     @Test
     public void parseCommand_findMod() throws Exception {
-        List<String> keywords = Arrays.asList("foo", "bar", "baz");
+        List<String> keywords = Arrays.asList("CS2103T", "CS2101", "CS2100");
         FindModCommand command = (FindModCommand) parser.parseCommand(
                 FindModCommand.COMMAND_WORD + " " + keywords.stream().collect(Collectors.joining(" ")));
         assertEquals(new FindModCommand(new ModContainsKeywordsPredicate(keywords)), command);
