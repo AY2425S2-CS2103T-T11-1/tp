@@ -23,6 +23,8 @@ public class LinkTest {
 
     @Test
     public void isValidLink() {
+        String example = "https://nusmods.com/timetable/sem-2/share?CS2040S=TUT:60,REC:01,LEC:1&CS2101="
+            + "&CS2103T=LEC:G12&CS2109S=TUT:08,LEC:1&CS3230=TUT:06,LEC:1&MA2108S=TUT:1,LEC:1&ta=CS2040S(TUT:60,REC:01)";
         // null link
         assertThrows(NullPointerException.class, () -> Email.isValidEmail(null));
 
@@ -36,8 +38,10 @@ public class LinkTest {
         // invalid parts
         assertFalse(Link.isValidLink("www.nusmods.com/timetable/sem-2/share?CS2101")); // missing https
         // valid link
+        assertTrue(Link.isValidLink(Link.TA_EXAMPLE));
         assertTrue(Link.isValidLink("https://nusmods.com/timetable/sem-2/share?CS2101"));
         assertTrue(Link.isValidLink("https://nusmods.com/timetable/sem-1/share?"));
+        assertTrue(Link.isValidLink(example));
     }
 
     @Test
@@ -52,6 +56,8 @@ public class LinkTest {
         codes =
             Link.extractCodes("https://nusmods.com/timetable/st-ii/share?AH3550=&CS1010E=TUT:05,SEC:1&MA3289=");
         assertTrue(codes.size() == 3);
+        codes = Link.extractCodes(Link.TA_EXAMPLE);
+        assertTrue(codes.contains("CS3230 (TA)"));
     }
 
     @Test

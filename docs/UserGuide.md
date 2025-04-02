@@ -47,7 +47,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 4. Open a [terminal](#terminal) and `cd` into the folder you put the `[.jar file]` in.
 
-5. Use the command `java -jar nusmates.jar` to run the application.
+5. Use the command `java -jar "nusmates.jar"` to run the application.
    A [GUI](#gui) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
@@ -67,7 +67,6 @@ NUSMates also makes it seamless to record [module](#module) information using an
 > * `exit` : Exits the app.
 
 --------------------------------------------------------------------------------------------------------------------
-
 ## Command Summary
 
 {: .note }
@@ -84,6 +83,24 @@ NUSMates also makes it seamless to record [module](#module) information using an
 | **Clear**   | `clear`                                                                                                                                                                                                                                                       |
 | **Exit**    | `exit`                                                                                                                                                                                                                                                        |
 | **Help**    | `help`                                                                                                                                                                                                                                                        |
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Storing a contact
+
+This section explains the meaning of each contact field you can include when storing a contact. These fields are also used as parameters in some commands.
+
+| Field         | Explanation                                                                                                                                                                                    |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `n/NAME`      | The name of the person. This is the only required field.                                                                                                                                       |
+| `p/PHONE`     | The person’s phone number.                                                                                                                                                                     |
+| `e/EMAIL`     | The person’s email address.                                                                                                                                                                    |
+| `y/YEAR`      | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>Year can take values from 1 to 6, which is the maximum candidature period                                                  |
+| `m/MAJOR`     | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   |
+| `h/HOUSING`   | Where the person stays, such as UTown Residence or off-campus.                                                                                                                                 |
+| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking.                                                                                              |
+| `t/TAG`       | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! |
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -104,7 +121,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 Adds a person to NUSMates.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
 
 * All parameters **except for `NAME`** are optional.<br>
 e.g. You can add a contact with only name, [year](#year), and [major](#major) using `add n/John Doe y/2 m/Computer Science`<br>
@@ -115,6 +132,9 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com y/1 m/Electrical Engineering h/PGPR p/1234567 l/https://nusmods.com/timetable/sem-2/share?CS2040=TUT:12,LAB:06,LEC:1`
 
+{: .note }
+> The application does not allow for two contacts to have the same name! However, other fields may have duplicates. 
+
 {: .tip }
 > For details on the NUSMods link parameter and how to get it, read [here](#how-to-get-the-nusmods-link)
 
@@ -122,7 +142,7 @@ Examples:
 
 Edits an existing person in NUSMates.
 
-Format: `edit INDEX n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...`
+Format: `edit INDEX n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
 
 * `Index` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
 * At least one of the [parameters](#parameter) must be provided.
@@ -153,9 +173,10 @@ Examples:
 
 Finds persons whose names contain any of the given keywords.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+Format: `find KEYWORD...`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
+* You can use multiple keywords separated by spaces, e.g. `Hans Bo`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 * Only the name is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`
@@ -169,7 +190,7 @@ Examples:
 
 ### Locating persons by [module](#module): `findMod`
 
-Finds persons who's [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
+Finds persons whose [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
 
 Format: `findMod KEYWORD [MORE_KEYWORDS]`
 
@@ -178,6 +199,7 @@ Format: `findMod KEYWORD [MORE_KEYWORDS]`
 * Only the [module](#module) is searched.
 * Only full words will be matched e.g. `CS2103` will not match `CS2103T`
 * Persons matching at least one of the [modules](#module) searched will be returned (i.e. `OR` search).
+* Note that NUSMates can distinguish between modules added as student or as a TA on NUSMods. Modules with the TA option enabled are appended with a ` (TA)`, so `CS2030` would become `CS2030 (TA)` instead. 
 
 Examples:
 * `findMod CS2109S` returns `Abi, Yuexi`
@@ -205,7 +227,7 @@ Format: `exit`
 
 Shows a message explaining how to access the help page.
 
-![help message](images/helpMessage.png)
+![help message](images/helpCommand.png)
 
 Format: `help`
 
@@ -336,11 +358,33 @@ If everything works, a window will pop up showing NUSMates with some sample cont
 
 --------------------------------------------------------------------------------------------------------------------
 
+## FAQ
+
+**Q**: How do I transfer my data to another Computer?<br>
+**A**: Install the app in the other computer and overwrite the empty data [file](#json-file) it creates with the [file](#json-file) that contains the data of your previous AddressBook [home folder](#home-folder).
+
+**Q**:  Can I use NUSMates on my mobile device?<br>
+**A**: NUSMates is a command-line application that may not be optimized for mobile devices. 
+It’s best used on desktop environments where a terminal or command prompt is available.
+
+**Q**: How do I get the NUSMods link?<br>
+**A**: You may refer to the detailed step-by-step guide [here](#how-to-get-the-nusmods-link).
+
+**Q**: Can I add two contacts with the same name?<br>
+**A**: No, AddressBook3 (AB3) does not allow duplicate names when adding contacts. 
+Each contact must have a unique name in the system.
+To add multiple people with the same name, distinguish them in some way such as adding a descriptor (e.g., John Doe (Work)) or a number (Amy1, Amy2).
+
+**Q**: Can I edit a contact's module information manually?<br>
+**A**: No, a contact's module information is automatically retrieved from the NUSMods link they provided.
+If their schedule changes, simply ask them to send you the updated link, and you can update their module information using the [edit](#editing-a-person--edit) command.
+
+--------------------------------------------------------------------------------------------------------------------
+
 ## Troubleshooting
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the [GUI](#gui) will open off-screen. The remedy is to delete the `preferences.json` [file](#json-file) created by the application before running the application again.
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
-3. **To transfer your data to another computer,** install the app in the other computer and overwrite the empty data [file](#json-file) it creates with the [file](#json-file) that contains the data of your previous AddressBook [home folder](#home-folder).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -381,7 +425,7 @@ A number that represents the position of a contact in the list shown in the app.
 
 ### Tag
 {: .no_toc}
-A label you can add to a contact to help categorise them, e.g. `t/friend` or `t/project`.
+A label you can add to a contact to help categorise them, such as storing CCA information e.g. `t/NUS Amplified` or `t/NUS Computing Club`.
 
 ### JSON file
 {: .no_toc}
