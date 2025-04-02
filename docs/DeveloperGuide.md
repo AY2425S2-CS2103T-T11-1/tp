@@ -362,7 +362,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3a1. AddressBook shows an error message.
+    * 3a1. System shows an error message.
 
       Use case resumes at step 2.
 
@@ -424,6 +424,30 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
    * 2a1. System informs user to try again in a moment.
 
       Use Case Ends.
+
+**Use Case: UC05 -- Find Contacts Taking a Specific Module**
+
+**Actor:** NUS Undergraduate Student
+
+**MSS**
+
+1. User enters the `findMod` command along with a module code.
+2. The system searches for contacts who are taking the specified module.
+3. The system lists matching contacts.
+
+   Use Case Ends.
+
+**Extensions**
+*1a. Invalid module code provided:*
+
+   * 1a1. System requests for correct data.
+   * 1a2. User provides new data.
+
+   Steps 1a1-1a2 are repeated until the data entered are valid.
+
+   Use case resumes from step 3.
+
+
 
 ### Non-Functional Requirements
 
