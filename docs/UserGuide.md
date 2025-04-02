@@ -49,7 +49,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 5. Use the command `java -jar "nusmates.jar"` to run the application.
    A [GUI](#gui) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   ![Ui](images/UpdatedUi.png)
 
 6. Type the command in the command box and press Enter to execute it.
 7. Refer to the [Features](#features) below for details of each command.
@@ -186,7 +186,7 @@ Format: `find KEYWORD...`
 Examples:
 * `find Huazhi` returns `Huazhi`
 * `find Abi Yuexi` returns `Abi`, `Yuexi`<br>
-  ![result for 'find Abi Yuexi'](images/findAbiYuexi.png)
+  ![result for 'find Abi Yuexi'](images/findDemo.png)
 
 ### Locating persons by [module](#module): `findMod`
 
@@ -203,7 +203,7 @@ Format: `findMod KEYWORD [MORE_KEYWORDS]`
 
 Examples:
 * `findMod CS2109S` returns `Abi, Yuexi`
-  ![result for 'findMod CS2109S'](images/findCS2109Sresult.png)
+  ![result for 'findMod CS2109S'](images/findModDemo.png)
 
 ### Listing all persons : `list`
 
