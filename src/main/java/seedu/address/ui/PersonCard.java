@@ -1,7 +1,5 @@
 package seedu.address.ui;
 
-import java.awt.Desktop;
-import java.net.URI;
 import java.util.Comparator;
 
 import javafx.fxml.FXML;
@@ -92,16 +90,10 @@ public class PersonCard extends UiPart<Region> {
         if (person.getLink() == null) {
             link.setDisable(true);
         } else {
-            link.setOnAction(event -> openWebPage(person.getLink().value));
-        }
-    }
-    private void openWebPage(String url) {
-        if (Desktop.isDesktopSupported()) {
-            try {
-                Desktop.getDesktop().browse(new URI(url));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            link.setOnAction(event -> {
+                Clipboard.copyToClipboard(person.getLink().value);
+                PopupMessage.showMessage(cardPane, "Link copied!");
+            });
         }
     }
 }
