@@ -91,8 +91,7 @@ public class PersonCard extends UiPart<Region> {
                 .forEach(module -> modules.getChildren().add(new Label(module.value)));
         if (person.getLink() == null) {
             link.setDisable(true);
-        }
-        else {
+        } else {
             link.setOnAction(event -> openWebPage(person.getLink().value));
         }
     }
