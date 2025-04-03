@@ -46,27 +46,27 @@ public class ModContainsKeywordsPredicateTest {
     public void test_nameContainsKeywords_returnsTrue() {
         // One keyword
         ModContainsKeywordsPredicate predicate =
-                new ModContainsKeywordsPredicate(Collections.singletonList("CS2030"));
+                new ModContainsKeywordsPredicate(Collections.singletonList("CS2103T"));
         assertTrue(predicate.test(new PersonBuilder().withLink(
-                "https://nusmods.com/timetable/sem-2/share?CG1111=LEC:1,TUT:1&CS2030=LEC:1,LAB:1")
+                "https://nusmods.com/timetable/sem-2/share?CS2101=&CS2103T=LEC:G12")
                 .build()));
 
         // Multiple keywords
-        predicate = new ModContainsKeywordsPredicate(Arrays.asList("CS2030", "CG1111"));
+        predicate = new ModContainsKeywordsPredicate(Arrays.asList("CS2103T", "CS2101"));
         assertTrue(predicate.test(new PersonBuilder().withLink(
-                "https://nusmods.com/timetable/sem-2/share?CG1111=LEC:1,TUT:1&CS2030=LEC:1,LAB:1")
+                "https://nusmods.com/timetable/sem-2/share?CS2101=&CS2103T=LEC:G12")
                 .build()));
 
         // Only one matching keyword
-        predicate = new ModContainsKeywordsPredicate(Arrays.asList("CS2030", "CS2040"));
+        predicate = new ModContainsKeywordsPredicate(Arrays.asList("CS2103T", "CS2040"));
         assertTrue(predicate.test(new PersonBuilder().withLink(
-                "https://nusmods.com/timetable/sem-2/share?CG1111=LEC:1,TUT:1&CS2030=LEC:1,LAB:1")
+                "https://nusmods.com/timetable/sem-2/share?CS2101=&CS2103T=LEC:G12")
                 .build()));
 
         // Mixed-case keywords
-        predicate = new ModContainsKeywordsPredicate(Arrays.asList("cs2030", "cS2040"));
+        predicate = new ModContainsKeywordsPredicate(Arrays.asList("cs2103t", "cS2040"));
         assertTrue(predicate.test(new PersonBuilder().withLink(
-                "https://nusmods.com/timetable/sem-2/share?CG1111=LEC:1,TUT:1&CS2030=LEC:1,LAB:1")
+                "https://nusmods.com/timetable/sem-2/share?CS2101=&CS2103T=LEC:G12")
                 .build()));
     }
 
@@ -81,7 +81,7 @@ public class ModContainsKeywordsPredicateTest {
         // Non-matching keyword
         predicate = new ModContainsKeywordsPredicate(Arrays.asList("CS3233"));
         assertFalse(predicate.test(new PersonBuilder().withLink(
-                "https://nusmods.com/timetable/sem-2/share?CG1111=LEC:1,TUT:1&CS2030=LEC:1,LAB:1")
+                "https://nusmods.com/timetable/sem-2/share?CS2101=&CS2103T=LEC:G12")
                 .build()));
     }
 
