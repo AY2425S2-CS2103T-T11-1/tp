@@ -543,3 +543,9 @@ testers are expected to do more *exploratory* testing.
 
    1. Test case: Deleting the JSON file
       Expected: The app should not crash. It should create a new address book with sample data. It should create the JSON file again upon any valid command.
+
+## **Appendix: Planned Enhancements**
+
+Team size: 4
+
+1. **Optional Fields should be able to be cleared**: Currently optional fields cannot be cleared once set. Optional fields should be able to be cleared just like tags. For example: Phone should be able to be cleared by doing `edit 1 p/` (with nothing after the space).
