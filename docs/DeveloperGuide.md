@@ -244,10 +244,6 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 _{more aspects and alternatives to be added}_
 
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
-
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -451,7 +447,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
+1.  Should work on any [_mainstream OS_](#glossary) as long as it has Java `17` or above installed.
 2.  Should be able to hold up to 1000 users without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  Searches should return results within 1 second for a dataset of 1000 contacts.
@@ -494,8 +490,6 @@ testers are expected to do more *exploratory* testing.
    1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
-
 ### Deleting a person
 
 1. Deleting a person while all persons are being shown
@@ -503,20 +497,49 @@ testers are expected to do more *exploratory* testing.
    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
    1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message.
 
    1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+      Expected: No person is deleted. Error details shown in the status message.
 
    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
       Expected: Similar to previous.
 
-1. _{ more test cases …​ }_
+### Editing a Person
+
+1. Editing a person while all persons are being shown
+
+   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list. No one is named "John Doe".
+
+   1. Test case: `edit 1 n/John Doe`<br>
+      Expected: First contact is updated with the new name. Details of the updated contact shown in the status message.
+
+   1. Test case: `edit 1`<br>
+      Expected: No person is edited. Error details shown in the status message.
+
+   1. Other incorrect delete commands to try: `edit 0`, `edit 0 n/Joe` `edit x`, `...` (where x is larger than the list size)<br>
+      Expected: Similar to previous.
+
+1. Editing the link of a person while all persons are being shown
+
+   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+
+   1. Test case: `edit 1 l/https://nusmods.com/timetable/sem-2/share?CS1010S=LEC:1,TUT:1&CS2030=LEC:1,LAB:1`<br>
+      Expected: First contact is updated with the new link. Details of the updated contact shown in the status message.
+      Clicking on `NUSMods Schedule` of the first person will result in copying the link which can be pasted in the browser.
+
+   1. Test case: `edit 1 l/google.com`<br>
+      Expected: No person is edited. Error details shown in the status message.
 
 ### Saving data
 
 1. Dealing with missing/corrupted data files
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+   1. Test case: Editing the JSON file so that it is still valid (e.g. changing `"year" : "2",` to `"year" : "3",`)
+      Expected: The app should not crash. It should load the address book with the new data.
 
-1. _{ more test cases …​ }_
+   1. Test case: Editing the JSON file to make it invalid (e.g. removing a comma)
+      Expected: The app should not crash. It should create a new empty address book and delete the corrupted file. It should show an error message in the console.
+
+   1. Test case: Deleting the JSON file
+      Expected: The app should not crash. It should create a new address book with sample data. It should create the JSON file again upon any valid command.
