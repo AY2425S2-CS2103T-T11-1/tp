@@ -19,3 +19,4 @@ public class Clipboard {
         clipboard.setContent(content);
     }
 }
+
