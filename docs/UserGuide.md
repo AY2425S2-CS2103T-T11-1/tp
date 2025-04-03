@@ -90,16 +90,16 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 This section explains the meaning of each contact field you can include when storing a contact. These fields are also used as parameters in some commands.
 
-| Field         | Explanation                                                                                                                                                                                    |
-|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `n/NAME`      | The name of the person. This is the only required field.                                                                                                                                       |
-| `p/PHONE`     | The person’s phone number.                                                                                                                                                                     |
-| `e/EMAIL`     | The person’s email address.                                                                                                                                                                    |
-| `y/YEAR`      | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>Year can take values from 1 to 6, which is the maximum candidature period                                                  |
-| `m/MAJOR`     | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   |
-| `h/HOUSING`   | Where the person stays, such as UTown Residence or off-campus.                                                                                                                                 |
-| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking.                                                                                              |
-| `t/TAG`       | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! |
+| Field            | Explanation                                                                                                                                                                                    |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `n/NAME`         | The name of the person. This is the only required field.                                                                                                                                       |
+| `p/PHONE`        | The person’s phone number.                                                                                                                                                                     |
+| `e/EMAIL`        | The person’s email address.                                                                                                                                                                    |
+| `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>Year can take values from 1 to 6, which is the maximum candidature period                                                  |
+| `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   |
+| `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.                                                                                                                                 |
+| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                                         |
+| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! |
 
 
 --------------------------------------------------------------------------------------------------------------------
