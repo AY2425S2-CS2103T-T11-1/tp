@@ -10,9 +10,9 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class ModuleCode {
     public static final String MESSAGE_CONSTRAINTS = "Module Code should be of the format prefix-code-suffix, where:\n"
-            + "1. The prefix has length 2-4 composed of capitalized letters.\n"
+            + "1. The prefix has a length of 2-4 composed of capitalized letters.\n"
             + "2. The code is a 4-digit number.\n"
-            + "3. The suffix has length 0-5, which can be composed of capitalized letters and/or numbers.\n";
+            + "3. The suffix has a length of 0-5, which can be composed of capitalized letters and/or numbers.\n";
 
     /*
      * The module code must start with a 2-4 letter prefix,
