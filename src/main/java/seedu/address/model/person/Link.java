@@ -64,6 +64,8 @@ public class Link {
                             codes.add(taModule);
                         }
                     }
+                } else if ("hidden".equals(key)) {
+                    continue; // skip hidden modules
                 } else {
                     codes.add(key);
                 }
