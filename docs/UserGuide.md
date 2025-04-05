@@ -379,6 +379,9 @@ To add multiple people with the same name, distinguish them in some way such as 
 **A**: No, a contact's module information is automatically retrieved from the NUSMods link they provided.
 If their schedule changes, simply ask them to send you the updated link, and you can update their module information using the [edit](#editing-a-person--edit) command.
 
+**Q**: What about hidden modules in the timetable?
+**A**: Our link processing treats hidden modules as usual, and **does** add it to the module list of the contact. 
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Troubleshooting
