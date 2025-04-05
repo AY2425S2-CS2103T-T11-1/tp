@@ -194,7 +194,7 @@ Examples:
 
 Finds persons whose [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
 
-Format: `findMod KEYWORD...`
+Format: `findMod KEYWORD [MOREKEYWORDS]...`
 
 * The search is case-insensitive. e.g `cs2030` will match `CS2030`
 * The order of the keywords does not matter. e.g. `CS2030 CS2103T` will match `CS2103T CS2030`
