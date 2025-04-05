@@ -330,14 +330,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 2a. System detects an error in the entered data.
+* 1a. System detects an error in the entered data.
 
-   * 2a1. System requests for correct data.
-   * 2a2. User provides new data.
+   * 1a1. System requests for correct data.
+   * 1a2. User provides new data.
 
-      Steps 2a1-2a2 are repeated until the data entered are correct.
+      Steps 1a1-1a2 are repeated until the data entered are correct.
 
-      Use case resumes from step 3.
+      Use case resumes from step 2.
 
 **Use case: UC02 -- Delete a person**
 
