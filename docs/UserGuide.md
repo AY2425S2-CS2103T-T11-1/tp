@@ -41,7 +41,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
    > {: .note }
    > **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-2. Download the latest `[.jar file]` from [here](https://github.com/{{site.repository}}/releases).
+2. Download the latest [.jar file](#jar-file) from [here](https://github.com/{{site.repository}}/releases).
 
 3. Copy the file to the [home folder](#home-folder) you want to use as the [home folder](#home-folder) for NUSMates. NUSMates will later generate files in this folder, including save data.
 
