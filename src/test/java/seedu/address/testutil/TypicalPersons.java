@@ -58,22 +58,22 @@ public class TypicalPersons {
             .withEmail("cornelia@example.com").withHousing("PGPR R1").withYear("1").withMajor("Law")
             .withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12")
             .withTags("friends").build();
-    public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("9482224")
+    public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("94882224")
             .withEmail("werner@example.com").withHousing("Tembusu College").withYear("4").withMajor("Physics")
             .withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
-    public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("9482427")
+    public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("94882427")
             .withEmail("lydia@example.com").withYear("1").withMajor("Political Science")
             .withHousing("Temasek Hall")
             .withLink("https://nusmods.com/timetable/sem-2/share?CS3230=LEC:1,TUT:06").build();
-    public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
+    public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("94882442")
             .withEmail("anna@example.com").withYear("2").withMajor("Computer Science")
             .withHousing("Lighthouse").withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
 
     // Manually added
-    public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("8482424")
+    public static final Person HOON = new PersonBuilder().withName("Hoon Meier").withPhone("84882424")
             .withEmail("stefan@example.com").withYear("2").withMajor("Quantitative Finance")
             .withHousing("little india").withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
-    public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("8482131")
+    public static final Person IDA = new PersonBuilder().withName("Ida Mueller").withPhone("84882131")
             .withEmail("hans@example.com").withYear("5").withMajor("Computer Science")
             .withHousing("chicago ave").withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
 

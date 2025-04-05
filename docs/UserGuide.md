@@ -93,7 +93,7 @@ This section explains the meaning of each contact field you can include when sto
 | Field            | Explanation                                                                                                                                                                                    |
 |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `n/NAME`         | The name of the person. This is the only required field.                                                                                                                                       |
-| `p/PHONE`        | The person’s phone number.                                                                                                                                                                     |
+| `p/PHONE_NUMBER`        | The person’s **Singaporean 8-digit phone number**.                                                                                                                                                                     |
 | `e/EMAIL`        | The person’s email address.                                                                                                                                                                    |
 | `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>Year can take values from 1 to 6, which is the maximum candidature period                                                  |
 | `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   |
@@ -142,7 +142,7 @@ Examples:
 
 Edits an existing person in NUSMates.
 
-Format: `edit INDEX n/NAME p/PHONE e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
+Format: `edit INDEX n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
 
 * `Index` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
 * At least one of the [parameters](#parameter) must be provided.
