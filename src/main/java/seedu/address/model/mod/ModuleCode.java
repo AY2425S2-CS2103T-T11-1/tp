@@ -20,7 +20,7 @@ public class ModuleCode {
      * All letters must be capitalized
      *
      */
-    public static final String VALIDATION_REGEX = "[A-Za-z]{2,4}\\d{4}[A-Z0-9]{0,5}(?:\\(TA\\))?";
+    public static final String VALIDATION_REGEX = "[A-Za-z]{2,4}\\d{4}[A-Za-z0-9]{0,5}(?:\\(TA\\))?";
 
     public final String value;
 

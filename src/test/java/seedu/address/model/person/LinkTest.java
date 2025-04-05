@@ -57,7 +57,7 @@ public class LinkTest {
             Link.extractCodes("https://nusmods.com/timetable/st-ii/share?AH3550=&CS1010E=TUT:05,SEC:1&MA3289=");
         assertTrue(codes.size() == 3);
         codes = Link.extractCodes(Link.TA_EXAMPLE);
-        assertTrue(codes.contains("CS3230 (TA)"));
+        assertTrue(codes.contains("CS3230(TA)"));
     }
 
     @Test

@@ -100,6 +100,26 @@ public class FindModCommandTest {
     }
 
     @Test
+    public void execute_multiplePersonsFound_smallLetterKeywords() {
+        String expectedMessage = String.format(MESSAGE_PERSONS_LISTED_OVERVIEW, 6);
+        ModContainsKeywordsPredicate predicate = preparePredicate("cs2103t cs2101");
+        FindModCommand command = new FindModCommand(predicate);
+        expectedModel.updateFilteredPersonList(predicate);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
+        assertEquals(Arrays.asList(ALICE, BENSON, CARL, DANIEL, ELLE, GEORGE), model.getFilteredPersonList());
+    }
+
+    @Test
+    public void execute_multiplePersonsFound_combineLetterKeywords() {
+        String expectedMessage = String.format(MESSAGE_PERSONS_LISTED_OVERVIEW, 6);
+        ModContainsKeywordsPredicate predicate = preparePredicate("cs2103T cs2101");
+        FindModCommand command = new FindModCommand(predicate);
+        expectedModel.updateFilteredPersonList(predicate);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
+        assertEquals(Arrays.asList(ALICE, BENSON, CARL, DANIEL, ELLE, GEORGE), model.getFilteredPersonList());
+    }
+
+    @Test
     public void toStringMethod() {
         ModContainsKeywordsPredicate predicate = new ModContainsKeywordsPredicate(Arrays.asList("CS2100"));
         FindModCommand findModCommand = new FindModCommand(predicate);
