@@ -242,8 +242,6 @@ The following activity diagram summarizes what happens when a user executes a ne
   * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
   * Cons: We must ensure that the implementation of each individual command are correct.
 
-_{more aspects and alternatives to be added}_
-
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -306,7 +304,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise. All use cases also require the precondition that the app already be open, along with any additional use cases specified.
 
 **Use Case: UC01 -- Add Contacts**
 
@@ -320,100 +318,63 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 2a. System detects an error in the entered data.
+* 1a. System detects an error in the entered data.
 
-   * 2a1. System requests for correct data.
-   * 2a2. User provides new data.
+   * 1a1. System requests for correct data.
+   * 1a2. User provides new data.
 
-      Steps 2a1-2a2 are repeated until the data entered are correct.
+      Steps 1a1-1a2 are repeated until the data entered are correct.
 
-      Use case resumes from step 3.
+      Use case resumes from step 2.
 
 **Use case: UC02 -- Delete a Contact**
 
+**Preconditions:**
+* A non-empty list of persons is currently displayed to the user
+
 **MSS**
 
-1.  User requests to list contacts
-2.  AddressBook shows a list of contacts
-3.  User requests to delete a specific contact in the list
-4.  AddressBook deletes the person
+1. User requests to delete a specific contact in the list.
+2. AddressBook deletes the person.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 1a. The given index is invalid.
 
-  Use case ends.
+    * 1a1. System shows an error message and requests for a correct index.
+    * 1a2. User provides a new index.
+    
+    Steps 1a1-1a2 are repeated until the index entered is correct.
 
-* 3a. The given index is invalid.
-
-    * 3a1. System shows an error message.
-
-      Use case resumes at step 2.
+    Use case resumes at step 2.
 
 
-**Use Case: UC03 -- Link Contacts to NUSMods Timetable**
+**Use Case: UC03 -- Link a contact to NUSMods schedule**
 
-**Actor:** NUS Undergraduate Student
+**Preconditions**
+* The contact to be linked exists, or the user is in the process of creating a new valid contact.
+
 
 **MSS**
-1. User provides contact to link and link to timetable.
-2. System links timetable to contact, deleting the old timetable if any.
-3. System display the contact.
+1. User provides a contact and a NUSMods timetable link during creation or editing of the contact.
+2. System links the provided timetable to the contact, replacing any previously linked timetable if present.
+3. System displays the updated contact with the updated modules from the timetable.
 
    Use Case Ends.
 
 **Extensions**
-* 1a. System detects an error in link or contact (contact not found).
+* 2a. Provided timetable link is invalid.
+  * 2a1. System informs the user that the link is invalid and requests a new link.
+  * 2a2. User provides a new link.
 
-   * 1a1. System requests for correct data.
-   * 1a2. User provides new link and contact.
+    Steps 2a1-2a2 are repeated until the link entered is correct.
 
-      Steps 1a1-1a2 are repeated until the link and contact is correct.
+    Use case resumes from step 2.
 
-      Use case resumes from step 3.
 
-**Use Case: UC04 -- Updating NUSMods Venue and Schedule**
-
-**Actor:** NUS Undergraduate Student
-
-**Guarantees**
-
-- Old data will be deleted only if new data is successfully fetched and parsed.
-
-**MSS**
-
-1. User requests to update data.
-2. System fetches new venue and schedule data from NUSMods.
-3. System deletes old venue and schedule data.
-
-   Use Case Ends.
-
-**Extensions**
-* 1a. System cannot connect to the internet.
-
-   * 1a1. System informs user that there is a connection problem.
-
-      Use Case Ends.
-
-* 1b. System checked that the old data is less than 24 hours old.
-
-   * 1b1. System informs user that data is unlikely to have changed.
-   * 1b2. System asks user if data should be fetched.
-   * 1b3. System fetches data if user insists and use case resume from step 3.
-
-      Use Case Ends.
-
-* 2a. There is an error when fetching or parsing data.
-
-   * 2a1. System informs user to try again in a moment.
-
-      Use Case Ends.
-
-**Use Case: UC05 -- Find Contacts Taking a Specific Module**
-
-**Actor:** NUS Undergraduate Student
+**Use Case: UC04 -- Find Contacts Taking a Specific Module**
 
 **MSS**
 
@@ -425,7 +386,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 1a. Invalid module code provided:
+* 1a. User provides an invalid module code.
 
    * 1a1. System requests for correct data.
    * 1a2. User provides new data.
@@ -434,7 +395,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case resumes from step 3.
 
-**Use Case: UC06 -- Find Contacts By Name**
+**Use Case: UC05 -- Find Contacts By Name**
 
 **MSS**
 
