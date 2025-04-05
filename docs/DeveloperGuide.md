@@ -382,7 +382,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Steps 1a1-1a2 are repeated until the link and contact is correct.
 
-      Use case resumes from step 3.
+      Use case resumes from step 2.
 
 **Use Case: UC04 -- Find Contacts Taking a Specific Module**
 
@@ -397,14 +397,15 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
    Use Case Ends.
 
 **Extensions**
-*1a. Invalid module code provided:*
+
+* 1a. Invalid module code provided:
 
    * 1a1. System requests for correct data.
    * 1a2. User provides new data.
 
    Steps 1a1-1a2 are repeated until the data entered are valid.
 
-   Use case resumes from step 3.
+   Use case resumes from step 2.
 
 
 
