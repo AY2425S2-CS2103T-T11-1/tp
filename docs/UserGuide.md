@@ -41,7 +41,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
    > {: .note }
    > **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-2. Download the latest `[.jar file]` from [here](https://github.com/{{site.repository}}/releases).
+2. Download the latest [.jar file](#jar-file) from [here](https://github.com/{{site.repository}}/releases).
 
 3. Copy the file to the [home folder](#home-folder) you want to use as the [home folder](#home-folder) for NUSMates. NUSMates will later generate files in this folder, including save data.
 
@@ -84,6 +84,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
 | **Exit**    | `exit`                                                                                                                                                                                                                                                        |
 | **Help**    | `help`                                                                                                                                                                                                                                                        |
 
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Storing a contact
@@ -111,6 +112,8 @@ This section explains the meaning of each contact field you can include when sto
   e.g. in `add n/NAME`, `NAME` is a [parameter](#parameter) which can be used as `add n/John Doe`.
 > * Items with `…`​ after them can be used multiple times including zero times.<br>
     e.g. `[t/tag]...` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+> * Extraneous parameters for commands that do not take in parameters (such as `list`, `clear`, `exit` and `help`) will be ignored.
+    e.g. if the command specifies `list 123`, it will be interpreted as `list`.
 
 {: .tip }
 > * [Parameters](#parameter) can be in any order.<br>
@@ -192,7 +195,7 @@ Examples:
 
 Finds persons whose [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
 
-Format: `findMod KEYWORD [MORE_KEYWORDS]`
+Format: `findMod KEYWORD [MOREKEYWORDS]...`
 
 * The search is case-insensitive. e.g `cs2030` will match `CS2030`
 * The order of the keywords does not matter. e.g. `CS2030 CS2103T` will match `CS2103T CS2030`
