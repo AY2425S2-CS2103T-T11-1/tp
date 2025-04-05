@@ -59,7 +59,7 @@ public class Link {
                         if (parenIndex != -1) {
                             // Extract module code before '('
                             codes.remove(code); // remove the module code without the suffix
-                            codes.add(code + " (TA)"); // add the module code with the suffix
+                            codes.add(code + "(TA)"); // add the module code with the suffix
                         } else {
                             codes.add(taModule);
                         }
