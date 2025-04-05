@@ -384,44 +384,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes from step 3.
 
-**Use Case: UC04 -- Updating NUSMods Venue and Schedule**
-
-**Actor: NUS Undergraduate Student**
-
-**Guarantees**
-
-- Old data will be deleted only if new data is successfully fetched and parsed.
-
-**MSS**
-
-1. User requests to update data.
-2. System fetches new venue and schedule data from NUSMods.
-3. System deletes old venue and schedule data.
-
-   Use Case Ends.
-
-**Extensions**
-* 1a. System cannot connect to the internet.
-
-   * 1a1. System informs user that there is a connection problem.
-
-      Use Case Ends.
-
-* 1b. System checked that the old data is less than 24 hours old.
-
-   * 1b1. System informs user that data is unlikely to have changed.
-   * 1b2. System asks user if data should be fetched.
-   * 1b3. System fetches data if user insists and use case resume from step 3.
-
-      Use Case Ends.
-
-* 2a. There is an error when fetching or parsing data.
-
-   * 2a1. System informs user to try again in a moment.
-
-      Use Case Ends.
-
-**Use Case: UC05 -- Find Contacts Taking a Specific Module**
+**Use Case: UC04 -- Find Contacts Taking a Specific Module**
 
 **Actor:** NUS Undergraduate Student
 
