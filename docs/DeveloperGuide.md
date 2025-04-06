@@ -515,4 +515,6 @@ testers are expected to do more *exploratory* testing.
 
 Team size: 4
 
-1. **Optional Fields should be able to be cleared**: Currently optional fields cannot be cleared once set. Optional fields should be able to be cleared just like tags. For example: Phone should be able to be cleared by doing `edit 1 p/` (with nothing after the space).
+1. **Optional fields should be able to be cleared**: Currently optional fields cannot be cleared once set. Optional fields should be able to be cleared using the `edit` command, just like tags. For example: Phone should be able to be cleared by doing `edit 1 p/` (with nothing after the space).
+2. **Fix issue of tags overflowing out of the UI**: Currently, extremely long tags which overflow out of the UI get abruptly cut off, such as in the screenshot below. This off-screen overflow should be handles more elegantly, such as truncating the tag with a `...` before cutting it within the UI boundary.
+![TagUiOverflow.png](images%2FTagUiOverflow.png)
