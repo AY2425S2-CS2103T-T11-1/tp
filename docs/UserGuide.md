@@ -92,17 +92,16 @@ NUSMates also makes it seamless to record [module](#module) information using an
 This section explains the meaning of each contact field you can include when storing a contact. These fields are also used as parameters in some commands.
 
 
-| Field            | Explanation                                                                                                                                                                                    | Constraints |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `n/NAME`         | The name of the person. This is the only required field.                                                                     | A non-empty string consisting of alphanumeric characters and spaces.                                                                  | 
-| `p/PHONE_NUMBER` | The person’s phone number.         | **8-digit number**, as all target users are expected to be Singapore residents.                                                                                                                                                              |
-| `e/EMAIL`        | The person’s email address.                                    | Any valid email address.                                                                                                                                |
-| `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>| Any number between 1 to 6, which is the maximum candidature period.                                                  |
-| `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.           | Any string.                                                                                                                        |
-| `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.               | Any string.                                                                                                                  |
-| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                                         | Any valid NUSMods timetable link.
-| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! | Any alphanumeric string.
-
+| Field            | Explanation                                                                                                                                                                                    | Constraints                                                                     |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| `n/NAME`         | The name of the person. This is the only required field.                                                                                                                                       | A non-empty string consisting of alphanumeric characters and spaces.            | 
+| `p/PHONE_NUMBER` | The person’s phone number.                                                                                                                                                                     | **8-digit number**, as all target users are expected to be Singapore residents. |
+| `e/EMAIL`        | The person’s email address.                                                                                                                                                                    | Any valid email address.                                                        |
+| `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>                                                                                                                           | Any number between 1 to 6, which is the maximum candidature period.             |
+| `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   | Any string.                                                                     |
+| `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.                                                                                                                                 | Any string.                                                                     |
+| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                                         | Any valid NUSMods timetable link.                                               |
+| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! | Any alphanumeric string.                                                        |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -151,9 +150,12 @@ Format: `edit index [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HO
 * `Index` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
 * **At least one of the [parameters](#parameter) must be provided.**
 * Existing values will be updated to the input values.
-* For all fields except `name`, you can set it to nothing by typing the prefix without anything following it. <br>
-e.g. You can remove all the person’s [tags](#tag) by typing `t/` without specifying any [tags](#tag) after it.
+* You can remove all the person’s [tags](#tag) by typing `t/` without specifying any [tags](#tag) after it.
 * When editing [tags](#tag), the existing [tags](#tag) of the person will be removed i.e adding of [tags](#tag) is not cumulative.
+
+{: .warning }
+> You cannot combine tag clearing `t/` and tag addition `t/TAG` in the same command. Doing so will result in an error.
+> For example, the command `edit 1 t/ t/friends` is invalid — you must either clear all tags `t/` or replace them with new tags `t/friends t/groupmate`, but not both.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
