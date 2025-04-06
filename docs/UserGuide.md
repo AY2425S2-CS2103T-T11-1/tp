@@ -91,10 +91,11 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 This section explains the meaning of each contact field you can include when storing a contact. These fields are also used as parameters in some commands.
 
+
 | Field            | Explanation                                                                                                                                                                                    | Constraints |
 |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
 | `n/NAME`         | The name of the person. This is the only required field.                                                                     | A non-empty string consisting of alphanumeric characters and spaces.                                                                  | 
-| `p/PHONE`        | The person’s phone number.         | Any string consisting only of numbers with length at least 3.                                                                                                                                                             |
+| `p/PHONE_NUMBER` | The person’s phone number.         | **8-digit number**, as all target users are expected to be Singapore residents.                                                                                                                                                              |
 | `e/EMAIL`        | The person’s email address.                                    | Any valid email address.                                                                                                                                |
 | `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>| Any number between 1 to 6, which is the maximum candidature period.                                                  |
 | `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.           | Any string.                                                                                                                        |
@@ -162,7 +163,7 @@ Examples:
 
 Deletes the specified person from the address book.
 
-Format: `delete INDEX`
+Format: `delete index`
 
 * Deletes the person at the specified `index`.
 * The [index](#index) refers to the [index](#index) number shown in the displayed person list.
