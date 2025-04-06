@@ -242,8 +242,6 @@ The following activity diagram summarizes what happens when a user executes a ne
   * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
   * Cons: We must ensure that the implementation of each individual command are correct.
 
-_{more aspects and alternatives to be added}_
-
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -276,47 +274,37 @@ Tailored towards frequent NUSMods users, the app makes it seamless to record mod
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …             | I want to …                                                                    | So that I can…                                                         |
-|:---------|--------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| `* * *`  | new user           | see usage instructions                                                         | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user               | add a new person                                                               |                                                                        |
-| `* * *`  | user               | view a list of all my contacts                                                 | quickly find and access their details                                  |
-| `* * *`  | user               | clear all contacts at once                                                     | reset my address book when needed                                      |
-| `* * *`  | user               | exit the application using a command                                           | close it quickly when I am done using it                               |
-| `* * *`  | user               | have my contacts saved automatically                                           | make sure my data is not lost when I close the application             |
-| `* * *`  | advanced user      | edit the data file directly                                                    | modify my contact list without using the application interface         |
-| `* * *`  | user               | interact with a graphical interface while using command-line inputs            | visually confirm my actions and navigate the application more easily   |
-| `* * *`  | user               | delete a person                                                                | remove contacts that I no longer need                                  |
-| `* * *`  | user               | find a person by name                                                          | locate details of persons without having to go through the entire list |
-| `* * *`  | user               | edit a contact’s details                                                       | update outdated or incorrect information                               |
-| `* * *`  | user        | record the year, major, and housing of my contact                              |                                                                        |
-| `* * *`  | user        | fetch and store latest module information for the semester                     | use the application offline                                            |
-| `* * *`  | user        | link a contact to their course timetable                                       | record the modules and timetables of contacts                          |
-| `* * *`  | user        | record the timeslot and venue of the module taken by my contact                | record the information of each module                                  |
-| `* * *`  | user        | find contacts by module                                                        | find friends to take modules with                                      |
-| `* * *`  | user        | sync mine and others' module information with NUSMods                          |                                                                        |
-| `* * *`  | user               | back up my contact data                                                        | make sure my data won't get lost                                       |
-| `* * *`  | user               | group my contacts into different categories                                    |                                                                        |
-| `* * *`  | user               | save certain contacts as favourites                                            |                                                                        |
-| `* * *`  | user               | share the contact details of a contact                                         | ensure other people can receive details of the contact easily          |
-| `* * *`  | user        | record the second major or minors of my contact                                | have more detailed information on their program                        |
-| `* * * ` | user               | record the birthday of my contact                                              |                                                                        |
-| `* * *`  | user               | merge duplicate contacts automatically                                         | avoid redundancy                                                       |
-| `* *`    | user               | hide private contact details                                                   | minimize chance of someone else seeing them by accident                |
-| `* *`    | user               | automatically back up my contact data periodically                             | make sure data will not be lost if I forget to manually save it        |
-| `* *`    | user        | view where my contact is at the current moment based on their NUSMods schedule | easily meet them                                                       |
-| `* *`    | user        | compare my schedule with my contacts                                           | see when we have overlapping free time                                 |
-| `* *`    | user who prefers light mode | toggle the GUI between dark mode and light mode                                |                                                                        |
-| `* *`    | user               | import contacts from a backup file                                             |                                                                        |
-| `*`      | user               | get a notification when it is one of my contact's birthdays                    | always remember to celabrate  for them                                 |
-| `*`      | user               | have the option to lock my contacts with a password                            | make sure random people won't access my sensitive information          |
+| Priority | As a …        | I want to …                                                         | So that I can…                                                                |
+|:---------|---------------|---------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| `* * *`  | new user      | see usage instructions                                              | refer to instructions when I forget how to use the App                        |
+| `* * *`  | user          | add a new person                                                    |                                                                               |
+| `* * *`  | user          | record a person's year of study                                     |                                                                               |
+| `* * *`  | user          | record a person's NUS major                                         |                                                                               |
+| `* * *`  | user          | record a person's housing                                           |                                                                               |
+| `* * *`  | user          | record a person's Singaporean phone number                          |                                                                               |
+| `* * *`  | user          | record a person's email                                             |                                                                               |
+| `* * *`  | user          | record the link of a person's NUSMods schedule                      | record the modules and timetables of contacts                                 |
+| `* * *`  | user          | view a person's modules                                             |                                                                               |
+| `* * *`  | user          | delete a person                                                     | remove contacts that I no longer need                                         |
+| `* * *`  | user          | edit a contact’s details                                            | update outdated or incorrect information                                      |
+| `* * *`  | user          | find a person by name                                               | locate details of persons without having to go through the entire list        |
+| `* * *`  | user          | find contacts by module                                             | find friends to take modules with                                             |
+| `* * *`  | user          | view a list of all my contacts                                      | quickly find and access their details                                         |
+| `* *`    | user          | copy the link to my contact's NUSMods schedule                      | easily paste it into my browser to open their schedule on the NUSMods website |
+| `* *`    | user          | exit the application using a command                                | close it quickly when I am done using it                                      |
+| `* *`    | user          | have my contacts saved automatically                                | make sure my data is not lost when I close the application                    |
+| `* *`    | user          | interact with a graphical interface while using command-line inputs | visually confirm my actions and navigate the application more easily          |
+| `* *`    | user          | back up my contact data                                             | make sure my data won't get lost                                              |
+| `* *`    | user          | import contacts from a backup file                                  |                                                                               |
+| `*`      | user          | clear all contacts at once                                          | reset my address book when needed                                             |
+| `*`      | advanced user | edit the data file directly                                         | modify my contact list without using the application interface                |
 
 
 
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise. All use cases also require the precondition that the app already be open, along with any additional use cases specified.
 
 **Use Case: UC01 -- Add Contacts**
 
@@ -330,100 +318,63 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions:**
 
-* 2a. System detects an error in the entered data.
+* 1a. System detects an error in the entered data.
 
-   * 2a1. System requests for correct data.
-   * 2a2. User provides new data.
+   * 1a1. System requests for correct data.
+   * 1a2. User provides new data.
 
-      Steps 2a1-2a2 are repeated until the data entered are correct.
+      Steps 1a1-1a2 are repeated until the data entered are correct.
 
-      Use case resumes from step 3.
+      Use case resumes from step 2.
 
 **Use case: UC02 -- Delete a Contact**
 
+**Preconditions:**
+* A non-empty list of persons is currently displayed to the user
+
 **MSS**
 
-1.  User requests to list contacts
-2.  AddressBook shows a list of contacts
-3.  User requests to delete a specific contact in the list
-4.  AddressBook deletes the person
+1. User requests to delete a specific contact in the list.
+2. AddressBook deletes the person.
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 1a. The given index is invalid.
 
-  Use case ends.
+    * 1a1. System shows an error message and requests for a correct index.
+    * 1a2. User provides a new index.
+    
+    Steps 1a1-1a2 are repeated until the index entered is correct.
 
-* 3a. The given index is invalid.
-
-    * 3a1. System shows an error message.
-
-      Use case resumes at step 2.
+    Use case resumes at step 2.
 
 
-**Use Case: UC03 -- Link Contacts to NUSMods Timetable**
+**Use Case: UC03 -- Link a contact to NUSMods schedule**
 
-**Actor:** NUS Undergraduate Student
+**Preconditions**
+* The contact to be linked exists, or the user is in the process of creating a new valid contact.
+
 
 **MSS**
-1. User provides contact to link and link to timetable.
-2. System links timetable to contact, deleting the old timetable if any.
-3. System display the contact.
+1. User provides a contact and a NUSMods timetable link during creation or editing of the contact.
+2. System links the provided timetable to the contact, replacing any previously linked timetable if present.
+3. System displays the updated contact with the updated modules from the timetable.
 
    Use Case Ends.
 
 **Extensions**
-* 1a. System detects an error in link or contact (contact not found).
+* 2a. Provided timetable link is invalid.
+  * 2a1. System informs the user that the link is invalid and requests a new link.
+  * 2a2. User provides a new link.
 
-   * 1a1. System requests for correct data.
-   * 1a2. User provides new link and contact.
+    Steps 2a1-2a2 are repeated until the link entered is correct.
 
-      Steps 1a1-1a2 are repeated until the link and contact is correct.
+    Use case resumes from step 2.
 
-      Use case resumes from step 3.
 
-**Use Case: UC04 -- Updating NUSMods Venue and Schedule**
-
-**Actor:** NUS Undergraduate Student
-
-**Guarantees**
-
-- Old data will be deleted only if new data is successfully fetched and parsed.
-
-**MSS**
-
-1. User requests to update data.
-2. System fetches new venue and schedule data from NUSMods.
-3. System deletes old venue and schedule data.
-
-   Use Case Ends.
-
-**Extensions**
-* 1a. System cannot connect to the internet.
-
-   * 1a1. System informs user that there is a connection problem.
-
-      Use Case Ends.
-
-* 1b. System checked that the old data is less than 24 hours old.
-
-   * 1b1. System informs user that data is unlikely to have changed.
-   * 1b2. System asks user if data should be fetched.
-   * 1b3. System fetches data if user insists and use case resume from step 3.
-
-      Use Case Ends.
-
-* 2a. There is an error when fetching or parsing data.
-
-   * 2a1. System informs user to try again in a moment.
-
-      Use Case Ends.
-
-**Use Case: UC05 -- Find Contacts Taking a Specific Module**
-
-**Actor:** NUS Undergraduate Student
+**Use Case: UC04 -- Find Contacts Taking a Specific Module**
 
 **MSS**
 
@@ -435,7 +386,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 **Extensions**
 
-* 1a. Invalid module code provided:
+* 1a. User provides an invalid module code.
 
    * 1a1. System requests for correct data.
    * 1a2. User provides new data.
@@ -444,7 +395,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
    Use case resumes from step 3.
 
-**Use Case: UC06 -- Find Contacts By Name**
+**Use Case: UC05 -- Find Contacts By Name**
 
 **MSS**
 
@@ -496,7 +447,8 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Open a terminal and `cd` into the folder you put the jar file.
+   3. Use the command `java -jar "nusmates.jar"` to run the application.<br>Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
 
 1. Saving window preferences
 
