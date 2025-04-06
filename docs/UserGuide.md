@@ -146,7 +146,7 @@ Examples:
 
 Edits an existing person in NUSMates.
 
-Format: `edit index n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
+Format: `edit index [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]...`
 
 * `Index` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
 * **At least one of the [parameters](#parameter) must be provided.**
