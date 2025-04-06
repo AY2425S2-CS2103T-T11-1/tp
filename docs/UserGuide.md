@@ -205,7 +205,7 @@ Format: `findMod KEYWORD [MOREKEYWORDS]...`
 * Only the [module](#module) is searched.
 * Only full words will be matched e.g. `CS2103` will not match `CS2103T`
 * Persons matching at least one of the [modules](#module) searched will be returned (i.e. `OR` search).
-* Note that NUSMates can distinguish between modules added as student or as a TA on NUSMods. Modules with the TA option enabled are appended with a `(TA)`, so `CS2030` would become `CS2030 (TA)` instead. 
+* Note that NUSMates can distinguish between modules added as student or as a TA on NUSMods. Modules with the TA option enabled are appended with a `(TA)`, so `CS2030` would become `CS2030 (TA)` instead.
 
 Examples:
 * `findMod CS2109S` returns `Abi, Yuexi`
@@ -370,14 +370,14 @@ If everything works, a window will pop up showing NUSMates with some sample cont
 **A**: Install the app in the other computer and overwrite the empty data [file](#json-file) it creates with the [file](#json-file) that contains the data of your previous AddressBook [home folder](#home-folder).
 
 **Q**:  Can I use NUSMates on my mobile device?<br>
-**A**: NUSMates is a command-line application that may not be optimized for mobile devices. 
+**A**: NUSMates is a command-line application that may not be optimized for mobile devices.
 It’s best used on desktop environments where a terminal or command prompt is available.
 
 **Q**: How do I get the NUSMods link?<br>
 **A**: You may refer to the detailed step-by-step guide [here](#how-to-get-the-nusmods-link).
 
 **Q**: Can I add two contacts with the same name?<br>
-**A**: No, NUSMates does not allow duplicate names when adding contacts. 
+**A**: No, NUSMates does not allow duplicate names when adding contacts.
 Each contact must have a unique name in the system.
 To add multiple people with the same name, distinguish them in some way such as adding a descriptor (e.g., John Doe (Work)) or a number (Amy1, Amy2).
 
@@ -386,7 +386,7 @@ To add multiple people with the same name, distinguish them in some way such as 
 If their schedule changes, simply ask them to send you the updated link, and you can update their module information using the [edit](#editing-a-person--edit) command.
 
 **Q**: What about hidden modules in the timetable?<br>
-**A**: Our link processing treats hidden modules as usual, and **does** add it to the module list of the contact. 
+**A**: Our link processing treats hidden modules as usual, and **does** add it to the module list of the contact.
 
 --------------------------------------------------------------------------------------------------------------------
 

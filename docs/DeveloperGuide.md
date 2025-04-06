@@ -267,7 +267,7 @@ NUS undergraduate students who
 * are tech-savvy and familiar with installing jar files
 * can type fast and prefer using CLI apps over mouse interactions
 
-**Value proposition**: NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students with NUS-specific contact information such as year, major, housing, and modules. 
+**Value proposition**: NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students with NUS-specific contact information such as year, major, housing, and modules.
 Tailored towards frequent NUSMods users, the app makes it seamless to record module information using NUSMods links, helping users easily find friends who are taking the same modules - so they can form project groups, share notes, or know who to reach out to for help.
 
 ### User stories
@@ -345,7 +345,7 @@ For all use cases below, the **System** is the `AddressBook` and the **Actor** i
 
     * 1a1. System shows an error message and requests for a correct index.
     * 1a2. User provides a new index.
-    
+
     Steps 1a1-1a2 are repeated until the index entered is correct.
 
     Use case resumes at step 2.
