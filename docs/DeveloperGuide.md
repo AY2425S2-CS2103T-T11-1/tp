@@ -98,12 +98,12 @@ Here's a (partial) class diagram of the `Logic` component:
 
 <img src="images/LogicClassDiagram.png" width="550"/>
 
-The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("delete 1")` API call as an example.
+The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("edit 2 y/2")` API call as an example.
 
 ![Interactions Inside the Logic Component for the `edit 2 y/2` Command](images/EditSequenceDiagram.png)
 
 {: .note }
-> The lifeline for `DeleteCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+> The lifeline for `EditCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
 
 How the `Logic` component works:
 
@@ -267,8 +267,10 @@ NUS undergraduate students who
 * are tech-savvy and familiar with installing jar files
 * can type fast and prefer using CLI apps over mouse interactions
 
-**Value proposition**: NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students with NUS-specific contact information such as year, major, housing, and modules. 
-Tailored towards frequent NUSMods users, the app makes it seamless to record module information using NUSMods links, helping users easily find friends who are taking the same modules - so they can form project groups, share notes, or know who to reach out to for help.
+**Value proposition**: 
+
+NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students with NUS-specific contact information such as year, major, housing, and modules. 
+Tailored towards frequent NUSMods users, the app makes it seamless to record module information using NUSMods links, helping users easily find friends who are taking the same modules - so they can form project groups, share notes or know who to reach out to for help.
 
 ### User stories
 
@@ -287,16 +289,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | user          | view a person's modules                                             |                                                                               |
 | `* * *`  | user          | delete a person                                                     | remove contacts that I no longer need                                         |
 | `* * *`  | user          | edit a contact’s details                                            | update outdated or incorrect information                                      |
-| `* * *`  | user          | find a person by name                                               | locate details of persons without having to go through the entire list        |
+| `* * *`  | user          | find contacts by name                                               | locate details of contacts without having to go through the entire list       |
 | `* * *`  | user          | find contacts by module                                             | find friends to take modules with                                             |
 | `* * *`  | user          | view a list of all my contacts                                      | quickly find and access their details                                         |
-| `* *`    | user          | copy the link to my contact's NUSMods schedule                      | easily paste it into my browser to open their schedule on the NUSMods website |
-| `* *`    | user          | exit the application using a command                                | close it quickly when I am done using it                                      |
+| `* * *`  | user          | copy the link to my contact's NUSMods schedule                      | easily paste it into my browser to open their schedule on the NUSMods website |
+| `* * *`  | user          | clear all contacts at once                                          | reset my address book when needed                                             |
+| `* * *`  | user          | exit the application using a command                                | close it quickly when I am done using it                                      |
 | `* *`    | user          | have my contacts saved automatically                                | make sure my data is not lost when I close the application                    |
 | `* *`    | user          | interact with a graphical interface while using command-line inputs | visually confirm my actions and navigate the application more easily          |
-| `* *`    | user          | back up my contact data                                             | make sure my data won't get lost                                              |
+| `* *`    | user          | back up my contact's data                                           | make sure my data won't get lost                                              |
 | `* *`    | user          | import contacts from a backup file                                  |                                                                               |
-| `*`      | user          | clear all contacts at once                                          | reset my address book when needed                                             |
 | `*`      | advanced user | edit the data file directly                                         | modify my contact list without using the application interface                |
 
 
@@ -476,10 +478,11 @@ testers are expected to do more *exploratory* testing.
 
 1. Editing a person while all persons are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list. No one is named "John Doe".
+   1. Prerequisites: List all persons using the `list` command. Multiple persons listed. 
+   No one is named "John Doe".
 
    1. Test case: `edit 1 n/John Doe`<br>
-      Expected: First contact is updated with the new name. Details of the updated contact shown in the status message.
+      Expected: First contact is updated with the new name. Name of the updated contact shown in the status message.
 
    1. Test case: `edit 1`<br>
       Expected: No person is edited. Error details shown in the status message.
@@ -489,10 +492,10 @@ testers are expected to do more *exploratory* testing.
 
 1. Editing the link of a person while all persons are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+   1. Prerequisites: List all persons using the `list` command. Multiple persons listed.
 
    1. Test case: `edit 1 l/https://nusmods.com/timetable/sem-2/share?CS1010S=LEC:1,TUT:1&CS2030=LEC:1,LAB:1`<br>
-      Expected: First contact is updated with the new link. Details of the updated contact shown in the status message.
+      Expected: First contact is updated with the new link. Updated details of the contact shown in the status message.
       Clicking on `NUSMods Schedule` of the first person will result in copying the link which can be pasted in the browser.
 
    1. Test case: `edit 1 l/google.com`<br>
