@@ -41,7 +41,7 @@ NUSMates also makes it seamless to record [module](#module) information using an
    > {: .note }
    > **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-2. Download the latest `[.jar file]` from [here](https://github.com/{{site.repository}}/releases).
+2. Download the latest [.jar file](#jar-file) from [here](https://github.com/{{site.repository}}/releases).
 
 3. Copy the file to the [home folder](#home-folder) you want to use as the [home folder](#home-folder) for NUSMates. NUSMates will later generate files in this folder, including save data.
 
@@ -74,15 +74,16 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 | Command     | Format, Examples                                                                                                                                                                                                                                              |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
-| **Edit**    | `edit index n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/tag...`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                              |
+| **Add**     | `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG] [t/MORE_TAGS]...` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
+| **Edit**    | `edit index [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]...`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                              |
 | **Delete**  | `delete index`<br> e.g., `delete 3`                                                                                                                                                                                                                           |
-| **Find**    | `find KEYWORD...`<br> e.g., `find James Jake`                                                                                                                                                                                                                 |
-| **FindMod** | `findMod KEYWORD...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                       |
+| **Find**    | `find KEYWORD [MORE_KEYWORDS]...`<br> e.g., `find James Jake`                                                                                                                                                                                                                 |
+| **FindMod** | `findMod KEYWORD [MORE_KEYWORDS]...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                       |
 | **List**    | `list`                                                                                                                                                                                                                                                        |
 | **Clear**   | `clear`                                                                                                                                                                                                                                                       |
 | **Exit**    | `exit`                                                                                                                                                                                                                                                        |
 | **Help**    | `help`                                                                                                                                                                                                                                                        |
+
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -90,16 +91,17 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 This section explains the meaning of each contact field you can include when storing a contact. These fields are also used as parameters in some commands.
 
-| Field            | Explanation                                                                                                                                                                                    |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `n/NAME`         | The name of the person. This is the only required field.                                                                                                                                       |
-| `p/PHONE_NUMBER`        | The person’s **Singaporean 8-digit phone number**.                                                                                                                                                                     |
-| `e/EMAIL`        | The person’s email address.                                                                                                                                                                    |
-| `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>Year can take values from 1 to 6, which is the maximum candidature period                                                  |
-| `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   |
-| `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.                                                                                                                                 |
-| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                                         |
-| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! |
+
+| Field            | Explanation                                                                                                                                                                                    | Constraints |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
+| `n/NAME`         | The name of the person. This is the only required field.                                                                     | A non-empty string consisting of alphanumeric characters and spaces.                                                                  | 
+| `p/PHONE_NUMBER` | The person’s phone number.         | **8-digit number**, as all target users are expected to be Singapore residents.                                                                                                                                                              |
+| `e/EMAIL`        | The person’s email address.                                    | Any valid email address.                                                                                                                                |
+| `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>| Any number between 1 to 6, which is the maximum candidature period.                                                  |
+| `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.           | Any string.                                                                                                                        |
+| `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.               | Any string.                                                                                                                  |
+| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                                         | Any valid NUSMods timetable link.
+| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! | Any alphanumeric string.
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -111,6 +113,8 @@ This section explains the meaning of each contact field you can include when sto
   e.g. in `add n/NAME`, `NAME` is a [parameter](#parameter) which can be used as `add n/John Doe`.
 > * Items with `…`​ after them can be used multiple times including zero times.<br>
     e.g. `[t/tag]...` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+> * Extraneous parameters for commands that do not take in parameters (such as `list`, `clear`, `exit` and `help`) will be ignored.
+    e.g. if the command specifies `list 123`, it will be interpreted as `list`.
 
 {: .tip }
 > * [Parameters](#parameter) can be in any order.<br>
@@ -121,7 +125,7 @@ This section explains the meaning of each contact field you can include when sto
 
 Adds a person to NUSMates.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
+Format: `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG] [t/MORE_TAGS]...`
 
 * All parameters **except for `NAME`** are optional.<br>
 e.g. You can add a contact with only name, [year](#year), and [major](#major) using `add n/John Doe y/2 m/Computer Science`<br>
@@ -142,10 +146,10 @@ Examples:
 
 Edits an existing person in NUSMates.
 
-Format: `edit INDEX n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
+Format: `edit index n/NAME p/PHONE_NUMBER e/EMAIL y/YEAR m/MAJOR h/HOUSING l/NUSMODS_LINK t/TAG...`
 
 * `Index` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
-* At least one of the [parameters](#parameter) must be provided.
+* **At least one of the [parameters](#parameter) must be provided.**
 * Existing values will be updated to the input values.
 * For all fields except `name`, you can set it to nothing by typing the prefix without anything following it. <br>
 e.g. You can remove all the person’s [tags](#tag) by typing `t/` without specifying any [tags](#tag) after it.
@@ -159,7 +163,7 @@ Examples:
 
 Deletes the specified person from the address book.
 
-Format: `delete INDEX`
+Format: `delete index`
 
 * Deletes the person at the specified `index`.
 * The [index](#index) refers to the [index](#index) number shown in the displayed person list.
@@ -173,7 +177,7 @@ Examples:
 
 Finds persons whose names contain any of the given keywords.
 
-Format: `find KEYWORD...`
+Format: `find KEYWORD [MORE_KEYWORDS]...`
 
 * The search is case-insensitive. e.g `hans` will match `Hans`
 * You can use multiple keywords separated by spaces, e.g. `Hans Bo`
@@ -192,7 +196,7 @@ Examples:
 
 Finds persons whose [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
 
-Format: `findMod KEYWORD [MORE_KEYWORDS]`
+Format: `findMod KEYWORD [MOREKEYWORDS]...`
 
 * The search is case-insensitive. e.g `cs2030` will match `CS2030`
 * The order of the keywords does not matter. e.g. `CS2030 CS2103T` will match `CS2103T CS2030`
@@ -371,13 +375,16 @@ It’s best used on desktop environments where a terminal or command prompt is a
 **A**: You may refer to the detailed step-by-step guide [here](#how-to-get-the-nusmods-link).
 
 **Q**: Can I add two contacts with the same name?<br>
-**A**: No, AddressBook3 (AB3) does not allow duplicate names when adding contacts. 
+**A**: No, NUSMates does not allow duplicate names when adding contacts. 
 Each contact must have a unique name in the system.
 To add multiple people with the same name, distinguish them in some way such as adding a descriptor (e.g., John Doe (Work)) or a number (Amy1, Amy2).
 
 **Q**: Can I edit a contact's module information manually?<br>
 **A**: No, a contact's module information is automatically retrieved from the NUSMods link they provided.
 If their schedule changes, simply ask them to send you the updated link, and you can update their module information using the [edit](#editing-a-person--edit) command.
+
+**Q**: What about hidden modules in the timetable?<br>
+**A**: Our link processing treats hidden modules as usual, and **does** add it to the module list of the contact. 
 
 --------------------------------------------------------------------------------------------------------------------
 
