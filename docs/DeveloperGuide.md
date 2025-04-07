@@ -518,3 +518,5 @@ Team size: 4
 1. **Optional fields should be able to be cleared**: Currently optional fields cannot be cleared once set. Optional fields should be able to be cleared using the `edit` command, just like tags. For example: Phone should be able to be cleared by doing `edit 1 p/` (with nothing after the space).
 2. **Fix issue of tags overflowing out of the UI**: Currently, extremely long tags which overflow out of the UI get abruptly cut off, such as in the screenshot below. This off-screen overflow should be handles more elegantly, such as truncating the tag with a `...` before cutting it within the UI boundary.
 ![TagUiOverflow.png](images%2FTagUiOverflow.png)
+3. **Allow names with `/`**: Currently, names cannot include the `/` character, even though there are valid names which include this character. In the future, this should be allowed to make NUSMates more inclusive.
+4. **Long error messages**: Currently, the error messages returned when entering an invlaid command are quite long and hard to read. In the future, this should be fixed by having line breaks or making the messages shorter to improve readbility.
