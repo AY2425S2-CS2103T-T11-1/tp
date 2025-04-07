@@ -92,7 +92,7 @@ This section explains the meaning of each contact field you can include when sto
 | `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   | Any string.                                                                     |
 | `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.                                                                                                                                 | Any string.                                                                     |
 | `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                                         | Any valid NUSMods timetable link.                                               |
-| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! | Any alphanumeric string.                                                        |
+| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, etc. | Any alphanumeric string.                                                        |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -119,7 +119,7 @@ Format: `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l
 
 * All parameters **except for `NAME`** are optional.<br>
 e.g. You can add a contact with only name, [year](#year), and [major](#major) using `add n/John Doe y/2 m/Computer Science`<br>
-* A person can have any number of **[tags](#tag)**, including none.<br>
+* A person can have any number of [tags](#tag), including none.<br>
 * `NUSMODS_LINK` refers to the student's [NUSMods link](#nusmods-link) course schedule original link.
 
 Examples:
