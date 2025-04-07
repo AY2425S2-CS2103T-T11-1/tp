@@ -120,6 +120,16 @@ public class FindModCommandTest {
     }
 
     @Test
+    public void execute_taFound_combineLetterKeywords() {
+        String expectedMessage = String.format(MESSAGE_PERSON_LISTED_OVERVIEW, 1);
+        ModContainsKeywordsPredicate predicate = preparePredicate("cs2107(TA)");
+        FindModCommand command = new FindModCommand(predicate);
+        expectedModel.updateFilteredPersonList(predicate);
+        assertCommandSuccess(command, model, expectedMessage, expectedModel);
+        assertEquals(Arrays.asList(DANIEL), model.getFilteredPersonList());
+    }
+
+    @Test
     public void toStringMethod() {
         ModContainsKeywordsPredicate predicate = new ModContainsKeywordsPredicate(Arrays.asList("CS2100"));
         FindModCommand findModCommand = new FindModCommand(predicate);
