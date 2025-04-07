@@ -45,7 +45,7 @@ NUSMates makes it seamless for you to record [module](#module) information using
 
 3. Copy the file to the [home folder](#home-folder) you want to use as the [home folder](#home-folder) for NUSMates. NUSMates will later generate files in this folder, including save data.
 
-4. Open a [terminal](#terminal) and `cd` into the folder you put the `[.jar file]` in.
+4. Open a [terminal](#terminal) and `cd` into the folder you put the [.jar file](#jar-file) in.
 
 5. Use the command `java -jar "nusmates.jar"` to run the application.
    A [GUI](#gui) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
@@ -309,11 +309,10 @@ NUSMates runs using [Java](#java), which is a common tool installed on many comp
    java -version
    ```
 
-3. If you see a version number that starts with `17` or higher, such as in the image below, you’re good to go. Move to step 2.
-
-|                         ![java-version.png](images%2Fjava-version.png)                         |
-|:----------------------------------------------------------------------------------------------:|
-| Result of entering the `java -version` command in terminal, and where to see your Java version |
+3. If you see a version number that starts with `17` or higher, such as in the image below, you’re good to go. Move to step 2.<br>
+    > |                         ![java-version.png](images%2Fjava-version.png)                         |
+    > |:----------------------------------------------------------------------------------------------:|
+    > | Result of entering the `java -version` command in terminal, and where to see your Java version |
 
 4. If you see an error, or a number less than 17, you’ll need to install Java. Follow the guide for your operating system below:
 
@@ -361,7 +360,7 @@ You’ll now “go into” the folder using the terminal.
 Now that you’re in the correct folder, run this command:
 
 ```
-java -jar nusmates.jar
+java -jar "nusmates.jar"
 ```
 
 If everything works, a window will pop up showing NUSMates with some sample contacts, such as below.
