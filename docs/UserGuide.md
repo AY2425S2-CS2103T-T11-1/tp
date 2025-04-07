@@ -49,11 +49,9 @@ NUSMates makes it seamless for you to record [module](#module) information using
 
 5. Use the command `java -jar "nusmates.jar"` to run the application.
    A [GUI](#gui) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   
-|                  ![Ui](images/UpdatedUi.png)                   |
-|:--------------------------------------------------------------:|
-|    GUI which should appear after you launch the application    |
-    
+    > |                  ![Ui](images/UpdatedUi.png)                   |
+    > |:--------------------------------------------------------------:|
+    > |    GUI which should appear after you launch the application    |
 
 6. Type the command in the command box and press Enter to execute it.
 7. Refer to the [Features](#features) below for details of each command.
@@ -83,16 +81,16 @@ NUSMates makes it seamless for you to record [module](#module) information using
 This section explains the meaning of each contact field you can include when storing a contact. These fields are also used as parameters in some commands.
 
 
-| Field            | Explanation                                                                                                                                                                                    | Constraints                                                                     |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| `n/NAME`         | The name of the person. This is the only required field.                                                                                                                                       | A non-empty string consisting of alphanumeric characters and spaces.            | 
-| `p/PHONE_NUMBER` | The person’s phone number.                                                                                                                                                                     | **8-digit number**, as all target users are expected to be Singapore residents. |
-| `e/EMAIL`        | The person’s email address.                                                                                                                                                                    | Any valid email address.                                                        |
-| `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>                                                                                                                           | Any number between 1 to 6, which is the maximum candidature period.             |
-| `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   | Any string.                                                                     |
-| `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.                                                                                                                                 | Any string.                                                                     |
-| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                                         | Any valid NUSMods timetable link.                                               |
-| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! | Any alphanumeric string.                                                        |
+| Field            | Explanation                                                                                                                                                                   | Constraints                                                                     |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| `n/NAME`         | The name of the person. This is the only required field.                                                                                                                      | A non-empty string consisting of alphanumeric characters and spaces.            | 
+| `p/PHONE_NUMBER` | The person’s phone number.                                                                                                                                                    | **8-digit number**, as all target users are expected to be Singapore residents. |
+| `e/EMAIL`        | The person’s email address.                                                                                                                                                   | Any valid email address.                                                        |
+| `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>                                                                                                          | Any number between 1 to 6, which is the maximum candidature period.             |
+| `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                  | Any string.                                                                     |
+| `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.                                                                                                                | Any string.                                                                     |
+| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                        | Any valid NUSMods timetable link.                                               |
+| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, etc. | Any alphanumeric string.                                                        |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -102,7 +100,7 @@ This section explains the meaning of each contact field you can include when sto
 > * Words in `UPPER_CASE` are the [parameters](#parameter) you must supply when entering the command.<br>
   e.g. in `add n/NAME`, `NAME` is a [parameter](#parameter) which can be used as `add n/John Doe`.
 > * Items with `…`​ after them can be used multiple times including zero times.<br>
-    e.g. `[t/tag]...` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+    e.g. `[t/TAG]...` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 > * Extraneous parameters for commands that do not take in parameters (such as `list`, `clear`, `exit` and `help`) will be ignored.
     e.g. if the command specifies `list 123`, it will be interpreted as `list`.
 
@@ -119,7 +117,7 @@ Format: `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l
 
 * All parameters **except for `NAME`** are optional.<br>
 e.g. You can add a contact with only name, [year](#year), and [major](#major) using `add n/John Doe y/2 m/Computer Science`<br>
-* A person can have any number of **[tags](#tag)**, including none.<br>
+* A person can have any number of [tags](#tag), including none.<br>
 * `NUSMODS_LINK` refers to the student's [NUSMods link](#nusmods-link) course schedule original link.
 
 Examples:
