@@ -58,18 +58,6 @@ NUSMates also makes it seamless to record [module](#module) information using an
 6. Type the command in the command box and press Enter to execute it.
 7. Refer to the [Features](#features) below for details of each command.
 
-{: .tip }
-> Some example commands you can try:
-> * `list` : Lists all contacts.
->
-> * `add n/John Doe y/2 m/Computer Science` : Adds a contact named `John Doe` to NUSMates.
->
-> * `delete 3` : Deletes the 3rd contact shown in the current list.
->
-> * `clear` : Deletes all contacts.
->
-> * `exit` : Exits the app.
-
 --------------------------------------------------------------------------------------------------------------------
 ## Command Summary
 
@@ -87,7 +75,6 @@ NUSMates also makes it seamless to record [module](#module) information using an
 | **Clear**   | `clear`                                                                                                                                                                                                                                                       |
 | **Exit**    | `exit`                                                                                                                                                                                                                                                        |
 | **Help**    | `help`                                                                                                                                                                                                                                                        |
-
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -320,7 +307,7 @@ NUSMates runs using [Java](#java), which is a common tool installed on many comp
    java -version
    ```
 
-3. If you see a version number that starts with `17` or higher, such as in the image below, you’re good to go. Move to [Step 2](#step-2-download-the-nusmates-jar-file).
+3. If you see a version number that starts with `17` or higher, such as in the image below, you’re good to go. Move to step 2.
 
 |                         ![java-version.png](images%2Fjava-version.png)                         |
 |:----------------------------------------------------------------------------------------------:|
@@ -366,10 +353,6 @@ You’ll now “go into” the folder using the terminal.
 2. Type `cd ` (with a space), then drag and drop your NUSMates folder into the terminal.
 3. Press Enter.
 
-{: .tip }
-> If you're curious, `cd` means “[change directory](#cd-command)” — it tells your terminal to go into a folder.
-
-
 ### Step 5: Run NUSMates
 {: .no_toc}
 
@@ -386,7 +369,7 @@ If everything works, a window will pop up showing NUSMates with some sample cont
 |    GUI which should appear after you launch the application    |
 
 {: .warning }
-> ❌ If you see an error:
+> If you see an error:
 >   - Double-check that you're in the correct folder and that the file name is exactly `nusmates.jar`.
 >   - Make sure [Java](#java) was installed properly.
 >   - Visit the [Troubleshooting](#troubleshooting) section for more help.
