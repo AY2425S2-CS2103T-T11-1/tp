@@ -8,16 +8,16 @@ title: User Guide
 {: .no_toc}
 
 NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students. With NUSMates, you can record NUS-specific contact information such as [year](#year), [major](#major), [housing](#housing), and [modules](#module).
-NUSMates also makes it seamless to record [module](#module) information using an [NUSMods link](#nusmods-link), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
+NUSMates makes it seamless for you to record [module](#module) information using an [NUSMods link](#nusmods-link), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
 
-#### You will love NUSMates if you are:
+#### You will love NUSMates if:
 {: .no_toc}
 
-* An NUS undergraduate student who frequently uses NUSMods
-* Socially active in NUS with a need to manage the contacts of your fellow NUS undergraduate students
-* Frequently use NUSMods to plan, record, and share your course schedules
-* Tech-savvy and familiar with installing jar files
-* Can type fast and prefer using CLI apps over mouse interactions
+* You're an NUS undergraduate student who frequently uses NUSMods
+* You're socially active in NUS with a need to manage the contacts of your fellow NUS undergraduate students
+* You often use NUSMods to plan, record, and share your course schedules
+* You're tech-savvy and familiar with installing jar files
+* You can type fast and prefer typing commands over using a mouse
 
 {: .tip }
 > You can quickly look up all commands in the [Command Summary](#command-summary), or check the [Glossary](#glossary) if you’re unsure about any technical terms used.
@@ -64,17 +64,17 @@ NUSMates also makes it seamless to record [module](#module) information using an
 {: .note }
 > For more detailed information regarding the command format and each command, refer to the [Features](#features) section.
 
-| Command     | Format, Examples                                                                                                                                                                                                                                              |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Command     | Format, Examples                                                                                                                                                                                                                                                                          |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Add**     | `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG] [t/MORE_TAGS]...` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
-| **Edit**    | `edit index [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]...`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                              |
-| **Delete**  | `delete index`<br> e.g., `delete 3`                                                                                                                                                                                                                           |
-| **Find**    | `find KEYWORD [MORE_KEYWORDS]...`<br> e.g., `find James Jake`                                                                                                                                                                                                                 |
-| **FindMod** | `findMod KEYWORD [MORE_KEYWORDS]...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                       |
-| **List**    | `list`                                                                                                                                                                                                                                                        |
-| **Clear**   | `clear`                                                                                                                                                                                                                                                       |
-| **Exit**    | `exit`                                                                                                                                                                                                                                                        |
-| **Help**    | `help`                                                                                                                                                                                                                                                        |
+| **Edit**    | `edit index [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]...`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                                          |
+| **Delete**  | `delete index`<br> e.g., `delete 3`                                                                                                                                                                                                                                                       |
+| **Find**    | `find KEYWORD [MORE_KEYWORDS]...`<br> e.g., `find James Jake`                                                                                                                                                                                                                             |
+| **FindMod** | `findMod KEYWORD [MORE_KEYWORDS]...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                                   |
+| **List**    | `list`                                                                                                                                                                                                                                                                                    |
+| **Clear**   | `clear`                                                                                                                                                                                                                                                                                   |
+| **Exit**    | `exit`                                                                                                                                                                                                                                                                                    |
+| **Help**    | `help`                                                                                                                                                                                                                                                                                    |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -113,7 +113,7 @@ This section explains the meaning of each contact field you can include when sto
 
 ### Adding a person: `add`
 
-Adds a person to NUSMates.
+You can add a person to NUSMates and record their contact information with the `add` command.
 
 Format: `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG] [t/MORE_TAGS]...`
 
@@ -134,7 +134,7 @@ Examples:
 
 ### Editing a person : `edit`
 
-Edits an existing person in NUSMates.
+You can edit the details of a person whose contact information you already saved with the `edit` command.
 
 Format: `edit index [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]...`
 
@@ -154,7 +154,7 @@ Examples:
 
 ### Deleting a person : `delete`
 
-Deletes the specified person from the address book.
+You can delete a person from NUSMates with the `delete` command.
 
 Format: `delete index`
 
@@ -168,7 +168,7 @@ Examples:
 
 ### Locating persons by name: `find`
 
-Finds persons whose names contain any of the given keywords.
+You can find a person in your contacts whose name matches a keyword with the `find` command.
 
 Format: `find KEYWORD [MORE_KEYWORDS]...`
 
@@ -190,7 +190,7 @@ Examples:
 
 ### Locating persons by [module](#module): `findMod`
 
-Finds persons whose [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
+You can find a person taking certain [modules](#module) with the `findMod` command.
 
 Format: `findMod KEYWORD [MOREKEYWORDS]...`
 
@@ -210,25 +210,29 @@ Examples:
 
 ### Listing all persons : `list`
 
-Shows a list of all persons in the address book.
+After finding specific persons, you can list all your contacts again with the `list` command.
 
 Format: `list`
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the address book.
+You can quickly delete all your contacts with the `clear` command.
 
 Format: `clear`
 
+
+{: .warning }
+> There is no way to undo clearing all your contacts, so be careful!
+
 ### Exiting the program : `exit`
 
-Exits the program.
+You can exit the NUSMates app by using the `exit` command.
 
 Format: `exit`
 
 ### Viewing help : `help`
 
-Shows a message explaining how to access the help page.
+You can return to this user guide for help on using NUSMates by using the `help` command.
 
 |          ![help message](images/helpCommand.png)          |
 |:---------------------------------------------------------:|
@@ -238,13 +242,13 @@ Format: `help`
 
 ### Saving and editing the data [file](#json-file)
 
-NUSMates data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+NUSMates data is saved in the hard disk automatically after any command that changes the data, so you don't need to save manually.
 
-NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data [file](#json-file).
+NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file location]/data/addressbook.json`. If you are an advanced user, you are welcome to update data directly by editing that file.
 
 {: .warning }
-> If your changes to the data [file](#json-file) makes its format invalid, AddressBook will discard all data and start with an empty data [file](#json-file) at the next run. Hence, it is recommended to take a backup of the [file](#json-file) before editing it.<br>
-> Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data [file](#json-file) only if you are confident that you can update it correctly.
+> If your changes to the data file makes its format invalid, NUSMates will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the data file before editing it.<br>
+> Furthermore, certain edits can cause NUSMates to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 
 --------------------------------------------------------------------------------------------------------------------
 
