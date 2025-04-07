@@ -375,8 +375,9 @@ For all use cases below, the **System** is the `AddressBook` and the **Actor** i
 
     Use case resumes from step 2.
 
-
 **Use Case: UC04 -- Find Contacts Taking a Specific Module**
+
+**Actor:** NUS Undergraduate Student
 
 **MSS**
 
@@ -393,11 +394,13 @@ For all use cases below, the **System** is the `AddressBook` and the **Actor** i
    * 1a1. System requests for correct data.
    * 1a2. User provides new data.
 
-   Steps 1a1-1a2 are repeated until the data entered are valid.
+        Steps 1a1-1a2 are repeated until the data entered are valid.
 
-   Use case resumes from step 3.
+        Use case resumes from step 2.
 
 **Use Case: UC05 -- Find Contacts By Name**
+
+**Actor:** NUS Undergraduate Student
 
 **MSS**
 
