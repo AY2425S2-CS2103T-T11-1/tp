@@ -49,7 +49,11 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 5. Use the command `java -jar "nusmates.jar"` to run the application.
    A [GUI](#gui) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/UpdatedUi.png)
+   
+|                  ![Ui](images/UpdatedUi.png)                   |
+|:--------------------------------------------------------------:|
+|    GUI which should appear after you launch the application    |
+    
 
 6. Type the command in the command box and press Enter to execute it.
 7. Refer to the [Features](#features) below for details of each command.
@@ -192,7 +196,10 @@ Format: `find KEYWORD [MORE_KEYWORDS]...`
 Examples:
 * `find Huazhi` returns `Huazhi`
 * `find Abi Yuexi` returns `Abi`, `Yuexi`<br>
-  ![result for 'find Abi Yuexi'](images/findDemo.png)
+
+| ![result for 'find Abi Yuexi'](images/findDemo.png) |
+|:---------------------------------------------------:|
+|             Result for `find Abi Yuexi`             |
 
 ### Locating persons by [module](#module): `findMod`
 
@@ -209,7 +216,10 @@ Format: `findMod KEYWORD [MOREKEYWORDS]...`
 
 Examples:
 * `findMod CS2109S` returns `Abi, Yuexi`
-  ![result for 'findMod CS2109S'](images/findModDemo.png)
+
+| ![result for 'findMod CS2109S'](images/findModDemo.png) |
+|:-------------------------------------------------------:|
+|              Result for `findMod CS2109S`               |
 
 ### Listing all persons : `list`
 
@@ -233,7 +243,9 @@ Format: `exit`
 
 Shows a message explaining how to access the help page.
 
-![help message](images/helpCommand.png)
+|          ![help message](images/helpCommand.png)          |
+|:---------------------------------------------------------:|
+| Pop-up window displayed when you enter the `help` command |
 
 Format: `help`
 
@@ -261,17 +273,26 @@ NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file loc
 ### Step 1: Share/Sync
 {: .no_toc}
 Click on the `Share/Sync` button on the top right.
-![nusmods_step1.png](images/nusmods_step1.png)
+
+| ![nusmods_step1.png](images/nusmods_step1.png) |
+|:----------------------------------------------:|
+|    `Share/Sync` button on the NUSMods website    |
 
 ### Step 2: Show original link
 {: .no_toc}
 Click on the `Show original link` button to convert the shortened NUSMods link to the original one.
-![nusmods_step2.png](images/nusmods_step2.png)
+
+|   ![nusmods_step2.png](images/nusmods_step2.png)   |
+|:--------------------------------------------------:|
+| `Show original link` button on the NUSMods website |
 
 ### Step 3. Copy
 {: .no_toc}
 Copy the link, and you're done!
-![nusmods_step3.png](images/nusmods_step3.png)
+
+| ![nusmods_step3.png](images/nusmods_step3.png) |
+|:----------------------------------------------:|
+|   `Copy link` button on the NUSMods website    |
 
 You can now use this link as the `l/NUSMODS_LINK` parameter in the [add](#adding-a-person-add) or [edit](#editing-a-person--edit) commands.
 
@@ -299,7 +320,11 @@ NUSMates runs using [Java](#java), which is a common tool installed on many comp
    java -version
    ```
 
-3. If you see a version number that starts with `17` or higher, you’re good to go. Move to [Step 2](#step-2-download-the-nusmates-jar-file).
+3. If you see a version number that starts with `17` or higher, such as in the image below, you’re good to go. Move to [Step 2](#step-2-download-the-nusmates-jar-file).
+
+|                         ![java-version.png](images%2Fjava-version.png)                         |
+|:----------------------------------------------------------------------------------------------:|
+| Result of entering the `java -version` command in terminal, and where to see your Java version |
 
 4. If you see an error, or a number less than 17, you’ll need to install Java. Follow the guide for your operating system below:
 
@@ -309,9 +334,9 @@ NUSMates runs using [Java](#java), which is a common tool installed on many comp
 ### Step 2: Download the NUSMates `.jar` file
 {: .no_toc}
 
-1. Go to the latest release of NUSMates by [downloading the `.jar` file](https://github.com/{{site.repository}}/releases)
+1. Go to the latest release of NUSMates on the [NUSMates releases page](https://github.com/AY2425S2-CS2103T-T11-1/tp/releases/)
 
-2. Click on the most recent version, and download the file that ends with `.jar`. (e.g. `nusmates.jar`)
+2. Find the most recent version, and download the file named `nusmates.jar`
 
 
 ### Step 3: Choose a [home folder](#home-folder)
@@ -354,7 +379,11 @@ Now that you’re in the correct folder, run this command:
 java -jar nusmates.jar
 ```
 
-If everything works, a window will pop up showing NUSMates with some sample contacts.
+If everything works, a window will pop up showing NUSMates with some sample contacts, such as below.
+
+|                  ![Ui](images/UpdatedUi.png)                   |
+|:--------------------------------------------------------------:|
+|    GUI which should appear after you launch the application    |
 
 {: .warning }
 > ❌ If you see an error:
@@ -385,7 +414,10 @@ To add multiple people with the same name, distinguish them in some way such as 
 **A**: No, a contact's module information is automatically retrieved from the NUSMods link they provided.
 If their schedule changes, simply ask them to send you the updated link, and you can update their module information using the [edit](#editing-a-person--edit) command.
 
-**Q**: What about hidden modules in the timetable?<br>
+**Q**: If my contact changes their schedule on NUSMods, will their modules be automatically updated in NUSMates?<br>
+**A**: No, changes in NUSMods will not automatically be reflected in NUSMates. You can ask your contact to send you the updated link, and you can update their module information using the [edit](#editing-a-person--edit) command.
+
+**Q**: How are hidden modules in the timetable treated?<br>
 **A**: Our link processing treats hidden modules as usual, and **does** add it to the module list of the contact.
 
 --------------------------------------------------------------------------------------------------------------------
