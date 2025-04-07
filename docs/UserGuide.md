@@ -57,6 +57,9 @@ NUSMates makes it seamless for you to record [module](#module) information using
 7. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
+
 ## Command Summary
 
 {: .note }
@@ -93,6 +96,8 @@ This section explains the meaning of each contact field you can include when sto
 | `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, etc. | Any alphanumeric string.                                                        |
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## Features
 
@@ -259,6 +264,8 @@ NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file loc
 ![nusmods_sample.png](images/nusmods_sample.png)
 >You can share your NUSMods timetable with others using an NUSMods link. NUSMates uses this NUSMods link to record the module information of a contact.
 
+<div style="page-break-after: always;"></div>
+
 ### Step 1: Share/Sync
 {: .no_toc}
 Click on the `Share/Sync` button on the top right.
@@ -267,6 +274,8 @@ Click on the `Share/Sync` button on the top right.
 |:----------------------------------------------:|
 |    `Share/Sync` button on the NUSMods website    |
 
+<div style="page-break-after: always;"></div>
+
 ### Step 2: Show original link
 {: .no_toc}
 Click on the `Show original link` button to convert the shortened NUSMods link to the original one.
@@ -274,6 +283,8 @@ Click on the `Show original link` button to convert the shortened NUSMods link t
 |   ![nusmods_step2.png](images/nusmods_step2.png)   |
 |:--------------------------------------------------:|
 | `Show original link` button on the NUSMods website |
+
+<div style="page-break-after: always;"></div>
 
 ### Step 3. Copy
 {: .no_toc}
@@ -368,6 +379,8 @@ If everything works, a window will pop up showing NUSMates with some sample cont
 |                  ![Ui](images/UpdatedUi.png)                   |
 |:--------------------------------------------------------------:|
 |    GUI which should appear after you launch the application    |
+
+<div style="page-break-after: always;"></div>
 
 {: .warning }
 > If you see an error:
