@@ -205,7 +205,7 @@ Format: `findMod KEYWORD [MOREKEYWORDS]...`
 * Only the [module](#module) is searched.
 * Only full words will be matched e.g. `CS2103` will not match `CS2103T`
 * Persons matching at least one of the [modules](#module) searched will be returned (i.e. `OR` search).
-* Note that NUSMates can distinguish between modules added as student or as a TA on NUSMods. Modules with the TA option enabled are appended with a `(TA)`, so `CS2030` would become `CS2030 (TA)` instead.
+* Note that NUSMates can distinguish between modules added as student or as a TA on NUSMods. Modules with the TA option enabled are appended with a `(TA)`, so `CS2030` would become `CS2030(TA)` instead.
 
 Examples:
 * `findMod CS2109S` returns `Abi, Yuexi`
