@@ -347,7 +347,7 @@ For all use cases below, the **System** is the `AddressBook` and the **Actor** i
 
     * 1a1. System shows an error message and requests for a correct index.
     * 1a2. User provides a new index.
-    
+
     Steps 1a1-1a2 are repeated until the index entered is correct.
 
     Use case resumes at step 2.
@@ -521,5 +521,9 @@ testers are expected to do more *exploratory* testing.
 
 Team size: 4
 
-1. **Optional Fields should be able to be cleared**: Currently optional fields cannot be cleared once set. Optional fields should be able to be cleared just like tags. For example: Phone should be able to be cleared by doing `edit 1 p/` (with nothing after the space).
-2. **More Robust Link Validation**: Currently, our link validation for the NUSMods timetable works in the following manner: verify that the link is indeed from ```nusmods.com```, then parse the module codes from it ensuring that they satisfy some basic constraints (2-4 alphabet prefix, then 4 digits, and finally 0-5 alphanumeric characters). In the future, we plan to make this validation even more robust by verifying that the parsed codes are actually modules that exist (for example) by maintaining an offline list of valid codes. 
+1. **Optional fields should be able to be cleared**: Currently optional fields cannot be cleared once set. Optional fields should be able to be cleared using the `edit` command, just like tags. For example: Phone should be able to be cleared by doing `edit 1 p/` (with nothing after the space).
+2. **Fix issue of tags overflowing out of the UI**: Currently, extremely long tags which overflow out of the UI get abruptly cut off, such as in the screenshot below. This off-screen overflow should be handles more elegantly, such as truncating the tag with a `...` before cutting it within the UI boundary.
+![TagUiOverflow.png](images%2FTagUiOverflow.png)
+3. **Allow names with `/`**: Currently, names cannot include the `/` character, even though there are valid names which include this character. In the future, this should be allowed to make NUSMates more inclusive.
+4. **Long error messages**: Currently, the error messages returned when entering an invlaid command are quite long and hard to read. In the future, this should be fixed by having line breaks or making the messages shorter to improve readbility.
+5. **More Robust Link Validation**: Currently, our link validation for the NUSMods timetable works in the following manner: verify that the link is indeed from ```nusmods.com```, then parse the module codes from it ensuring that they satisfy some basic constraints (2-4 alphabet prefix, then 4 digits, and finally 0-5 alphanumeric characters). In the future, we plan to make this validation even more robust by verifying that the parsed codes are actually modules that exist (for example) by maintaining an offline list of valid codes. 

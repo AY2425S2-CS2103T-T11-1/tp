@@ -8,16 +8,16 @@ title: User Guide
 {: .no_toc}
 
 NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students. With NUSMates, you can record NUS-specific contact information such as [year](#year), [major](#major), [housing](#housing), and [modules](#module).
-NUSMates also makes it seamless to record [module](#module) information using an [NUSMods link](#nusmods-link), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
+NUSMates makes it seamless for you to record [module](#module) information using an [NUSMods link](#nusmods-link), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
 
-#### You will love NUSMates if you are:
+#### You will love NUSMates if:
 {: .no_toc}
 
-* An NUS undergraduate student who frequently uses NUSMods
-* Socially active in NUS with a need to manage the contacts of your fellow NUS undergraduate students
-* Frequently use NUSMods to plan, record, and share your course schedules
-* Tech-savvy and familiar with installing jar files
-* Can type fast and prefer using CLI apps over mouse interactions
+* You're an NUS undergraduate student who frequently uses NUSMods
+* You're socially active in NUS with a need to manage the contacts of your fellow NUS undergraduate students
+* You often use NUSMods to plan, record, and share your course schedules
+* You're tech-savvy and familiar with installing jar files
+* You can type fast and prefer typing commands over using a mouse
 
 {: .tip }
 > You can quickly look up all commands in the [Command Summary](#command-summary), or check the [Glossary](#glossary) if you’re unsure about any technical terms used.
@@ -49,22 +49,14 @@ NUSMates also makes it seamless to record [module](#module) information using an
 
 5. Use the command `java -jar "nusmates.jar"` to run the application.
    A [GUI](#gui) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/UpdatedUi.png)
+   
+|                  ![Ui](images/UpdatedUi.png)                   |
+|:--------------------------------------------------------------:|
+|    GUI which should appear after you launch the application    |
+    
 
 6. Type the command in the command box and press Enter to execute it.
 7. Refer to the [Features](#features) below for details of each command.
-
-{: .tip }
-> Some example commands you can try:
-> * `list` : Lists all contacts.
->
-> * `add n/John Doe y/2 m/Computer Science` : Adds a contact named `John Doe` to NUSMates.
->
-> * `delete 3` : Deletes the 3rd contact shown in the current list.
->
-> * `clear` : Deletes all contacts.
->
-> * `exit` : Exits the app.
 
 --------------------------------------------------------------------------------------------------------------------
 ## Command Summary
@@ -72,18 +64,17 @@ NUSMates also makes it seamless to record [module](#module) information using an
 {: .note }
 > For more detailed information regarding the command format and each command, refer to the [Features](#features) section.
 
-| Command     | Format, Examples                                                                                                                                                                                                                                              |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Command     | Format, Examples                                                                                                                                                                                                                                                                          |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Add**     | `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG] [t/MORE_TAGS]...` <br> e.g., `add n/John Doe p/98765432 e/johnd@example.com y/2 m/Computer Science  h/UTown Residence l/https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12 t/kiasu` |
-| **Edit**    | `edit index [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]...`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                              |
-| **Delete**  | `delete index`<br> e.g., `delete 3`                                                                                                                                                                                                                           |
-| **Find**    | `find KEYWORD [MORE_KEYWORDS]...`<br> e.g., `find James Jake`                                                                                                                                                                                                                 |
-| **FindMod** | `findMod KEYWORD [MORE_KEYWORDS]...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                       |
-| **List**    | `list`                                                                                                                                                                                                                                                        |
-| **Clear**   | `clear`                                                                                                                                                                                                                                                       |
-| **Exit**    | `exit`                                                                                                                                                                                                                                                        |
-| **Help**    | `help`                                                                                                                                                                                                                                                        |
-
+| **Edit**    | `edit index [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]...`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                                                                                          |
+| **Delete**  | `delete index`<br> e.g., `delete 3`                                                                                                                                                                                                                                                       |
+| **Find**    | `find KEYWORD [MORE_KEYWORDS]...`<br> e.g., `find James Jake`                                                                                                                                                                                                                             |
+| **FindMod** | `findMod KEYWORD [MORE_KEYWORDS]...`<br> e.g., `findMod CS2103T CS2101`                                                                                                                                                                                                                   |
+| **List**    | `list`                                                                                                                                                                                                                                                                                    |
+| **Clear**   | `clear`                                                                                                                                                                                                                                                                                   |
+| **Exit**    | `exit`                                                                                                                                                                                                                                                                                    |
+| **Help**    | `help`                                                                                                                                                                                                                                                                                    |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -92,17 +83,16 @@ NUSMates also makes it seamless to record [module](#module) information using an
 This section explains the meaning of each contact field you can include when storing a contact. These fields are also used as parameters in some commands.
 
 
-| Field            | Explanation                                                                                                                                                                                    | Constraints |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
-| `n/NAME`         | The name of the person. This is the only required field.                                                                     | A non-empty string consisting of alphanumeric characters and spaces.                                                                  | 
-| `p/PHONE_NUMBER` | The person’s phone number.         | **8-digit number**, as all target users are expected to be Singapore residents.                                                                                                                                                              |
-| `e/EMAIL`        | The person’s email address.                                    | Any valid email address.                                                                                                                                |
-| `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>| Any number between 1 to 6, which is the maximum candidature period.                                                  |
-| `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.           | Any string.                                                                                                                        |
-| `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.               | Any string.                                                                                                                  |
-| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                                         | Any valid NUSMods timetable link.
-| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! | Any alphanumeric string.
-
+| Field            | Explanation                                                                                                                                                                                    | Constraints                                                                     |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| `n/NAME`         | The name of the person. This is the only required field.                                                                                                                                       | A non-empty string consisting of alphanumeric characters and spaces.            | 
+| `p/PHONE_NUMBER` | The person’s phone number.                                                                                                                                                                     | **8-digit number**, as all target users are expected to be Singapore residents. |
+| `e/EMAIL`        | The person’s email address.                                                                                                                                                                    | Any valid email address.                                                        |
+| `y/YEAR`         | The person’s [year](#year) of study at NUS. E.g., `1` = Year 1.<br/>                                                                                                                           | Any number between 1 to 6, which is the maximum candidature period.             |
+| `m/MAJOR`        | The person’s [major](#major) at NUS. E.g., Computer Science.                                                                                                                                   | Any string.                                                                     |
+| `h/HOUSING`      | Where the person stays, such as UTown Residence or off-campus.                                                                                                                                 | Any string.                                                                     |
+| `l/NUSMODS_LINK` | A link to the person’s [NUSMods](#nusmods-link) timetable containing the modules they are taking. You can click the link to copy it to your clipboard.                                         | Any valid NUSMods timetable link.                                               |
+| `t/TAG`          | [Tags](#tag) to categorise the person, e.g., `t/friend`, `t/project`. One person can have multiple tags.<br/>💡 Tip: You can use tags to record CCAs, country of origin, or anything you want! | Any alphanumeric string.                                                        |
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -123,7 +113,7 @@ This section explains the meaning of each contact field you can include when sto
 
 ### Adding a person: `add`
 
-Adds a person to NUSMates.
+You can add a person to NUSMates and record their contact information with the `add` command.
 
 Format: `add n/NAME [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG] [t/MORE_TAGS]...`
 
@@ -144,16 +134,19 @@ Examples:
 
 ### Editing a person : `edit`
 
-Edits an existing person in NUSMates.
+You can edit the details of a person whose contact information you already saved with the `edit` command.
 
 Format: `edit index [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [y/YEAR] [m/MAJOR] [h/HOUSING] [l/NUSMODS_LINK] [t/TAG]...`
 
 * `Index` refers to the [index](#index) number shown in the displayed person list. The [index](#index) **must be a positive integer** 1, 2, 3, …​
 * **At least one of the [parameters](#parameter) must be provided.**
 * Existing values will be updated to the input values.
-* For all fields except `name`, you can set it to nothing by typing the prefix without anything following it. <br>
-e.g. You can remove all the person’s [tags](#tag) by typing `t/` without specifying any [tags](#tag) after it.
+* You can remove all the person’s [tags](#tag) by typing `t/` without specifying any [tags](#tag) after it.
 * When editing [tags](#tag), the existing [tags](#tag) of the person will be removed i.e adding of [tags](#tag) is not cumulative.
+
+{: .warning }
+> You cannot combine tag clearing `t/` and tag addition `t/TAG` in the same command. Doing so will result in an error.
+> For example, the command `edit 1 t/ t/friends` is invalid — you must either clear all tags `t/` or replace them with new tags `t/friends t/groupmate`, but not both.
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
@@ -161,7 +154,7 @@ Examples:
 
 ### Deleting a person : `delete`
 
-Deletes the specified person from the address book.
+You can delete a person from NUSMates with the `delete` command.
 
 Format: `delete index`
 
@@ -175,7 +168,7 @@ Examples:
 
 ### Locating persons by name: `find`
 
-Finds persons whose names contain any of the given keywords.
+You can find a person in your contacts whose name matches a keyword with the `find` command.
 
 Format: `find KEYWORD [MORE_KEYWORDS]...`
 
@@ -190,11 +183,14 @@ Format: `find KEYWORD [MORE_KEYWORDS]...`
 Examples:
 * `find Huazhi` returns `Huazhi`
 * `find Abi Yuexi` returns `Abi`, `Yuexi`<br>
-  ![result for 'find Abi Yuexi'](images/findDemo.png)
+
+| ![result for 'find Abi Yuexi'](images/findDemo.png) |
+|:---------------------------------------------------:|
+|             Result for `find Abi Yuexi`             |
 
 ### Locating persons by [module](#module): `findMod`
 
-Finds persons whose [NUSMods link](#nusmods-link) contains any of the given [modules](#module).
+You can find a person taking certain [modules](#module) with the `findMod` command.
 
 Format: `findMod KEYWORD [MOREKEYWORDS]...`
 
@@ -203,47 +199,56 @@ Format: `findMod KEYWORD [MOREKEYWORDS]...`
 * Only the [module](#module) is searched.
 * Only full words will be matched e.g. `CS2103` will not match `CS2103T`
 * Persons matching at least one of the [modules](#module) searched will be returned (i.e. `OR` search).
-* Note that NUSMates can distinguish between modules added as student or as a TA on NUSMods. Modules with the TA option enabled are appended with a `(TA)`, so `CS2030` would become `CS2030 (TA)` instead. 
+* Note that NUSMates can distinguish between modules added as student or as a TA on NUSMods. Modules with the TA option enabled are appended with a `(TA)`, so `CS2030` would become `CS2030(TA)` instead.
 
 Examples:
 * `findMod CS2109S` returns `Abi, Yuexi`
-  ![result for 'findMod CS2109S'](images/findModDemo.png)
+
+| ![result for 'findMod CS2109S'](images/findModDemo.png) |
+|:-------------------------------------------------------:|
+|              Result for `findMod CS2109S`               |
 
 ### Listing all persons : `list`
 
-Shows a list of all persons in the address book.
+After finding specific persons, you can list all your contacts again with the `list` command.
 
 Format: `list`
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the address book.
+You can quickly delete all your contacts with the `clear` command.
 
 Format: `clear`
 
+
+{: .warning }
+> There is no way to undo clearing all your contacts, so be careful!
+
 ### Exiting the program : `exit`
 
-Exits the program.
+You can exit the NUSMates app by using the `exit` command.
 
 Format: `exit`
 
 ### Viewing help : `help`
 
-Shows a message explaining how to access the help page.
+You can return to this user guide for help on using NUSMates by using the `help` command.
 
-![help message](images/helpCommand.png)
+|          ![help message](images/helpCommand.png)          |
+|:---------------------------------------------------------:|
+| Pop-up window displayed when you enter the `help` command |
 
 Format: `help`
 
 ### Saving and editing the data [file](#json-file)
 
-NUSMates data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+NUSMates data is saved in the hard disk automatically after any command that changes the data, so you don't need to save manually.
 
-NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data [file](#json-file).
+NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file location]/data/addressbook.json`. If you are an advanced user, you are welcome to update data directly by editing that file.
 
 {: .warning }
-> If your changes to the data [file](#json-file) makes its format invalid, AddressBook will discard all data and start with an empty data [file](#json-file) at the next run. Hence, it is recommended to take a backup of the [file](#json-file) before editing it.<br>
-> Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data [file](#json-file) only if you are confident that you can update it correctly.
+> If your changes to the data file makes its format invalid, NUSMates will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the data file before editing it.<br>
+> Furthermore, certain edits can cause NUSMates to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -259,17 +264,26 @@ NUSMates data is saved automatically as a [JSON file](#json-file) `[JAR file loc
 ### Step 1: Share/Sync
 {: .no_toc}
 Click on the `Share/Sync` button on the top right.
-![nusmods_step1.png](images/nusmods_step1.png)
+
+| ![nusmods_step1.png](images/nusmods_step1.png) |
+|:----------------------------------------------:|
+|    `Share/Sync` button on the NUSMods website    |
 
 ### Step 2: Show original link
 {: .no_toc}
 Click on the `Show original link` button to convert the shortened NUSMods link to the original one.
-![nusmods_step2.png](images/nusmods_step2.png)
+
+|   ![nusmods_step2.png](images/nusmods_step2.png)   |
+|:--------------------------------------------------:|
+| `Show original link` button on the NUSMods website |
 
 ### Step 3. Copy
 {: .no_toc}
 Copy the link, and you're done!
-![nusmods_step3.png](images/nusmods_step3.png)
+
+| ![nusmods_step3.png](images/nusmods_step3.png) |
+|:----------------------------------------------:|
+|   `Copy link` button on the NUSMods website    |
 
 You can now use this link as the `l/NUSMODS_LINK` parameter in the [add](#adding-a-person-add) or [edit](#editing-a-person--edit) commands.
 
@@ -297,7 +311,11 @@ NUSMates runs using [Java](#java), which is a common tool installed on many comp
    java -version
    ```
 
-3. If you see a version number that starts with `17` or higher, you’re good to go. Move to [Step 2](#step-2-download-the-nusmates-jar-file).
+3. If you see a version number that starts with `17` or higher, such as in the image below, you’re good to go. Move to step 2.
+
+|                         ![java-version.png](images%2Fjava-version.png)                         |
+|:----------------------------------------------------------------------------------------------:|
+| Result of entering the `java -version` command in terminal, and where to see your Java version |
 
 4. If you see an error, or a number less than 17, you’ll need to install Java. Follow the guide for your operating system below:
 
@@ -307,9 +325,9 @@ NUSMates runs using [Java](#java), which is a common tool installed on many comp
 ### Step 2: Download the NUSMates `.jar` file
 {: .no_toc}
 
-1. Go to the latest release of NUSMates by [downloading the `.jar` file](https://github.com/{{site.repository}}/releases)
+1. Go to the latest release of NUSMates on the [NUSMates releases page](https://github.com/AY2425S2-CS2103T-T11-1/tp/releases/)
 
-2. Click on the most recent version, and download the file that ends with `.jar`. (e.g. `nusmates.jar`)
+2. Find the most recent version, and download the file named `nusmates.jar`
 
 
 ### Step 3: Choose a [home folder](#home-folder)
@@ -339,10 +357,6 @@ You’ll now “go into” the folder using the terminal.
 2. Type `cd ` (with a space), then drag and drop your NUSMates folder into the terminal.
 3. Press Enter.
 
-{: .tip }
-> If you're curious, `cd` means “[change directory](#cd-command)” — it tells your terminal to go into a folder.
-
-
 ### Step 5: Run NUSMates
 {: .no_toc}
 
@@ -352,10 +366,14 @@ Now that you’re in the correct folder, run this command:
 java -jar nusmates.jar
 ```
 
-If everything works, a window will pop up showing NUSMates with some sample contacts.
+If everything works, a window will pop up showing NUSMates with some sample contacts, such as below.
+
+|                  ![Ui](images/UpdatedUi.png)                   |
+|:--------------------------------------------------------------:|
+|    GUI which should appear after you launch the application    |
 
 {: .warning }
-> ❌ If you see an error:
+> If you see an error:
 >   - Double-check that you're in the correct folder and that the file name is exactly `nusmates.jar`.
 >   - Make sure [Java](#java) was installed properly.
 >   - Visit the [Troubleshooting](#troubleshooting) section for more help.
@@ -368,14 +386,14 @@ If everything works, a window will pop up showing NUSMates with some sample cont
 **A**: Install the app in the other computer and overwrite the empty data [file](#json-file) it creates with the [file](#json-file) that contains the data of your previous AddressBook [home folder](#home-folder).
 
 **Q**:  Can I use NUSMates on my mobile device?<br>
-**A**: NUSMates is a command-line application that may not be optimized for mobile devices. 
+**A**: NUSMates is a command-line application that may not be optimized for mobile devices.
 It’s best used on desktop environments where a terminal or command prompt is available.
 
 **Q**: How do I get the NUSMods link?<br>
 **A**: You may refer to the detailed step-by-step guide [here](#how-to-get-the-nusmods-link).
 
 **Q**: Can I add two contacts with the same name?<br>
-**A**: No, NUSMates does not allow duplicate names when adding contacts. 
+**A**: No, NUSMates does not allow duplicate names when adding contacts.
 Each contact must have a unique name in the system.
 To add multiple people with the same name, distinguish them in some way such as adding a descriptor (e.g., John Doe (Work)) or a number (Amy1, Amy2).
 
@@ -383,8 +401,11 @@ To add multiple people with the same name, distinguish them in some way such as 
 **A**: No, a contact's module information is automatically retrieved from the NUSMods link they provided.
 If their schedule changes, simply ask them to send you the updated link, and you can update their module information using the [edit](#editing-a-person--edit) command.
 
-**Q**: What about hidden modules in the timetable?<br>
-**A**: Our link processing treats hidden modules as usual, and **does** add it to the module list of the contact. 
+**Q**: If my contact changes their schedule on NUSMods, will their modules be automatically updated in NUSMates?<br>
+**A**: No, changes in NUSMods will not automatically be reflected in NUSMates. You can ask your contact to send you the updated link, and you can update their module information using the [edit](#editing-a-person--edit) command.
+
+**Q**: How are hidden modules in the timetable treated?<br>
+**A**: Our link processing treats hidden modules as usual, and **does** add it to the module list of the contact.
 
 --------------------------------------------------------------------------------------------------------------------
 
