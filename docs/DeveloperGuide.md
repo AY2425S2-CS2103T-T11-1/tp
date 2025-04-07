@@ -276,30 +276,30 @@ Tailored towards frequent NUSMods users, the app makes it seamless to record mod
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …        | I want to …                                                         | So that I can…                                                                |
-|:---------|---------------|---------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| `* * *`  | new user      | see usage instructions                                              | refer to instructions when I forget how to use the App                        |
-| `* * *`  | user          | add a new person                                                    |                                                                               |
-| `* * *`  | user          | record a person's year of study                                     |                                                                               |
-| `* * *`  | user          | record a person's NUS major                                         |                                                                               |
-| `* * *`  | user          | record a person's housing                                           |                                                                               |
-| `* * *`  | user          | record a person's Singaporean phone number                          |                                                                               |
-| `* * *`  | user          | record a person's email                                             |                                                                               |
-| `* * *`  | user          | record the link of a person's NUSMods schedule                      | record the modules and timetables of contacts                                 |
-| `* * *`  | user          | view a person's modules                                             |                                                                               |
-| `* * *`  | user          | delete a person                                                     | remove contacts that I no longer need                                         |
-| `* * *`  | user          | edit a contact’s details                                            | update outdated or incorrect information                                      |
-| `* * *`  | user          | find contacts by name                                               | locate details of contacts without having to go through the entire list       |
-| `* * *`  | user          | find contacts by module                                             | find friends to take modules with                                             |
-| `* * *`  | user          | view a list of all my contacts                                      | quickly find and access their details                                         |
-| `* * *`  | user          | copy the link to my contact's NUSMods schedule                      | easily paste it into my browser to open their schedule on the NUSMods website |
-| `* * *`  | user          | clear all contacts at once                                          | reset my address book when needed                                             |
-| `* * *`  | user          | exit the application using a command                                | close it quickly when I am done using it                                      |
-| `* *`    | user          | have my contacts saved automatically                                | make sure my data is not lost when I close the application                    |
+| Priority | As a …        | I want to …                                              | So that I can…                                                                |
+|:---------|---------------|----------------------------------------------------------|-------------------------------------------------------------------------------|
+| `* * *`  | new user      | see usage instructions                                   | refer to instructions when I forget how to use the App                        |
+| `* * *`  | user          | add a new person                                         |                                                                               |
+| `* * *`  | user          | record a person's year of study                          |                                                                               |
+| `* * *`  | user          | record a person's NUS major                              |                                                                               |
+| `* * *`  | user          | record a person's housing                                |                                                                               |
+| `* * *`  | user          | record a person's Singaporean phone number               |                                                                               |
+| `* * *`  | user          | record a person's email                                  |                                                                               |
+| `* * *`  | user          | record the link of a person's NUSMods schedule           | record the modules and timetables of contacts                                 |
+| `* * *`  | user          | view a person's modules                                  |                                                                               |
+| `* * *`  | user          | delete a person                                          | remove contacts that I no longer need                                         |
+| `* * *`  | user          | edit a contact’s details                                 | update outdated or incorrect information                                      |
+| `* * *`  | user          | find contacts by name                                    | locate details of contacts without having to go through the entire list       |
+| `* * *`  | user          | find contacts by module                                  | find friends to take modules with                                             |
+| `* * *`  | user          | view a list of all my contacts                           | quickly find and access their details                                         |
+| `* * *`  | user          | copy the link to my contact's NUSMods schedule           | easily paste it into my browser to open their schedule on the NUSMods website |
+| `* * *`  | user          | clear all contacts at once                               | reset my address book when needed                                             |
+| `* * *`  | user          | exit the application using a command                     | close it quickly when I am done using it                                      |
+| `* *`    | user          | have my contacts saved automatically                     | make sure my data is not lost when I close the application                    |
 | `* *`    | user          | interact with a graphical interface while using command-line inputs | visually confirm my actions and navigate the application more easily          |
-| `* *`    | user          | back up my contact's data                                           | make sure my data won't get lost                                              |
-| `* *`    | user          | import contacts from a backup file                                  |                                                                               |
-| `*`      | advanced user | edit the data file directly                                         | modify my contact list without using the application interface                |
+| `* *`    | user          | back up m data                                           | make sure my data won't get lost                                              |
+| `* *`    | user          | import contacts from a backup file                       |                                                                               |
+| `*`      | advanced user | edit the data file directly                              | modify my contact list without using the application interface                |
 
 
 
