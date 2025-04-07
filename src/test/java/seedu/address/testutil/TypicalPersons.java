@@ -56,7 +56,7 @@ public class TypicalPersons {
             .withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12").build();
     public static final Person DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
             .withEmail("cornelia@example.com").withHousing("PGPR R1").withYear("1").withMajor("Law")
-            .withLink("https://nusmods.com/timetable/sem-2/share?CS2103T=LEC:G12")
+            .withLink("https://nusmods.com/timetable/sem-1/share?CS2103T=LEC:G20&CS2107=TUT:13,LEC:1&ta=CS2107(TUT:13)")
             .withTags("friends").build();
     public static final Person ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("94882224")
             .withEmail("werner@example.com").withHousing("Tembusu College").withYear("4").withMajor("Physics")
