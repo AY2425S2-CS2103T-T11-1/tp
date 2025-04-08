@@ -49,9 +49,9 @@ NUSMates makes it seamless for you to record [module](#module) information using
 
 5. Use the command `java -jar "nusmates.jar"` to run the application.
    A [GUI](#gui) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-    > |                  ![Ui](images/UpdatedUi.png)                   |
-    > |:--------------------------------------------------------------:|
-    > |    GUI which should appear after you launch the application    |
+    > |                   ![Ui](images/Ui.png)                   |
+    > |:--------------------------------------------------------:|
+    > | GUI which should appear after you launch the application |
 
 6. Type the command in the command box and press Enter to execute it.
 7. Refer to the [Features](#features) below for details of each command.
@@ -376,9 +376,9 @@ java -jar "nusmates.jar"
 
 If everything works, a window will pop up showing NUSMates with some sample contacts, such as below.
 
-|                  ![Ui](images/UpdatedUi.png)                   |
-|:--------------------------------------------------------------:|
-|    GUI which should appear after you launch the application    |
+|                   ![Ui](images/Ui.png)                   |
+|:--------------------------------------------------------:|
+| GUI which should appear after you launch the application |
 
 <div style="page-break-after: always;"></div>
 
