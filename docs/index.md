@@ -9,7 +9,7 @@ title: Home
 [![CI Status](https://github.com/{{site.repository}}/workflows/Java%20CI/badge.svg)](https://github.com/{{site.repository}}/actions)
 [![codecov](https://codecov.io/gh/{{site.repository}}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{site.repository}})
 
-![Ui](images/UpdatedUi.png)
+![Ui](images/Ui.png)
 
 **NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students.** With NUSMates, you can record NUS-specific contact information such as year, major, housing, and modules.
 NUSMates also makes it seamless to record module information using an NUSMods link, helping you easily find friends who are taking the same modules - so you can form project groups, share notes, or know who to reach out to for help.

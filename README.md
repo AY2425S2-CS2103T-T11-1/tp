@@ -4,7 +4,7 @@
 
 [![codecov](https://codecov.io/gh/AY2425S2-CS2103T-T11-1/tp/graph/badge.svg?token=VA2F7WUH2X)](https://codecov.io/gh/AY2425S2-CS2103T-T11-1/tp)
 
-![Ui](docs/images/UpdatedUi.png)
+![Ui](docs/images/Ui.png)
 
 **NUSMates allows NUS undergraduate students to record the contact details of their fellow NUS undergraduate students.** With NUSMates, you can record NUS-specific contact information such as [year](#year), [major](#major), housing, and [modules](#module).
 NUSMates also makes it seamless to record [module](#module) information using an [NUSMods link](#nusmods-link), helping you easily find friends who are taking the same [modules](#module) - so you can form project groups, share notes, or know who to reach out to for help.
