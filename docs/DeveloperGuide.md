@@ -19,6 +19,10 @@ title: Developer Guide
 
 * It is based on the [AddressBook-Level3 (AB3) project](https://github.com/se-edu/addressbook-level3) created by the [SE-EDU initiative](https://se-education.org).
 In addition to the functionalities provided in AB3, we introduce features that can help NUS students better manage their contacts' information.
+* GitHub Copilot Inline Editor was used as an autocomplete to complete repititive and tedious code.
+* GitHub Copilot Inline Editor was used to generate some testcases.
+* GitHub Copilot was used to generate some commit messages.
+* ChatGPT was used to format and correct the wordings and format of User Guide and Developer Guide, including the glossary.
 
 --------------------------------------------------------------------------------------------------------------------
 
